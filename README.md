@@ -1,6 +1,6 @@
 # Personal Meal Planner App
 
-This project is a simple weekly meal planning application.
+This [project](https://infinite-plains-09580.herokuapp.com) (current iteration) is a simple weekly meal planning application.
 
 ## How To Get Started
 
