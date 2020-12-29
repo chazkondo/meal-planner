@@ -25,11 +25,11 @@ export default class App extends Component {
       },
     ],
     events: [
-      { title: "Event 1", id: "1" },
-      { title: "Event 2", id: "2" },
-      { title: "Event 3", id: "3" },
-      { title: "Event 4", id: "4" },
-      { title: "Event 5", id: "5" },
+      { title: "Curry Stew (Example)", id: "1" },
+      { title: "Beef Broccoli (Example)", id: "2" },
+      { title: "Cereal (Example)", id: "3" },
+      { title: "Pancakes (Example)", id: "4" },
+      { title: "Waffles (Example)", id: "5" },
     ],
   };
 
@@ -107,7 +107,7 @@ export default class App extends Component {
               }}
             >
               <p align="center">
-                <strong> Events</strong>
+                <strong>Meals</strong>
               </p>
               {this.state.events.map((event) => (
                 <div
