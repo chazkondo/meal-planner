@@ -13,6 +13,7 @@ import { v4 as uuid_v4 } from "uuid";
 // Next actions
 
 // Finish view all recipes. look into mongoose paginate
+// Finish edit and delete recipes
 
 Date.prototype.addDays = function(days) {
   var date = new Date(this.valueOf());
