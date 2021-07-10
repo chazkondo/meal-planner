@@ -43,20 +43,17 @@ export default function App() {
   const [checked, setChecked] = useState(false)
   const [expandedView, setExpandedView] = useState(1)
   // initial state
-  const [state, setState] = useState({
-    weekendsVisible: true,
-    externalEvents: [
-      { title: "Curry Stew", color: "#0097a7", id: 34432 },
-      { title: "Beef Broccoli", color: "#f44336", id: 323232 },
-      { title: "Cereal", color: "#f57f17", id: 1111 },
-      { title: "Pancakes", color: "#90a4ae", id: 432432 }
-    ],
-    calendarEvents: [
-    ]
-  });
+  const [weekendsVisible, setWeekendsVisible] = useState(true)
+  const [recipes, updateRecipes] = useState([
+    { title: "Curry Stew", color: "#0097a7", id: 34432 },
+    { title: "Beef Broccoli", color: "#f44336", id: 323232 },
+    { title: "Cereal", color: "#f57f17", id: 1111 },
+    { title: "Pancakes", color: "#90a4ae", id: 432432 }
+  ])
+  const [calendar, updateCalendar] = useState([])
 
   // add external events
-  const addEvent = () => {
+  const addRecipe = () => {
     let newEvent = {
       id: 3433,
       title: "Timed event",
@@ -132,7 +129,7 @@ export default function App() {
           <input
             type="submit"
             name="name"
-            onClick={addEvent}
+            onClick={addRecipe}
             value="add recipe"
           />
         </div>
