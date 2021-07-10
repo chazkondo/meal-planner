@@ -39,6 +39,8 @@ const ExternalEvent = memo(({ event }) => {
 });
 
 export default function App() {
+
+  const [checked, setChecked] = useState(false)
   // initial state
   const [state, setState] = useState({
     weekendsVisible: true,
@@ -105,6 +107,11 @@ export default function App() {
     console.log(state, 'hello?')
   };
 
+  function handleCheck(e) {
+    setChecked(e.target.checked)
+    console.log('bitch')
+  }
+
   return (
     <div className="App">
       <div className="recipe-wrapper">
@@ -134,7 +141,7 @@ export default function App() {
           editable={true}
           selectable={true}
           selectMirror={true}
-          dayMaxEvents={3}
+          dayMaxEvents={5}
           weekends={state.weekendsVisible}
           events={state.calendarEvents}
           droppable={true}
@@ -142,6 +149,8 @@ export default function App() {
           eventReceive={handleEventReceive}
         />
       </div>
+      <input type="checkbox" defaultChecked={checked} 
+     onChange={e=>handleCheck(e)} />
     </div>
   );
 }
