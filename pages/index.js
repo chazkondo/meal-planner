@@ -52,20 +52,6 @@ export default function App() {
       { title: "Pancakes", color: "#90a4ae", id: 432432 }
     ],
     calendarEvents: [
-      {
-        id: 1,
-        title: "All-day event",
-        color: "#388e3c",
-        start: "2020-12-12",
-        end: "2020-12-12"
-      },
-      {
-        id: 2,
-        title: "Timed event",
-        color: "#0097a7",
-        start: "2020-12-07",
-        end: "2020-12-10"
-      }
     ]
   });
 
@@ -107,15 +93,12 @@ export default function App() {
         calendarEvents: state.calendarEvents.concat(newEvent)
       };
     });
-    console.log(state, 'hello?')
   };
 
     // handle event move
     const handleEventMove = (e) => {
       const event = state.calendarEvents.find(item=>item._instance === e.event._instance.defId)
       event._date = e.event.start
-      console.log(event, 'wat i get her?')
-      console.log(e.event.start.toISOString(), '??')
       // const newEvent = {
       //   id: eventInfo.draggedEl.getAttribute("data-id"),
       //   title: eventInfo.draggedEl.getAttribute("title"),
@@ -131,7 +114,6 @@ export default function App() {
       //     calendarEvents: state.calendarEvents.concat(newEvent)
       //   };
       // });
-      console.log(state, 'hello2?')
     };
 
   function handleCheck(e) {
@@ -179,11 +161,10 @@ export default function App() {
           fixedWeekCount={false}
           eventReceive={handleEventReceive}
           eventDrop={handleEventMove}
-          eventLeave={()=>console.log('THIS HAPPEND WT')}
         />
-      </div>
       <div style={{color: 'white'}}>Expanded View <input style={{marginTop: 20}} type="checkbox" defaultChecked={checked} onChange={e=>handleCheck(e)} /></div>
       <div><button onClick={()=>console.log(state, 'heres the state for u')}>check state</button></div>
+      </div>
     </div>
   );
 }
