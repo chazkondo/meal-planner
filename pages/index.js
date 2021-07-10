@@ -4,7 +4,7 @@ import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin, { Draggable } from "@fullcalendar/interaction";
 
-const ExternalEvent = memo(({ event }) => {
+const Recipe = memo(({ event }) => {
   let elRef = useRef(null);
 
   useEffect(() => {
@@ -54,7 +54,7 @@ export default function App() {
 
   // add external events
   const addRecipe = () => {
-    let newEvent = {
+    let newRecipe = {
       id: 3433,
       title: "Timed event",
       color: "#333333",
@@ -63,12 +63,8 @@ export default function App() {
       custom: "custom stuff"
     };
 
-    setState((state) => {
-      return {
-        ...state,
-        externalEvents: state.externalEvents.concat(newEvent)
-      };
-    });
+    updateRecipes(previous => [...previous, newRecipe]
+    );
   };
 
   // handle event receive
@@ -84,17 +80,12 @@ export default function App() {
       _instance: eventInfo.event._instance.defId
     };
 
-    setState((state) => {
-      return {
-        ...state,
-        calendarEvents: state.calendarEvents.concat(newEvent)
-      };
-    });
+    updateCalendar(previous=>[...previous, newEvent]);
   };
 
     // handle event move
     const handleEventMove = (e) => {
-      const event = state.calendarEvents.find(item=>item._instance === e.event._instance.defId)
+      const event = calendarEvents.find(item=>item._instance === e.event._instance.defId)
       event._date = e.event.start
       // const newEvent = {
       //   id: eventInfo.draggedEl.getAttribute("data-id"),
@@ -133,9 +124,9 @@ export default function App() {
             value="add recipe"
           />
         </div>
-        <div id="external-events">
-          {state.externalEvents.map((event) => (
-            <ExternalEvent key={event.id} event={event} />
+        <div id="all-recipes">
+          {recipes.map((event) => (
+            <Recipe key={event.id} event={event} />
           ))}
         </div>
       </div>
@@ -152,15 +143,15 @@ export default function App() {
           selectable={true}
           selectMirror={true}
           dayMaxEvents={expandedView}
-          weekends={state.weekendsVisible}
-          events={state.calendarEvents}
+          weekends={weekendsVisible}
+          events={calendar}
           droppable={true}
           fixedWeekCount={false}
           eventReceive={handleEventReceive}
           eventDrop={handleEventMove}
         />
       <div style={{color: 'white'}}>Expanded View <input style={{marginTop: 20}} type="checkbox" defaultChecked={checked} onChange={e=>handleCheck(e)} /></div>
-      <div><button onClick={()=>console.log(state, 'heres the state for u')}>check state</button></div>
+      <div><button onClick={()=>console.log(calendar, 'heres the state for u')}>check calendar state</button></div>
       </div>
     </div>
   );
