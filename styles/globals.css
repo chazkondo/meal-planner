@@ -19,8 +19,6 @@ a {
   font-family: sans-serif;
   text-align: center;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
   align-items: center;
   background: pink;
   width: 100vw;
@@ -28,9 +26,12 @@ a {
 }
 
 .recipe-wrapper {
-  width: 95vw; 
   background: red;
   margin: 2.5vh;
+}
+
+.recipe-title {
+  height: 7vh
 }
 
 #external-events {
@@ -39,12 +40,9 @@ a {
   background: #eee;
   overflow-x: scroll;
   display: flex;
-  /* width: */
 }
 
 .recipe {
-  margin-right: 5vw !important;
-  min-width: 20vw !important;
   padding: 1vw
 }
 
@@ -68,8 +66,12 @@ a {
 }
 
 @media screen and (max-width: 2400px) {
+  .App {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
   .recipe-wrapper {
-    width: 95vw; 
+    width: 20vw; 
     background: red;
     margin: 2.5vh;
   }
@@ -77,19 +79,25 @@ a {
     flex-direction: column;
   }
   .calendar-wrapper {
-    width: 50vw;
+    width: 60vw;
     background: green
   }
 }
 
 @media screen and (max-width: 600px) {
+  .App {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
   .recipe-wrapper {
     width: 95vw; 
-    background: red;
-    margin: 2.5vh;
   }
   #external-events {
     flex-direction: row;
+  }
+  .recipe {
+    margin-right: 5vw !important;
+    min-width: 20vw !important;
   }
   .calendar-wrapper {
     width: 95vw;
