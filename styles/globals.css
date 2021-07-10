@@ -38,7 +38,7 @@ a {
   height: 7vh
 }
 
-#external-events {
+#all-recipes {
   padding: 0 10px;
   border: 1px solid #ccc;
   overflow-x: scroll;
@@ -51,7 +51,7 @@ a {
   padding: 1vw
 }
 
-#external-events .fc-event {
+#all-recipes .fc-event {
   margin: 1em 0;
   cursor: move;
 }
@@ -79,7 +79,7 @@ a {
     width: 20vw; 
     margin: 2.5vh;
   }
-  #external-events {
+  #all-recipes {
     flex-direction: column;
   }
   .calendar-wrapper {
@@ -95,7 +95,7 @@ a {
   .recipe-wrapper {
     width: 95vw; 
   }
-  #external-events {
+  #all-recipes {
     flex-direction: row;
   }
   .recipe {

@@ -4,6 +4,8 @@ import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin, { Draggable } from "@fullcalendar/interaction";
 
+import Alert from "sweetalert2";
+
 const Recipe = memo(({ event }) => {
   let elRef = useRef(null);
 
@@ -113,6 +115,45 @@ export default function App() {
     setChecked(e.target.checked)
   }
 
+  function eventClick(eventClick) {
+    Alert.fire({
+      title: eventClick.event.title,
+      html:
+        `<div class="table-responsive">
+      <table class="table">
+      <tbody>
+      <tr >
+      <td>Title</td>
+      <td><strong>` +
+        eventClick.event.title +
+        `</strong></td>
+      </tr>
+      <tr >
+      <td>Start Time</td>
+      <td><strong>
+      ` +
+        eventClick.event.start +
+        `
+      </strong></td>
+      </tr>
+      </tbody>
+      </table>
+      </div>`,
+
+      showCancelButton: true,
+      confirmButtonColor: "#d33",
+      cancelButtonColor: "#3085d6",
+      confirmButtonText: "Remove Event",
+      cancelButtonText: "Close",
+    }).then((result) => {
+      if (result.value) {
+        console.log(eventClick, 'where da revert?')
+        eventClick.event.remove(); // It will remove event from the calendar
+        Alert.fire("Deleted!", "Your Event has been deleted.", "success");
+      }
+    });
+  };
+
   return (
     <div className="App">
       <div className="recipe-wrapper">
@@ -149,6 +190,7 @@ export default function App() {
           fixedWeekCount={false}
           eventReceive={handleEventReceive}
           eventDrop={handleEventMove}
+          eventClick={eventClick}
         />
       <div style={{color: 'white'}}>Expanded View <input style={{marginTop: 20}} type="checkbox" defaultChecked={checked} onChange={e=>handleCheck(e)} /></div>
       <div><button onClick={()=>console.log(calendar, 'heres the state for u')}>check calendar state</button></div>
