@@ -48,7 +48,7 @@ export default function App() {
   const [weekendsVisible, setWeekendsVisible] = useState(true)
   const [recipes, updateRecipes] = useState([
     { title: "Curry Stew", color: "#0097a7", id: 34432 },
-    { title: "Beef Broccoli", color: "#f44336", id: 323232, ingredients: ['Beef', 'Broccoli, Rice, Soy Sauce, Ginger'] },
+    { title: "Beef Broccoli", color: "#f44336", id: 323232, ingredients: [{name: 'Beef', amount: '2lbs'}, {name: 'Broccoli', amount: '2 heads'}, {name: 'Rice', amount: '3 cups'}, {name: 'Soy Sauce', amount: '3 Tablespoons'}, {name: 'Ginger', amount: '2 Tablespoons'}] },
     { title: "Cereal", color: "#f57f17", id: 1111 },
     { title: "Pancakes", color: "#90a4ae", id: 432432 }
   ])
@@ -117,34 +117,17 @@ export default function App() {
     const parsedId = parseFloat(id);
     const recipe = recipes.find(element=>element.id === parsedId).ingredients
 
-    return recipe.map(ingredient=>`<p>${ingredient}</p>`)
+    return recipe.map(ingredient=>` <span>${ingredient.name} (${ingredient.amount})</span>`)
   }
 
   function eventClick(eventClick) {
     console.log(eventClick, 'do i get revert here?')
     Alert.fire({
-      title: eventClick.event.title + ' - ' + eventClick.event.start.toLocaleString({dateStyle:'long'}).slice(0, 20),
+      title: eventClick.event.title + '<div style="font-size: 20">' + eventClick.event.start.toString().slice(0, 15) + '</div>',
       html:
-        `<div class="table-responsive">
-      <table class="table">
-      <tbody>
-      <tr >
-      <td>Ingredients</td>
-      <td><strong>` +
+      `<div>` +
         getIngredients(eventClick.event._def.publicId) +
-        `</strong></td>
-      </tr>
-      <tr >
-      <td>Start Time</td>
-      <td><strong>
-      ` +
-        eventClick.event.start +
-        `
-      </strong></td>
-      </tr>
-      </tbody>
-      </table>
-      </div>`,
+      '</div>',
 
       showCancelButton: true,
       confirmButtonColor: "#d33",
