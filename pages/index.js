@@ -122,7 +122,7 @@ export default function App() {
           ))}
         </div>
       </div>
-      <div style={{ float: "left", width: "75%", paddingBottom: 20 }}>
+      <div style={{ float: "left", width: "75%"}}>
         <FullCalendar
           plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
           headerToolbar={{
