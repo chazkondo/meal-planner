@@ -48,7 +48,7 @@ export default function App() {
   const [weekendsVisible, setWeekendsVisible] = useState(true)
   const [recipes, updateRecipes] = useState([
     { title: "Curry Stew", color: "#0097a7", id: 34432 },
-    { title: "Beef Broccoli", color: "#f44336", id: 323232 },
+    { title: "Beef Broccoli", color: "#f44336", id: 323232, ingredients: ['Beef', 'Broccoli, Rice, Soy Sauce, Ginger'] },
     { title: "Cereal", color: "#f57f17", id: 1111 },
     { title: "Pancakes", color: "#90a4ae", id: 432432 }
   ])
@@ -71,8 +71,6 @@ export default function App() {
 
   // handle event receive
   const handleEventReceive = (eventInfo) => {
-    console.log('this got fired')
-    console.log(eventInfo, 'hi')
     const newEvent = {
       id: eventInfo.draggedEl.getAttribute("data-id"),
       title: eventInfo.draggedEl.getAttribute("title"),
@@ -87,7 +85,7 @@ export default function App() {
 
     // handle event move
     const handleEventMove = (e) => {
-      const event = calendarEvents.find(item=>item._instance === e.event._instance.defId)
+      const event = calendar.find(item=>item._instance === e.event._instance.defId)
       event._date = e.event.start
       // const newEvent = {
       //   id: eventInfo.draggedEl.getAttribute("data-id"),
@@ -115,17 +113,25 @@ export default function App() {
     setChecked(e.target.checked)
   }
 
+  function getIngredients(id) {
+    const parsedId = parseFloat(id);
+    const recipe = recipes.find(element=>element.id === parsedId).ingredients
+
+    return recipe.map(ingredient=>`<p>${ingredient}</p>`)
+  }
+
   function eventClick(eventClick) {
+    console.log(eventClick, 'do i get revert here?')
     Alert.fire({
-      title: eventClick.event.title,
+      title: eventClick.event.title + ' - ' + eventClick.event.start.toLocaleString({dateStyle:'long'}).slice(0, 20),
       html:
         `<div class="table-responsive">
       <table class="table">
       <tbody>
       <tr >
-      <td>Title</td>
+      <td>Ingredients</td>
       <td><strong>` +
-        eventClick.event.title +
+        getIngredients(eventClick.event._def.publicId) +
         `</strong></td>
       </tr>
       <tr >
@@ -147,7 +153,8 @@ export default function App() {
       cancelButtonText: "Close",
     }).then((result) => {
       if (result.value) {
-        console.log(eventClick, 'where da revert?')
+        const newArr = calendar.filter(events => events._instance !== eventClick.event._instance.defId)
+        updateCalendar(newArr)
         eventClick.event.remove(); // It will remove event from the calendar
         Alert.fire("Deleted!", "Your Event has been deleted.", "success");
       }
