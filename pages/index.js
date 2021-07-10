@@ -21,7 +21,7 @@ const ExternalEvent = memo(({ event }) => {
   return (
     <div
       ref={elRef}
-      className="fc-event fc-h-event mb-1 fc-daygrid-event fc-daygrid-block-event p-2"
+      className="fc-event fc-h-event mb-1 fc-daygrid-event fc-daygrid-block-event p-2 recipe"
       title={event.title}
       style={{
         backgroundColor: event.color,
@@ -107,8 +107,8 @@ export default function App() {
 
   return (
     <div className="App">
-      <div style={{ width: "90vw", background: 'red' }}>
-        <div className="flex-center" style={{height: 40}}>
+      <div style={{ width: "95vw", background: 'red', margin: '2.5vh' }}>
+        <div className="flex-center" style={{height: 20}}>
           <input
             type="submit"
             name="name"
@@ -122,7 +122,7 @@ export default function App() {
           ))}
         </div>
       </div>
-      <div style={{ width: "75vw", background: 'green'}}>
+      <div className="calendar-wrapper">
         <FullCalendar
           plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
           headerToolbar={{

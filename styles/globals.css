@@ -20,21 +20,27 @@ a {
   text-align: center;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   background: pink;
   width: 100vw;
-  height: 100vh
+  height: 100vh;
 }
 
 #external-events {
   padding: 0 10px;
   border: 1px solid #ccc;
   background: #eee;
-  overflow-y: scroll;
+  overflow-x: scroll;
   display: flex;
   flex-direction: row;
   /* width: */
+}
+
+.recipe {
+  margin-right: 5vw !important;
+  min-width: 20vw !important;
+  padding: 1vw
 }
 
 #external-events .fc-event {
