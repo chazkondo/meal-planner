@@ -56,38 +56,56 @@ export default function App() {
 
   // add external events
   const addRecipe = () => {
-    let newRecipe = {
-      id: 3433,
-      title: "Demo Recipe",
-      color: "#333333",
-      start: "2020-12-31",
-      end: "2020-12-31",
-      custom: "custom stuff"
-    };
 
     Alert.fire({
-      title: 'Add Recipe',
-      html:
-      `<div>` +
-        'demo' +
-      '</div>',
-
-      showCancelButton: true,
-      confirmButtonColor: "#d33",
-      cancelButtonColor: "#3085d6",
-      confirmButtonText: "Remove Event",
-      cancelButtonText: "Close",
-    }).then((result) => {
-      if (result.value) {
-        const newArr = calendar.filter(events => events._instance !== eventClick.event._instance.defId)
-        updateCalendar(newArr)
-        eventClick.event.remove(); // It will remove event from the calendar
-        Alert.fire("Deleted!", "Your item has been deleted.", "success");
+      title: 'Login Form',
+      html: `<input type="text" id="login" class="swal2-input" placeholder="Username">
+      <input type="password" id="password" class="swal2-input" placeholder="Password">`,
+      confirmButtonText: 'Sign in',
+      focusConfirm: false,
+      preConfirm: () => {
+        const login = Alert.getPopup().querySelector('#login').value
+        const password = Alert.getPopup().querySelector('#password').value
+        if (!login || !password) {
+          Alert.showValidationMessage(`Please enter login and password`)
+        }
+        return { login: login, password: password }
       }
-    });
+    }).then((result) => {
+      Alert.fire(`
+        Login: ${result.value.login}
+        Password: ${result.value.password}
+      `.trim())
+      // axios call- if good show
+      Alert.fire({
+        title: 'Recipe FORM Form',
+        html: `<input type="text" id="name" class="swal2-input" placeholder="Recipe Name">
+        <input type="color" id="color" class="swal2-input" value="ffffff">
+        `,
+        confirmButtonText: 'Submit',
+        focusConfirm: false,
+        preConfirm: () => {
+          const name = Alert.getPopup().querySelector('#name').value
+          const color = Alert.getPopup().querySelector('#color').value
+          if (!name || !color) {
+            Alert.showValidationMessage(`Please enter name and color`)
+          }
+          return { name: name, color: color }
+        }
+      }).then((result) => {
+        console.log(result, 'second result')
+        let newRecipe = {
+          id: 3433,
+          title: result.value.name,
+          color: result.value.color,
+          start: "2020-12-31",
+          end: "2020-12-31",
+          custom: "custom stuff"
+        };
+        updateRecipes(previous => [...previous, newRecipe])
+      })
+    })
 
-    updateRecipes(previous => [...previous, newRecipe]
-    );
   };
 
   // handle event receive
