@@ -107,7 +107,7 @@ export default function App() {
 
   return (
     <div className="App">
-      <div style={{ float: "left", width: "25%" }}>
+      <div style={{ width: "25vw", background: 'red' }}>
         <div style={{ margin: "0 0 20px" }}>
           <input
             type="submit"
@@ -122,7 +122,7 @@ export default function App() {
           ))}
         </div>
       </div>
-      <div style={{ float: "left", width: "75%"}}>
+      <div style={{ width: "75vw", background: 'green'}}>
         <FullCalendar
           plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
           headerToolbar={{
