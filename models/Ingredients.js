@@ -7,7 +7,7 @@ const IngredientSchema = new mongoose.Schema({
 	},
     type: {
         type: String,
-		required: [true, 'Please set the name']
+		required: [true, 'Please set the type']
     },
 	date: {
         type: Date,

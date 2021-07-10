@@ -1,13 +1,17 @@
 const mongoose = require('mongoose');
 
 const RecipeSchema = new mongoose.Schema({
+    name: {
+        type: String,
+        required: [true, 'Please add a name']
+    },
 	ingredients: {
 		type: Array,
 		required: [true, 'Please add ingredients']
 	},
-    type: {
+    color: {
         type: String,
-		required: [true, 'Please set the name']
+        required: [true, 'Please add a hex color']
     },
 	date: {
         type: Date,
@@ -19,4 +23,4 @@ const RecipeSchema = new mongoose.Schema({
 	},
 })
 
-module.exports = mongoose.models.Ingredient || mongoose.model('Ingredient', IngredientSchema);
+module.exports = mongoose.models.Recipe || mongoose.model('Recipe', RecipeSchema);
