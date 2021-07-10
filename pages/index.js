@@ -102,6 +102,7 @@ export default function App() {
         calendarEvents: state.calendarEvents.concat(newEvent)
       };
     });
+    console.log(state, 'hello?')
   };
 
   return (
@@ -121,7 +122,7 @@ export default function App() {
           ))}
         </div>
       </div>
-      <div style={{ float: "left", width: "75%" }}>
+      <div style={{ float: "left", width: "75%", paddingBottom: 20 }}>
         <FullCalendar
           plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
           headerToolbar={{
@@ -137,6 +138,7 @@ export default function App() {
           weekends={state.weekendsVisible}
           events={state.calendarEvents}
           droppable={true}
+          fixedWeekCount={false}
           eventReceive={handleEventReceive}
         />
       </div>
