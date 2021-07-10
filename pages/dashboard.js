@@ -58,33 +58,12 @@ export default function App() {
   const addRecipe = () => {
     let newRecipe = {
       id: 3433,
-      title: "Demo Recipe",
+      title: "Timed event",
       color: "#333333",
       start: "2020-12-31",
       end: "2020-12-31",
       custom: "custom stuff"
     };
-
-    Alert.fire({
-      title: 'Add Recipe',
-      html:
-      `<div>` +
-        'demo' +
-      '</div>',
-
-      showCancelButton: true,
-      confirmButtonColor: "#d33",
-      cancelButtonColor: "#3085d6",
-      confirmButtonText: "Remove Event",
-      cancelButtonText: "Close",
-    }).then((result) => {
-      if (result.value) {
-        const newArr = calendar.filter(events => events._instance !== eventClick.event._instance.defId)
-        updateCalendar(newArr)
-        eventClick.event.remove(); // It will remove event from the calendar
-        Alert.fire("Deleted!", "Your item has been deleted.", "success");
-      }
-    });
 
     updateRecipes(previous => [...previous, newRecipe]
     );
