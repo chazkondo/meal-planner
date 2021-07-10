@@ -14,3 +14,30 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+#external-events {
+  position: absolute;
+  z-index: 2;
+
+  padding: 0 10px;
+  border: 1px solid #ccc;
+  background: #eee;
+  overflow-y: scroll;
+}
+
+#external-events .fc-event {
+  margin: 1em 0;
+  cursor: move;
+}
+
+.fc .fc-daygrid-day.fc-day-today {
+  background-color: rgba(255, 220, 40, 0.15);
+}
+
+.fc-daygrid-day {
+  height: 40px !important
+}
