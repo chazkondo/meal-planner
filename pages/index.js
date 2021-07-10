@@ -107,7 +107,7 @@ export default function App() {
 
   return (
     <div className="App">
-      <div style={{ width: "95vw", background: 'red', margin: '2.5vh' }}>
+      <div className="recipe-wrapper">
         <div className="flex-center" style={{height: 20}}>
           <input
             type="submit"

@@ -27,13 +27,18 @@ a {
   height: 100vh;
 }
 
+.recipe-wrapper {
+  width: 95vw; 
+  background: red;
+  margin: 2.5vh;
+}
+
 #external-events {
   padding: 0 10px;
   border: 1px solid #ccc;
   background: #eee;
   overflow-x: scroll;
   display: flex;
-  flex-direction: row;
   /* width: */
 }
 
@@ -60,4 +65,34 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@media screen and (max-width: 2400px) {
+  .recipe-wrapper {
+    width: 95vw; 
+    background: red;
+    margin: 2.5vh;
+  }
+  #external-events {
+    flex-direction: column;
+  }
+  .calendar-wrapper {
+    width: 50vw;
+    background: green
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .recipe-wrapper {
+    width: 95vw; 
+    background: red;
+    margin: 2.5vh;
+  }
+  #external-events {
+    flex-direction: row;
+  }
+  .calendar-wrapper {
+    width: 95vw;
+    background: green
+  }
 }
