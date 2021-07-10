@@ -44,7 +44,7 @@ a {
   overflow-x: scroll;
   overflow-y: scroll;
   display: flex;
-  max-height: 80vh;
+  max-height: 70vh;
 }
 
 .recipe {
