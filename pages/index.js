@@ -41,6 +41,7 @@ const ExternalEvent = memo(({ event }) => {
 export default function App() {
 
   const [checked, setChecked] = useState(false)
+  const [expandedView, setExpandedView] = useState(1)
   // initial state
   const [state, setState] = useState({
     weekendsVisible: true,
@@ -89,13 +90,15 @@ export default function App() {
 
   // handle event receive
   const handleEventReceive = (eventInfo) => {
+    console.log('this got fired')
+    console.log(eventInfo, 'hi')
     const newEvent = {
       id: eventInfo.draggedEl.getAttribute("data-id"),
       title: eventInfo.draggedEl.getAttribute("title"),
       color: eventInfo.draggedEl.getAttribute("data-color"),
-      start: eventInfo.date,
-      end: eventInfo.date,
-      custom: eventInfo.draggedEl.getAttribute("data-custom")
+      _date: eventInfo.event.start,
+      custom: eventInfo.draggedEl.getAttribute("data-custom"),
+      _instance: eventInfo.event._instance.defId
     };
 
     setState((state) => {
@@ -107,9 +110,37 @@ export default function App() {
     console.log(state, 'hello?')
   };
 
+    // handle event move
+    const handleEventMove = (e) => {
+      const event = state.calendarEvents.find(item=>item._instance === e.event._instance.defId)
+      event._date = e.event.start
+      console.log(event, 'wat i get her?')
+      console.log(e.event.start.toISOString(), '??')
+      // const newEvent = {
+      //   id: eventInfo.draggedEl.getAttribute("data-id"),
+      //   title: eventInfo.draggedEl.getAttribute("title"),
+      //   color: eventInfo.draggedEl.getAttribute("data-color"),
+      //   start: eventInfo.date,
+      //   end: eventInfo.date,
+      //   custom: eventInfo.draggedEl.getAttribute("data-custom")
+      // };
+  
+      // setState((state) => {
+      //   return {
+      //     ...state,
+      //     calendarEvents: state.calendarEvents.concat(newEvent)
+      //   };
+      // });
+      console.log(state, 'hello2?')
+    };
+
   function handleCheck(e) {
+    if (e.target.checked) {
+      setExpandedView(5)
+    } else {
+      setExpandedView(1)
+    }
     setChecked(e.target.checked)
-    console.log('bitch')
   }
 
   return (
@@ -141,16 +172,18 @@ export default function App() {
           editable={true}
           selectable={true}
           selectMirror={true}
-          dayMaxEvents={5}
+          dayMaxEvents={expandedView}
           weekends={state.weekendsVisible}
           events={state.calendarEvents}
           droppable={true}
           fixedWeekCount={false}
           eventReceive={handleEventReceive}
+          eventDrop={handleEventMove}
+          eventLeave={()=>console.log('THIS HAPPEND WT')}
         />
       </div>
-      <input type="checkbox" defaultChecked={checked} 
-     onChange={e=>handleCheck(e)} />
+      <div style={{color: 'white'}}>Expanded View <input style={{marginTop: 20}} type="checkbox" defaultChecked={checked} onChange={e=>handleCheck(e)} /></div>
+      <div><button onClick={()=>console.log(state, 'heres the state for u')}>check state</button></div>
     </div>
   );
 }
