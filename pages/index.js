@@ -107,13 +107,13 @@ export default function App() {
 
   return (
     <div className="App">
-      <div style={{ width: "25vw", background: 'red' }}>
-        <div style={{ margin: "0 0 20px" }}>
+      <div style={{ width: "90vw", background: 'red' }}>
+        <div className="flex-center" style={{height: 40}}>
           <input
             type="submit"
             name="name"
             onClick={addEvent}
-            value="add external event"
+            value="add recipe"
           />
         </div>
         <div id="external-events">

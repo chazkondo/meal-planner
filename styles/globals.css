@@ -18,19 +18,23 @@ a {
 .App {
   font-family: sans-serif;
   text-align: center;
-  padding: 2vw;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   background: pink;
   width: 100vw;
   height: 100vh
 }
+
 #external-events {
   padding: 0 10px;
   border: 1px solid #ccc;
   background: #eee;
   overflow-y: scroll;
+  display: flex;
+  flex-direction: row;
+  /* width: */
 }
 
 #external-events .fc-event {
@@ -44,4 +48,10 @@ a {
 
 .fc-daygrid-day {
   height: 40px !important
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
