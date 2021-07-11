@@ -3,7 +3,6 @@ import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin, { Draggable } from "@fullcalendar/interaction";
-import Link from 'next/link'
 
 import Alert from "sweetalert2";
 import axios from "axios";
@@ -42,7 +41,7 @@ const Recipe = memo(({ event }) => {
   );
 });
 
-export default function App() {
+export default function Recipes() {
 
   const [checked, setChecked] = useState(false)
   const [expandedView, setExpandedView] = useState(1)
@@ -200,43 +199,8 @@ export default function App() {
   };
 
   return (
-    <div className="App">
-      <div className="recipe-wrapper">
-        <div className="recipe-title flex-center">
-          <Link href="/recipes">
-            <a className="link">Add Recipe</a>
-          </Link>
-        </div>
-        <div id="all-recipes">
-          {recipes.map((event) => (
-            <Recipe key={event.id} event={event} />
-          ))}
-        </div>
-      </div>
-      <div className="calendar-wrapper">
-        <FullCalendar
-          plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
-          headerToolbar={{
-            left: null,
-            center: "title",
-          }}
-          initialView="dayGridMonth"
-          eventDurationEditable={true}
-          editable={true}
-          selectable={true}
-          selectMirror={true}
-          dayMaxEvents={expandedView}
-          weekends={weekendsVisible}
-          events={calendar}
-          droppable={true}
-          fixedWeekCount={false}
-          eventReceive={handleEventReceive}
-          eventDrop={handleEventMove}
-          eventClick={eventClick}
-        />
-      <div style={{color: 'white'}}>Expanded View <input style={{marginTop: 20}} type="checkbox" defaultChecked={checked} onChange={e=>handleCheck(e)} /></div>
-      <div><button onClick={()=>console.log(calendar, 'heres the state for u')}>Login</button></div>
-      </div>
+    <div className="Recipes">
+        POOP
     </div>
   );
 }
