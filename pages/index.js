@@ -57,12 +57,14 @@ export default function App() {
 
   // add external events
   const addRecipe = () => {
-
+    let myresult;
+    let ingredientNum = 1;
     // axios call- if good show
     Alert.fire({
       title: 'Recipe FORM Form',
-      html: `<input type="text" id="name" class="swal2-input" placeholder="Recipe Name">
-      <input type="color" id="color" class="swal2-input" value="ffffff">
+      html: `
+        <input type="text" id="name" class="swal2-input" placeholder="Recipe Name">
+        <input type="color" id="color" value="ffffff">
       `,
       confirmButtonText: 'Submit',
       focusConfirm: false,
@@ -75,29 +77,77 @@ export default function App() {
         return { name: name, color: color }
       }
     }).then((result) => {
-      axios
-      .post(`/api/ingredients`, {
-        result,
-      })
-      .then((res) => {
-        console.log(res, 'DA RES CAME IN')
-        console.log(result, 'second result')
-        let newRecipe = {
-          id: 3433,
-          title: result.value.name,
-          color: result.value.color,
-          start: "2020-12-31",
-          end: "2020-12-31",
-          custom: "custom stuff"
-        };
-        updateRecipes(previous => [...previous, newRecipe])
-      })
-      .catch((err) => {
-        console.log(err, 'An error occurred while adding a new ingredient')
-      })
+      myresult = result;
+      Alert.fire({
+        title: 'Ingredient #' + ingredientNum,
+        html: `
+          <input type="text" id="name" class="swal2-input" placeholder="Ingredient">
+          <input type="checkbox" id="checkbox" class="swal2-input">
+        `,
+        confirmButtonText: 'Submit',
+        focusConfirm: false,
+        preConfirm: () => {
+          const name = Alert.getPopup().querySelector('#name').value
+          const checkbox = Alert.getPopup().querySelector('#checkbox').checked
+          if (!name) {
+            Alert.showValidationMessage(`Please enter name`)
+          }
+          return { name: name, checkbox: checkbox }
+        }
+      }).then((result) => {
+        console.log(result, '?? wat???')
+      // axios
+      // .post(`/api/ingredients`, {
+      //   result,
+      // })
+      // .then((res) => {
+      //   console.log(res, 'DA RES CAME IN')
+      //   console.log(result, 'second result')
+      //   let newRecipe = {
+      //     id: 3433,
+      //     title: result.value.name,
+      //     color: result.value.color,
+      //     start: "2020-12-31",
+      //     end: "2020-12-31",
+      //     custom: "custom stuff"
+      //   };
+      //   updateRecipes(previous => [...previous, newRecipe])
+      // })
+      // .catch((err) => {
+      //   console.log(err, 'An error occurred while adding a new ingredient')
+      // })
+    })
     })
 
   };
+
+  // Recursive function
+  function addIngredient(bool) {
+    if (bool) {
+      Alert.fire({
+        title: 'Ingredient #' + ingredientNum,
+        html: `
+          <input type="text" id="name" class="swal2-input" placeholder="Ingredient">
+          <input type="checkbox" id="checkbox" class="swal2-input">
+        `,
+        confirmButtonText: 'Submit',
+        focusConfirm: false,
+        preConfirm: () => {
+          const name = Alert.getPopup().querySelector('#name').value
+          const checkbox = Alert.getPopup().querySelector('#checkbox').checked
+          if (!name) {
+            Alert.showValidationMessage(`Please enter name`)
+          }
+          return { name: name, checkbox: checkbox }
+        }
+      })
+      .then(result =>{
+        addIngredient(result.value.checkbox)
+      })
+    } else {
+      alert('ELSE WAS HIT')
+    }
+  }
 
   // handle event receive
   const handleEventReceive = (eventInfo) => {
@@ -148,6 +198,12 @@ export default function App() {
     const recipe = recipes.find(element=>element.id === parsedId).ingredients
 
     return recipe.map(ingredient=>` <span>${ingredient.name}${ingredient.amount ? (' (' + ingredient.amount + ')') : ''}</span>`)
+  }
+
+  function addIngredientInput(num) {
+    num = num + 1;
+
+    return `<input type="text" id="name" class="swal2-input" placeholder="Ingredient">`
   }
 
   function eventClick(eventClick) {
