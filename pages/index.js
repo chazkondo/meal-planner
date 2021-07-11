@@ -93,8 +93,7 @@ export default function App() {
         updateRecipes(previous => [...previous, newRecipe])
       })
       .catch((err) => {
-        console.log(err, 'DA ERR CAME IN')
-        alert('Oops err')
+        console.log(err, 'An error occurred while adding a new ingredient')
       })
     })
 
