@@ -8,6 +8,10 @@ const RecipeSchema = new mongoose.Schema({
 	ingredients : [{
         type: [Schema.Types.ObjectId],
         ref: 'Ingredient',
+        amount: {
+            type: String,
+            required: [false]
+        }
     }],
     color: {
         type: String,
