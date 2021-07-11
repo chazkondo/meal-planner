@@ -5,10 +5,10 @@ const RecipeSchema = new mongoose.Schema({
         type: String,
         required: [true, 'Please add a name']
     },
-	ingredients: {
-		type: Array,
-		required: [true, 'Please add ingredients']
-	},
+	ingredients : [{
+        type: [Schema.Types.ObjectId],
+        ref: 'Ingredients',
+    }],
     color: {
         type: String,
         required: [true, 'Please add a hex color']
