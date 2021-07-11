@@ -7,7 +7,7 @@ const RecipeSchema = new mongoose.Schema({
     },
 	ingredients : [{
         type: [Schema.Types.ObjectId],
-        ref: 'Ingredients',
+        ref: 'Ingredient',
     }],
     color: {
         type: String,
