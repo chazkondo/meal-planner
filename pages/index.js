@@ -75,16 +75,27 @@ export default function App() {
         return { name: name, color: color }
       }
     }).then((result) => {
-      console.log(result, 'second result')
-      let newRecipe = {
-        id: 3433,
-        title: result.value.name,
-        color: result.value.color,
-        start: "2020-12-31",
-        end: "2020-12-31",
-        custom: "custom stuff"
-      };
-      updateRecipes(previous => [...previous, newRecipe])
+      axios
+      .post(`/api/ingredients`, {
+        result,
+      })
+      .then((res) => {
+        console.log(res, 'DA RES CAME IN')
+        console.log(result, 'second result')
+        let newRecipe = {
+          id: 3433,
+          title: result.value.name,
+          color: result.value.color,
+          start: "2020-12-31",
+          end: "2020-12-31",
+          custom: "custom stuff"
+        };
+        updateRecipes(previous => [...previous, newRecipe])
+      })
+      .catch((err) => {
+        console.log(err, 'DA ERR CAME IN')
+        alert('Oops err')
+      })
     })
 
   };
