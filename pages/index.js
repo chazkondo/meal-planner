@@ -5,6 +5,7 @@ import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin, { Draggable } from "@fullcalendar/interaction";
 
 import Alert from "sweetalert2";
+import axios from "axios";
 
 const Recipe = memo(({ event }) => {
   let elRef = useRef(null);
