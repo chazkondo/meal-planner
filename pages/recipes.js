@@ -21,6 +21,13 @@ export default function Ingredients() {
         Add Ingredient
         <br />
         <input type="text" placeholder={'Enter Ingredient Name'} onChange={(e) => setIngredientValue(e.target.value)} value={name}  />
+        <label for="cars">Choose a car:</label>
+        <select id="cars" name="cars">
+          <option value="volvo">Volvo</option>
+          <option value="saab">Saab</option>
+          <option value="fiat">Fiat</option>
+          <option value="audi">Audi</option>
+        </select>
         <button onClick={()=>doACall()}>Submit</button>
     </div>
   );
