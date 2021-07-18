@@ -18,6 +18,7 @@ export default function Ingredients() {
   return (
     <div onClick={()=>doACall()} >
         Add Ingredient
+        <br />
         <input type="text" placeholder={'Enter Ingredient Name'} onChange={(e) => setIngredientValue(e.target.value)} value={name}  />
     </div>
   );
