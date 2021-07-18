@@ -10,10 +10,14 @@ export default function Ingredients() {
       .catch(err=>console.log(err, 'wat err'))
   }
 
+  function setIngredientValue() {
+    
+  }
+
   return (
     <div onClick={()=>doACall()} >
         Add Ingredient
-        <input type="text" placeholder={'Enter Ingredient Name'} onChange={(e) => setPasswordValue(e.target.value)} value={passwordValue}  />
+        <input type="text" placeholder={'Enter Ingredient Name'} onChange={(e) => setIngredientValue(e.target.value)} value={'hi'}  />
     </div>
   );
 }
