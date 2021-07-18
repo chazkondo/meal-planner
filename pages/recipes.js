@@ -3,6 +3,7 @@ import React, { useEffect, useState, useRef, memo } from "react";
 
 export default function Ingredients() {
   const [name, setName] = useState('')
+  const [dropdown, setDropdown] = useState('')
 
   function doACall() {
     // axios
@@ -16,13 +17,17 @@ export default function Ingredients() {
     setName(e)
   }
 
+  function setDropdownValue(e) {
+    setDropdown(e)
+  }
+
   return (
     <div>
         Add Ingredient
         <br />
         <input type="text" placeholder={'Enter Ingredient Name'} onChange={(e) => setIngredientValue(e.target.value)} value={name}  />
         <label for="cars">Choose a car:</label>
-        <select id="cars" name="cars">
+        <select id="cars" name="cars" onChange={(e) => setDropdownValue(e.target.value)} value={dropdown}>
           <option value="volvo">Volvo</option>
           <option value="saab">Saab</option>
           <option value="fiat">Fiat</option>
