@@ -6,7 +6,7 @@ dbConnect();
 
 export default async function ingredientSwitch(req, res){
     const {method} = req;
-    const {isConfirmed} = req.body.result
+    // const {isConfirmed} = req.body.result
 
     switch(method) {
         case 'GET':
