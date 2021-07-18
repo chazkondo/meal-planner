@@ -5,10 +5,11 @@ export default function Ingredients() {
   const [name, setName] = useState('')
 
   function doACall() {
-    axios
-      .get(`/api/ingredients`)
-      .then(result=>console.log(result, 'result wat?'))
-      .catch(err=>console.log(err, 'wat err'))
+    // axios
+    //   .get(`/api/ingredients`)
+    //   .then(result=>console.log(result, 'result wat?'))
+    //   .catch(err=>console.log(err, 'wat err'))
+    alert('fired')
   }
 
   function setIngredientValue(e) {
@@ -20,7 +21,7 @@ export default function Ingredients() {
         Add Ingredient
         <br />
         <input type="text" placeholder={'Enter Ingredient Name'} onChange={(e) => setIngredientValue(e.target.value)} value={name}  />
-        <button>Submit</button>
+        <button onClick={()=>doACall()}>Submit</button>
     </div>
   );
 }
