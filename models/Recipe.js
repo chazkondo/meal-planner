@@ -5,6 +5,10 @@ const RecipeSchema = new mongoose.Schema({
         type: String,
         required: [true, 'Please add a name']
     },
+    type: {
+        type: String,
+		required: [true, 'Please set the type']
+    },
 	ingredients : [{
         type: [Schema.Types.ObjectId],
         ref: 'Ingredient',
