@@ -11,8 +11,9 @@ export default function Ingredients() {
   }
 
   return (
-    <div onClick={()=>doACall()} className="Recipes">
-        POOP
+    <div onClick={()=>doACall()} >
+        Add Ingredient
+        <input type="text" placeholder={'Enter Ingredient Name'} onChange={(e) => setPasswordValue(e.target.value)} value={passwordValue}  />
     </div>
   );
 }
