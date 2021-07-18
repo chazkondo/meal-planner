@@ -20,6 +20,7 @@ export default function Ingredients() {
         Add Ingredient
         <br />
         <input type="text" placeholder={'Enter Ingredient Name'} onChange={(e) => setIngredientValue(e.target.value)} value={name}  />
+        <button>Submit</button>
     </div>
   );
 }
