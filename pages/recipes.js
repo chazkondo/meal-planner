@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState, useRef, memo } from "react";
 
 export default function Ingredients() {
+  const [name, setName] = useState('')
 
   function doACall() {
     axios
@@ -10,14 +11,14 @@ export default function Ingredients() {
       .catch(err=>console.log(err, 'wat err'))
   }
 
-  function setIngredientValue() {
-    
+  function setIngredientValue(e) {
+    setName(e)
   }
 
   return (
     <div onClick={()=>doACall()} >
         Add Ingredient
-        <input type="text" placeholder={'Enter Ingredient Name'} onChange={(e) => setIngredientValue(e.target.value)} value={'hi'}  />
+        <input type="text" placeholder={'Enter Ingredient Name'} onChange={(e) => setIngredientValue(e.target.value)} value={name}  />
     </div>
   );
 }
