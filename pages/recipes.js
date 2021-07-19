@@ -41,9 +41,9 @@ export default function Ingredients() {
         <br />
         <label for="cars">Choose a car:</label>
         <select id="cars" name="cars" onChange={(e) => setDropdownValue(e.target.value)} value={dropdown}>
-          {arr.map(item => <option value={item}>{item}</option>)}
+          {arr.map((item, i) => <option value={item} key={i}>{item}</option>)}
         </select>
-        <button onClick={()=>doACall()}>Submit</button>
+        <button onClick={()=>postIngredient()}>Submit</button>
     </div>
   );
 }
