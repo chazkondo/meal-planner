@@ -17,7 +17,7 @@ export default function Ingredients() {
 
   function postIngredient() {
     axios
-      .post('/api/ingredients', {
+      .post('localhost:3000/api/ingredients/', {
         name,
         dropdown
       })
