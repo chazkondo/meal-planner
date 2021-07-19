@@ -15,6 +15,16 @@ export default function Ingredients() {
     alert('fired')
   }
 
+  function postIngredient() {
+    axios
+      .post('/api/ingredients', {
+        name,
+        dropdown
+      })
+      .then(res=>console.log(res, 'wat?'))
+      .catch(err=>console.log(err, 'wat err?'))
+  }
+
   function setIngredientValue(e) {
     setName(e)
   }
