@@ -39,7 +39,7 @@ export default function Ingredients() {
         <br />
         <input type="text" placeholder={'Enter Ingredient Name'} onChange={(e) => setIngredientValue(e.target.value)} value={name}  />
         <br />
-        <label for="cars">Choose a car:</label>
+        <label htmlFor="cars">Choose a car:</label>
         <select id="cars" name="cars" onChange={(e) => setDropdownValue(e.target.value)} value={dropdown}>
           {arr.map((item, i) => <option value={item} key={i}>{item}</option>)}
         </select>
