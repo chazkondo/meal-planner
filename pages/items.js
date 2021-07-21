@@ -20,7 +20,7 @@ export default function Items() {
   const [type, setType] = useState(types[0])
   const [currentRecipe, setCurrentRecipe] = useState([])
   const [allIngredients, setAllIngredients] = useState([])
-  const [ingredient, setIngredient] = useState(allIngredients[0])
+  const [ingredientIndex, setIngredientIndex] = useState(allIngredients[0])
 
 
 
@@ -74,11 +74,11 @@ export default function Items() {
   }
 
   function setIngredientDropdownValue(e) {
-    setIngredient(e.target.value)
+    setIngredientIndex(e.target.value)
   }
 
   function addIngredient() {
-    setCurrentRecipe(previous => [...previous, ingredient]);
+    setCurrentRecipe(previous => [...previous, allIngredients[ingredientIndex]]);
   }
 
   return (
@@ -103,8 +103,8 @@ export default function Items() {
         <br />
         {/* {currentRecipe.map(recipeItem => <div>{recipeItem.name}</div>)} */}
         <label htmlFor="ingredients">Choose an ingredient:</label>
-        <select id="ingredients" name="ingredients" onChange={(e) => setIngredientDropdownValue(e)} value={ingredient}>
-          {allIngredients.map((item, i) => <option value={item} key={i}>{item.name}</option>)}
+        <select id="ingredients" name="ingredients" onChange={(e) => setIngredientDropdownValue(e)} value={ingredientIndex}>
+          {allIngredients.map((item, i) => <option value={i} key={i}>{item.name}</option>)}
         </select>
         <button onClick={()=>addIngredient()}>Add Ingredient</button>
     </div>
