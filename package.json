@@ -8,8 +8,9 @@
     "start": "next start",
     "lint": "next lint",
     "c": "git add . && git commit -m \"next action\"",
-    "cc": "git add . && git commit -m \"fix\"",
-    "ccc": "git add . && git commit -m \"issue\"",
+    "t": "git add . && git commit -m \"test implementation\"",
+    "f": "git add . && git commit -m \"fix\"",
+    "i": "git add . && git commit -m \"issue\"",
     "s": "git status"
   },
   "dependencies": {
