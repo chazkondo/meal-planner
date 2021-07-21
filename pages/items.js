@@ -105,7 +105,7 @@ export default function Items() {
         {currentRecipe.map(recipeItem => 
           <div>
             {recipeItem.name}
-          {recipeItem.toggleDiv ? <input type="text" placeholder={'Enter Amount'} onChange={(e) => console.log('do someting')} value={name}  /><button>Submit</button>}
+          {recipeItem.toggleDiv ? <div><input type="text" placeholder={'Enter Amount'} onChange={(e) => console.log('do someting')} value={name}  /><button>Submit</button></div> : <button>Add Amount</button>}
           </div>
         )}
         <label htmlFor="ingredients">Choose an ingredient:</label>
