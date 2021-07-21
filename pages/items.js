@@ -95,8 +95,9 @@ export default function Items() {
         <select id="ingredients" name="ingredients" onChange={(e) => setDropdownValue(e)} value={type}>
           {allIngredients.map((item, i) => <option value={i} key={i}>{item.name}</option>)}
         </select>
-        <button onClick={()=>postItem()}>Submit Recipe</button>
+        <button onClick={()=>postItem()}>Add Ingredient</button>
     </div>
+    <button onClick={()=>postItem()}>Submit Recipe</button>
     </div>
   );
 }
