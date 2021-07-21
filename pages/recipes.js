@@ -16,7 +16,7 @@ export default function Ingredients() {
     'Other' ]
   const condensedTypes = ['Beverages', 'Bread/Bakery', 'Canned/Jarred Goods', 'Dairy', 'Dry/Baking Goods', 'Frozen Foods', 'Meat', 'Produce', 'Cleaners', 'Paper Goods', 'Personal Care', 'Other']
   const [name, setName] = useState('')
-  const [type, setType] = useState(arr[0])
+  const [type, setType] = useState(types[0])
 
   alert(types.length)
   alert(condensedTypes.length)
@@ -56,7 +56,7 @@ export default function Ingredients() {
         <br />
         <label htmlFor="ingredients">Choose a type:</label>
         <select id="ingredients" name="ingredients" onChange={(e) => setDropdownValue(e.target.value)} value={type}>
-          {arr.map((item, i) => <option value={item} key={i}>{item}</option>)}
+          {types.map((item, i) => <option value={item} key={i}>{item}</option>)}
         </select>
         <button onClick={()=>postIngredient()}>Submit</button>
     </div>
