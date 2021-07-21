@@ -18,6 +18,7 @@ export default function Items() {
   const [name, setName] = useState('')
   const [ingredientName, setIngredientName] = useState('')
   const [type, setType] = useState(types[0])
+  const [currentRecipe, setCurrentRecipe] = useState([])
 
   function doACall() {
     // axios
