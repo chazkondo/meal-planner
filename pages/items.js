@@ -101,13 +101,14 @@ export default function Items() {
         <br />
         <input type="text" placeholder={'Enter Ingredients Name'} onChange={(e) => setIngredientValue(e.target.value)} value={ingredientName}  />
         <br />
+        {/* {currentRecipe.map(recipeItem => <div>{recipeItem.name}</div>)} */}
         <label htmlFor="ingredients">Choose an ingredient:</label>
         <select id="ingredients" name="ingredients" onChange={(e) => setIngredientDropdownValue(e)} value={ingredient}>
           {allIngredients.map((item, i) => <option value={i} key={i}>{item.name}</option>)}
         </select>
         <button onClick={()=>addIngredient()}>Add Ingredient</button>
     </div>
-    <button onClick={()=>console.log('nothing')}>Submit Recipe</button>
+    <button onClick={()=>console.log(currentRecipe, 'nothing')}>Submit Recipe</button>
     </div>
   );
 }
