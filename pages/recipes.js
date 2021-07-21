@@ -48,7 +48,7 @@ export default function Ingredients() {
     }
   }
 
-  function setIngredientValue(e) {
+  function setItemValue(e) {
     setName(e)
   }
 
@@ -58,12 +58,12 @@ export default function Ingredients() {
 
   return (
     <div>
-        Add Ingredient
+        Add Item
         <br />
-        <input type="text" placeholder={'Enter Ingredient Name'} onChange={(e) => setIngredientValue(e.target.value)} value={name}  />
+        <input type="text" placeholder={'Enter Item Name'} onChange={(e) => setItemValue(e.target.value)} value={name}  />
         <br />
-        <label htmlFor="ingredients">Choose a type:</label>
-        <select id="ingredients" name="ingredients" onChange={(e) => setDropdownValue(e)} value={type}>
+        <label htmlFor="items">Choose a type:</label>
+        <select id="items" name="items" onChange={(e) => setDropdownValue(e)} value={type}>
           {types.map((item, i) => <option value={i} key={i}>{item}</option>)}
         </select>
         <button onClick={()=>postItem()}>Submit</button>
