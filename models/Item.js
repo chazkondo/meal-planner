@@ -19,4 +19,4 @@ const ItemSchema = new mongoose.Schema({
 	},
 })
 
-module.exports = mongoose.models.Item || mongoose.model('Ingredient', ItemSchema);
+module.exports = mongoose.models.Item || mongoose.model('Item', ItemSchema);
