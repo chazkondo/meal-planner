@@ -31,7 +31,7 @@ export default function Ingredients() {
     axios
       .post('/api/ingredients/', {
         name,
-        type
+        type: condensedTypes[type]
       })
       .then(res=>console.log(res, 'wat?'))
       .catch(err=>console.log(err, 'wat err?'))
@@ -42,6 +42,7 @@ export default function Ingredients() {
   }
 
   function setDropdownValue(e) {
+    alert(e)
     setType(e)
   }
 
