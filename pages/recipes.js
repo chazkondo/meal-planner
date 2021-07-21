@@ -14,9 +14,12 @@ export default function Ingredients() {
     'Paper Goods – paper towels, toilet paper, aluminum foil, sandwich bags',
     'Personal Care – shampoo, soap, hand soap, shaving cream',
     'Other' ]
-  const condensedTypes = []
+  const condensedTypes = ['Beverages', 'Bread/Bakery', 'Canned/Jarred Goods', 'Dairy', 'Dry/Baking Goods', 'Frozen Foods', 'Meat', 'Produce', 'Cleaners', 'Paper Goods', 'Personal Care', 'Other']
   const [name, setName] = useState('')
   const [type, setType] = useState(arr[0])
+
+  alert(types.length)
+  alert(condensedTypes.length)
 
   function doACall() {
     // axios
