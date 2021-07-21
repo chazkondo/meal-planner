@@ -38,13 +38,13 @@ export default function Ingredients() {
         .then(res=>console.log(res, 'wat?'))
         .catch(err=>console.log(err, 'wat err?'))
     } else {
-      axios
-        .post('/api/ingredients/', {
-          name,
-          type: condensedTypes[type]
-        })
-        .then(res=>console.log(res, 'wat?'))
-        .catch(err=>console.log(err, 'wat err?'))
+    //   axios
+    //     .post('/api/ingredients/', {
+    //       name,
+    //       type: condensedTypes[type]
+    //     })
+    //     .then(res=>console.log(res, 'wat?'))
+    //     .catch(err=>console.log(err, 'wat err?'))
     }
   }
 
