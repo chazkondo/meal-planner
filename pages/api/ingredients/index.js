@@ -36,7 +36,7 @@ export default async function ingredientSwitch(req, res){
                 //             signature = 'Grandma'
                 //         }
                 // if (isConfirmed) {
-                    const data = {...req.body, password: null, date: Date.now()}
+                    const data = {...req.body, password: null, date: Date.now(), signature: 'Chaz'}
                     console.log(data, 'LETS SEE DATA ')
                     // const ingredients = await Ingredient.create(data);
     
