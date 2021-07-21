@@ -11,8 +11,8 @@ export default async function itemSwitch(req, res){
     switch(method) {
         case 'GET':
             try {
-                const item = await Item.find({});
-                res.status(200).json({success: true, data: item})
+                const items = await Item.find({});
+                res.status(200).json({success: true, items})
             } catch (error) {
                 res.status(400).json({success: false})
             }    
