@@ -1,18 +1,18 @@
 import dbConnect from '../../../utils/dbConnect';
-import Ingredient from '../../../models/Ingredient';
+import Item from '../../../models/Item';
 // import Connections from '../../../models/Connections';
 
 dbConnect();
 
-export default async function ingredientSwitch(req, res){
+export default async function itemSwitch(req, res){
     const {method} = req;
     // const {isConfirmed} = req.body.result
 
     switch(method) {
         case 'GET':
             try {
-                const ingredient = await Ingredient.find({});
-                res.status(200).json({success: true, data: ingredient})
+                const item = await Item.find({});
+                res.status(200).json({success: true, data: item})
             } catch (error) {
                 res.status(400).json({success: false})
             }    
@@ -38,9 +38,9 @@ export default async function ingredientSwitch(req, res){
                 // if (isConfirmed) {
                     const data = {...req.body, password: null, date: Date.now(), signature: 'Chaz'}
                     console.log(data, 'LETS SEE DATA ')
-                    const ingredients = await Ingredient.create(data);
+                    const items = await Item.create(data);
     
-                    res.status(201).json({success: true, data: ingredients})
+                    res.status(201).json({success: true, data: items})
                 // } 
                 // else {
                 //     res.status(400).json({success: false, message: 'Invalid'})
