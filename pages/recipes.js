@@ -26,8 +26,10 @@ export default function Ingredients() {
     alert('fired')
   }
 
-  function postIngredient() {
+  function postItem() {
     alert('sup')
+
+    // if ()
     axios
       .post('/api/ingredients/', {
         name,
@@ -55,7 +57,7 @@ export default function Ingredients() {
         <select id="ingredients" name="ingredients" onChange={(e) => setDropdownValue(e)} value={type}>
           {types.map((item, i) => <option value={i} key={i}>{item}</option>)}
         </select>
-        <button onClick={()=>postIngredient()}>Submit</button>
+        <button onClick={()=>postItem()}>Submit</button>
     </div>
   );
 }
