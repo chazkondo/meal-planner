@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState, useRef, memo } from "react";
 
-export default function Ingredients() {
+export default function Items() {
   const types = ['Beverages – coffee/tea, juice, soda',
     'Bread/Bakery – sandwich loaves, dinner rolls, tortillas, bagels',
     'Canned/Jarred Goods – vegetables, spaghetti sauce, ketchup',
@@ -20,7 +20,7 @@ export default function Ingredients() {
 
   function doACall() {
     // axios
-    //   .get(`/api/ingredients`)
+    //   .get(`/api/items`)
     //   .then(result=>console.log(result, 'result wat?'))
     //   .catch(err=>console.log(err, 'wat err'))
     alert('fired')
