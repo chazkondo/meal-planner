@@ -78,7 +78,7 @@ export default function Items() {
   }
 
   function addIngredient() {
-    setCurrentRecipe(ingredient);
+    setCurrentRecipe(previous => [...previous, ingredient]);
   }
 
   return (
@@ -108,7 +108,7 @@ export default function Items() {
         </select>
         <button onClick={()=>addIngredient()}>Add Ingredient</button>
     </div>
-    <button onClick={()=>console.log(currentRecipe, 'nothing')}>Submit Recipe</button>
+    <button onClick={()=>console.log(currentRecipe)}>Submit Recipe</button>
     </div>
   );
 }
