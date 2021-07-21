@@ -42,7 +42,6 @@ export default function Ingredients() {
   }
 
   function setDropdownValue(e) {
-    console.log(e.target, 'what i get here?')
     setType(e.target.value)
   }
 
