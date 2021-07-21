@@ -69,6 +69,8 @@ export default function Items() {
         </select>
         <button onClick={()=>postItem()}>Submit</button>
     </div>
+    <br />
+    <br />
     <div>
         Add Recipe
         <br />
