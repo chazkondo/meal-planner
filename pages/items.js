@@ -20,6 +20,10 @@ export default function Items() {
   const [type, setType] = useState(types[0])
   const [currentRecipe, setCurrentRecipe] = useState([])
 
+  useEffect(()=>{
+    
+  },[])
+
   function doACall() {
     // axios
     //   .get(`/api/items`)
