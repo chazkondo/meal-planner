@@ -87,23 +87,24 @@ export default function Items() {
   }
 
   function findCurrentRecipeIndex(index) {
-    let change = currentRecipe[index];
-    change.toggleDiv = true;
-    showAmountDiv(change, index)
+    // let change = currentRecipe[index];
+    // change.toggleDiv = true;
+    // showAmountDiv(change, index)
+    setCurrentAmountDiv(index)
   }
 
   function showAmountDiv(el, index) {
-    let copy = currentRecipe.slice();
-    copy[index] = el;
-    setCurrentRecipe(copy)
-    copy = undefined;
+    // let copy = currentRecipe.slice();
+    // copy[index] = el;
+    // setCurrentRecipe(copy)
+    // copy = undefined;
   }
 
   function hideAmountDiv(index) {
-    let copy = currentRecipe.slice();
-    copy[index].toggleDiv = undefined;
-    setCurrentRecipe(copy)
-    copy = undefined;
+    // let copy = currentRecipe.slice();
+    // copy[index].toggleDiv = undefined;
+    // setCurrentRecipe(copy)
+    // copy = undefined;
   }
 
   return (
