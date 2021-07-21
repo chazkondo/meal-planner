@@ -19,9 +19,14 @@ export default function Items() {
   const [ingredientName, setIngredientName] = useState('')
   const [type, setType] = useState(types[0])
   const [currentRecipe, setCurrentRecipe] = useState([])
+  const [allIngredients, setAllIngredients] = useState([])
+
 
   useEffect(()=>{
-    
+    axios
+      .get('/api/ingredients')
+      .then(ingredients =>console.log(ingredients, 'these are the ingreds'))
+      .catch(err=>console.log(err))
   },[])
 
   function doACall() {
