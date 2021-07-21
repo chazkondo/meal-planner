@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "c": "git add . && git commit -m \"test\""
   },
   "dependencies": {
     "@babel/core": "^7.12.3",
