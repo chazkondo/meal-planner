@@ -25,8 +25,8 @@ export default function Items() {
   useEffect(()=>{
     axios
       .get('/api/ingredients')
-      .then(ingredients =>console.log(ingredients, 'these are the ingreds'))
-      .catch(err=>console.log(err))
+      .then(ingredients => setAllIngredients(ingredients.data.ingredients))
+      .catch(err => console.log(err))
   },[])
 
   function doACall() {
