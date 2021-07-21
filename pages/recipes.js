@@ -18,9 +18,6 @@ export default function Ingredients() {
   const [name, setName] = useState('')
   const [type, setType] = useState(types[0])
 
-  alert(types.length)
-  alert(condensedTypes.length)
-
   function doACall() {
     // axios
     //   .get(`/api/ingredients`)
