@@ -29,14 +29,23 @@ export default function Ingredients() {
   function postItem() {
     alert('sup')
 
-    // if ()
-    axios
-      .post('/api/ingredients/', {
-        name,
-        type: condensedTypes[type]
-      })
-      .then(res=>console.log(res, 'wat?'))
-      .catch(err=>console.log(err, 'wat err?'))
+    if (type > 7) {
+      axios
+        .post('/api/ingredients/', {
+          name,
+          type: condensedTypes[type]
+        })
+        .then(res=>console.log(res, 'wat?'))
+        .catch(err=>console.log(err, 'wat err?'))
+    } else {
+      axios
+        .post('/api/ingredients/', {
+          name,
+          type: condensedTypes[type]
+        })
+        .then(res=>console.log(res, 'wat?'))
+        .catch(err=>console.log(err, 'wat err?'))
+    }
   }
 
   function setIngredientValue(e) {
