@@ -35,15 +35,16 @@ export default async function ingredientSwitch(req, res){
                 //         } else if (req.body.password === process.env.PASSWORD2) {
                 //             signature = 'Grandma'
                 //         }
-                if (isConfirmed) {
+                // if (isConfirmed) {
                     const data = {...req.body, password: null, date: Date.now()}
                     console.log(data, 'LETS SEE DATA ')
                     // const ingredients = await Ingredient.create(data);
     
                     res.status(201).json({success: true, data: null})
-                } else {
-                    res.status(400).json({success: false, message: 'Invalid'})
-                }
+                } 
+                // else {
+                //     res.status(400).json({success: false, message: 'Invalid'})
+                // }
                 //     } else {
                 //         res.status(400).json({success: false, message: 'Invalid password'})
                 //     }
