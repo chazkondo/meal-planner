@@ -93,13 +93,6 @@ export default function Items() {
     setCurrentAmountDiv(index)
   }
 
-  function showAmountDiv(el, index) {
-    // let copy = currentRecipe.slice();
-    // copy[index] = el;
-    // setCurrentRecipe(copy)
-    // copy = undefined;
-  }
-
   function hideAmountDiv(index) {
     // let copy = currentRecipe.slice();
     // copy[index].toggleDiv = undefined;
