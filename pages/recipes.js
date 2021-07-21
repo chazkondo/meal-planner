@@ -2,7 +2,18 @@ import axios from "axios";
 import React, { useEffect, useState, useRef, memo } from "react";
 
 export default function Ingredients() {
-  const arr = ['poop', 'dook', 'shook', 'jook']
+  const arr = ['Beverages – coffee/tea, juice, soda',
+    'Bread/Bakery – sandwich loaves, dinner rolls, tortillas, bagels',
+    'Canned/Jarred Goods – vegetables, spaghetti sauce, ketchup',
+    'Dairy – cheeses, eggs, milk, yogurt, butter',
+    'Dry/Baking Goods – cereals, flour, sugar, pasta, mixes',
+    'Frozen Foods – waffles, vegetables, individual meals, ice cream',
+    'Meat – lunch meat, poultry, beef, pork',
+    'Produce – fruits, vegetables',
+    'Cleaners – all- purpose, laundry detergent, dishwashing liquid/detergent',
+    'Paper Goods – paper towels, toilet paper, aluminum foil, sandwich bags',
+    'Personal Care – shampoo, soap, hand soap, shaving cream',
+    'Other' ]
   const [name, setName] = useState('')
   const [type, setType] = useState(arr[0])
 
