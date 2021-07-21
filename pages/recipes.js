@@ -30,7 +30,7 @@ export default function Ingredients() {
   }
 
   function setDropdownValue(e) {
-    setDropdown(e)
+    setType(e)
   }
 
   return (
@@ -40,7 +40,7 @@ export default function Ingredients() {
         <input type="text" placeholder={'Enter Ingredient Name'} onChange={(e) => setIngredientValue(e.target.value)} value={name}  />
         <br />
         <label htmlFor="cars">Choose a car:</label>
-        <select id="cars" name="cars" onChange={(e) => setDropdownValue(e.target.value)} value={dropdown}>
+        <select id="cars" name="cars" onChange={(e) => setDropdownValue(e.target.value)} value={type}>
           {arr.map((item, i) => <option value={item} key={i}>{item}</option>)}
         </select>
         <button onClick={()=>postIngredient()}>Submit</button>
