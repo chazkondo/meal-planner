@@ -4,7 +4,7 @@ import React, { useEffect, useState, useRef, memo } from "react";
 export default function Ingredients() {
   const arr = ['poop', 'dook', 'shook', 'jook']
   const [name, setName] = useState('')
-  const [dropdown, setDropdown] = useState(arr[0])
+  const [type, setType] = useState(arr[0])
 
   function doACall() {
     // axios
@@ -19,7 +19,7 @@ export default function Ingredients() {
     axios
       .post('/api/ingredients/', {
         name,
-        type: dropdown
+        type
       })
       .then(res=>console.log(res, 'wat?'))
       .catch(err=>console.log(err, 'wat err?'))
