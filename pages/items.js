@@ -20,6 +20,8 @@ export default function Items() {
   const [type, setType] = useState(types[0])
   const [currentRecipe, setCurrentRecipe] = useState([])
   const [allIngredients, setAllIngredients] = useState([])
+  const [ingredient, setIngredient] = useState(allIngredients[0])
+
 
 
   useEffect(()=>{
@@ -71,6 +73,10 @@ export default function Items() {
     setType(e.target.value)
   }
 
+  function setIngredientDropdownValue(e) {
+    setIngredient(e.target.value)
+  }
+
   return (
     <div>
     <div>
@@ -92,7 +98,7 @@ export default function Items() {
         <input type="text" placeholder={'Enter Ingredients Name'} onChange={(e) => setIngredientValue(e.target.value)} value={ingredientName}  />
         <br />
         <label htmlFor="ingredients">Choose an ingredient:</label>
-        <select id="ingredients" name="ingredients" onChange={(e) => setDropdownValue(e)} value={type}>
+        <select id="ingredients" name="ingredients" onChange={(e) => setIngredientDropdownValue(e)} value={ingredient}>
           {allIngredients.map((item, i) => <option value={i} key={i}>{item.name}</option>)}
         </select>
         <button onClick={()=>postItem()}>Add Ingredient</button>
