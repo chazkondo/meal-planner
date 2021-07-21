@@ -89,7 +89,6 @@ export default function Items() {
   function findCurrentRecipeIndex(index) {
     // let change = currentRecipe[index];
     // change.toggleDiv = true;
-    // showAmountDiv(change, index)
     setCurrentAmountDiv(index)
   }
 
