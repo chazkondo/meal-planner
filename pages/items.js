@@ -82,8 +82,8 @@ export default function Items() {
     setCurrentRecipe(previous => [...previous, allIngredients[ingredientIndex]]);
   }
 
-  function findCurrentRecipeIndex() {
-
+  function findCurrentRecipeIndex(index) {
+    // let change =
   }
 
   return (
@@ -109,7 +109,7 @@ export default function Items() {
         {currentRecipe.map((recipeItem, mappedIndex) => 
           <div>
             {recipeItem.name}
-          {recipeItem.toggleDiv ? <div><input type="text" placeholder={'Enter Amount'} onChange={(e) => console.log('do someting')} value={name}  /><button>Submit</button></div> : <button onClick={()=>show}>Add Amount</button>}
+          {recipeItem.toggleDiv ? <div><input type="text" placeholder={'Enter Amount'} onChange={(e) => console.log('do someting')} value={name}  /><button>Submit</button></div> : <button onClick={()=>findCurrentRecipeIndex(mappedIndex)}>Add Amount</button>}
           </div>
         )}
         <label htmlFor="ingredients">Choose an ingredient:</label>
