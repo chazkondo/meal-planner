@@ -42,7 +42,7 @@ export default function Ingredients() {
   }
 
   function setDropdownValue(e) {
-    console.log(e, 'what i get here?')
+    console.log(e.target, 'what i get here?')
     setType(e.target.value)
   }
 
@@ -54,7 +54,7 @@ export default function Ingredients() {
         <br />
         <label htmlFor="ingredients">Choose a type:</label>
         <select id="ingredients" name="ingredients" onChange={(e) => setDropdownValue(e)} value={type}>
-          {types.map((item, i) => <option value={item} key={i}>{item}</option>)}
+          {types.map((item, i) => <option value={i} key={i}>{item}</option>)}
         </select>
         <button onClick={()=>postIngredient()}>Submit</button>
     </div>
