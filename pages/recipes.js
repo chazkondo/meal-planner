@@ -20,7 +20,7 @@ export default function Ingredients() {
     axios
       .post('/api/ingredients/', {
         name,
-        dropdown
+        type: dropdown
       })
       .then(res=>console.log(res, 'wat?'))
       .catch(err=>console.log(err, 'wat err?'))
