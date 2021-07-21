@@ -38,9 +38,9 @@ export default async function ingredientSwitch(req, res){
                 // if (isConfirmed) {
                     const data = {...req.body, password: null, date: Date.now(), signature: 'Chaz'}
                     console.log(data, 'LETS SEE DATA ')
-                    // const ingredients = await Ingredient.create(data);
+                    const ingredients = await Ingredient.create(data);
     
-                    res.status(201).json({success: true, data: null})
+                    res.status(201).json({success: true, data: ingredients})
                 // } 
                 // else {
                 //     res.status(400).json({success: false, message: 'Invalid'})
