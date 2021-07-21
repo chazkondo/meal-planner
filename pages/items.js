@@ -93,7 +93,7 @@ export default function Items() {
         <br />
         <label htmlFor="ingredients">Choose an ingredient:</label>
         <select id="ingredients" name="ingredients" onChange={(e) => setDropdownValue(e)} value={type}>
-          {types.map((item, i) => <option value={i} key={i}>{item}</option>)}
+          {allIngredients.map((item, i) => <option value={i} key={i}>l</option>)}
         </select>
         <button onClick={()=>postItem()}>Submit Recipe</button>
     </div>
