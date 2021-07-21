@@ -204,7 +204,7 @@ export default function App() {
       <div className="recipe-wrapper">
         <div className="recipe-title flex-center">
           <Link href="/recipes">
-            <a className="link">Add Recipe</a>
+            <a className="link">Add Grocery Item</a>
           </Link>
         </div>
         <div id="all-recipes">
