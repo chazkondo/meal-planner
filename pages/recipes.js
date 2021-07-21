@@ -16,8 +16,9 @@ export default function Ingredients() {
   }
 
   function postIngredient() {
+    alert('sup')
     axios
-      .post('localhost:3000/api/ingredients/', {
+      .post('/api/ingredients/', {
         name,
         dropdown
       })
