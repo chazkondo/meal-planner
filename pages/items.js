@@ -137,8 +137,7 @@ export default function Items() {
         <button onClick={()=>addIngredient()}>Add Ingredient</button>
     </div>
     <label for="color">Color</label>
-    <input type="color" id="color" name="color"
-           value="#e66465"/>
+    <input type="color" id="color" name="color" value={color} onChange={e => setColor(e.target.value)}/>
     <br />
     <br />
     <button onClick={()=>console.log(currentRecipe)} disabled={!currentRecipe.length}>Submit Recipe</button>
