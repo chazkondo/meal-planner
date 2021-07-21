@@ -77,6 +77,10 @@ export default function Items() {
     setIngredient(e.target.value)
   }
 
+  function addIngredient() {
+    setCurrentRecipe(ingredient);
+  }
+
   return (
     <div>
     <div>
@@ -101,9 +105,9 @@ export default function Items() {
         <select id="ingredients" name="ingredients" onChange={(e) => setIngredientDropdownValue(e)} value={ingredient}>
           {allIngredients.map((item, i) => <option value={i} key={i}>{item.name}</option>)}
         </select>
-        <button onClick={()=>postItem()}>Add Ingredient</button>
+        <button onClick={()=>addIngredient()}>Add Ingredient</button>
     </div>
-    <button onClick={()=>postItem()}>Submit Recipe</button>
+    <button onClick={()=>console.log('nothing')}>Submit Recipe</button>
     </div>
   );
 }
