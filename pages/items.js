@@ -99,8 +99,6 @@ export default function Items() {
     <div>
         Add Recipe
         <br />
-        <input type="text" placeholder={'Enter Ingredients Name'} onChange={(e) => setIngredientValue(e.target.value)} value={ingredientName}  />
-        <br />
         {/* {currentRecipe.map(recipeItem => <div>{recipeItem.name}</div>)} */}
         <label htmlFor="ingredients">Choose an ingredient:</label>
         <select id="ingredients" name="ingredients" onChange={(e) => setIngredientDropdownValue(e)} value={ingredientIndex}>
