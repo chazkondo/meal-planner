@@ -95,10 +95,10 @@ export default function Items() {
   }
 
   function submitAmount(index) {
-    // let copy = currentRecipe.slice();
-    // copy[index].toggleDiv = undefined;
-    // setCurrentRecipe(copy)
-    // copy = undefined;
+    let copy = currentRecipe.slice();
+    copy[index] = {...copy[index], currentAmount};
+    setCurrentRecipe(copy)
+    copy = undefined;
     console.log(index)
     setCurrentAmount('')
     setCurrentAmountDiv(null)
