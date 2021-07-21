@@ -2,10 +2,9 @@ import axios from "axios";
 import React, { useEffect, useState, useRef, memo } from "react";
 
 export default function Ingredients() {
-  const [name, setName] = useState('')
-  const [dropdown, setDropdown] = useState('')
-
   const arr = ['poop', 'dook', 'shook', 'jook']
+  const [name, setName] = useState('')
+  const [dropdown, setDropdown] = useState(arr[0])
 
   function doACall() {
     // axios
