@@ -135,7 +135,7 @@ export default function Items() {
         </select>
         <button onClick={()=>addIngredient()}>Add Ingredient</button>
     </div>
-    <button onClick={()=>console.log(currentRecipe)}>Submit Recipe</button>
+    <button onClick={()=>console.log(currentRecipe)} disabled={!currentRecipe.length}>Submit Recipe</button>
     </div>
   );
 }
