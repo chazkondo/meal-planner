@@ -24,6 +24,7 @@ export default function Items() {
   const [allRecipes, setAllRecipes] = useState([])
 
   const [currentAmountDiv, setCurrentAmountDiv] = useState(null)
+  const [currentAmount, setCurrentAmount] = useState('')
 
 
 
