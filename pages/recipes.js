@@ -31,7 +31,7 @@ export default function Ingredients() {
 
     if (type > 7) {
       axios
-        .post('/api/ingredients/', {
+        .post('/api/items/', {
           name,
           type: condensedTypes[type]
         })
