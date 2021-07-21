@@ -41,7 +41,7 @@ export default async function ingredientSwitch(req, res){
                     // const ingredients = await Ingredient.create(data);
     
                     res.status(201).json({success: true, data: null})
-                } 
+                // } 
                 // else {
                 //     res.status(400).json({success: false, message: 'Invalid'})
                 // }
