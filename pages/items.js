@@ -26,7 +26,7 @@ export default function Items() {
   const [currentAmountDiv, setCurrentAmountDiv] = useState(null)
   const [currentAmount, setCurrentAmount] = useState('')
 
-
+  const [color, setColor] = useState("#e66465");
 
   useEffect(()=>{
     axios
