@@ -83,7 +83,15 @@ export default function Items() {
   }
 
   function findCurrentRecipeIndex(index) {
-    // let change =
+    let change = currentRecipe[index];
+    change.toggleDiv = true;
+    setAmountDiv(change, index)
+  }
+
+  function setAmountDiv(el, index) {
+    let copy = currentRecipe.slice();
+    copy[index] = el;
+    setCurrentRecipe(copy)
   }
 
   return (
