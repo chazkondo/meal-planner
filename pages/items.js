@@ -140,6 +140,7 @@ export default function Items() {
            value="#e66465"/>
     <label for="color">Color</label>
     <br />
+    <br />
     <button onClick={()=>console.log(currentRecipe)} disabled={!currentRecipe.length}>Submit Recipe</button>
     </div>
   );
