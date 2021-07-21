@@ -124,7 +124,7 @@ export default function Items() {
         {currentRecipe.map((recipeItem, mappedIndex) => 
           <div>
             {recipeItem.name}
-          {currentAmountDiv === mappedIndex ? <div><input type="text" placeholder={'Enter Amount'} onChange={(e) => setCurrentAmount(e.target.value)} value={name}  /><button onClick={() => hideAmountDiv()}>Submit</button></div> : <button onClick={()=>findCurrentRecipeIndex(mappedIndex)}>Add Amount</button>}
+          {currentAmountDiv === mappedIndex ? <div><input type="text" placeholder={'Enter Amount'} onChange={(e) => setCurrentAmount(e.target.value)} value={currentAmount}  /><button onClick={() => hideAmountDiv()}>Submit</button></div> : <button onClick={()=>findCurrentRecipeIndex(mappedIndex)}>Add Amount</button>}
           </div>
         )}
         <label htmlFor="ingredients">Choose an ingredient:</label>
