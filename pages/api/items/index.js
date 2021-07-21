@@ -40,7 +40,7 @@ export default async function itemSwitch(req, res){
                     console.log(data, 'LETS SEE DATA ')
                     const items = await Item.create(data);
     
-                    res.status(201).json({success: true, data: items})
+                    res.status(201).json({success: true, items})
                 // } 
                 // else {
                 //     res.status(400).json({success: false, message: 'Invalid'})
