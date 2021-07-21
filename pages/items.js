@@ -92,11 +92,12 @@ export default function Items() {
     setCurrentAmountDiv(index)
   }
 
-  function hideAmountDiv(index) {
+  function hideAmountDiv() {
     // let copy = currentRecipe.slice();
     // copy[index].toggleDiv = undefined;
     // setCurrentRecipe(copy)
     // copy = undefined;
+    setCurrentAmountDiv(null)
   }
 
   return (
@@ -123,7 +124,7 @@ export default function Items() {
           <div>
             {recipeItem.name}
             {console.log(mappedIndex, 'wtf is this?')}
-          {currentAmountDiv === mappedIndex ? <div><input type="text" placeholder={'Enter Amount'} onChange={(e) => console.log(e)} value={name}  /><button onClick={() => hideAmountDiv(mappedIndex)}>Submit</button></div> : <button onClick={()=>findCurrentRecipeIndex(mappedIndex)}>Add Amount</button>}
+          {currentAmountDiv === mappedIndex ? <div><input type="text" placeholder={'Enter Amount'} onChange={(e) => console.log(e)} value={name}  /><button onClick={() => hideAmountDiv()}>Submit</button></div> : <button onClick={()=>findCurrentRecipeIndex(mappedIndex)}>Add Amount</button>}
           </div>
         )}
         <label htmlFor="ingredients">Choose an ingredient:</label>
