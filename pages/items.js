@@ -39,14 +39,6 @@ export default function Items() {
       .catch(err => console.log(err))
   },[])
 
-  function doACall() {
-    // axios
-    //   .get(`/api/items`)
-    //   .then(result=>console.log(result, 'result wat?'))
-    //   .catch(err=>console.log(err, 'wat err'))
-    alert('fired')
-  }
-
   function postItem() {
     alert('sup')
 
