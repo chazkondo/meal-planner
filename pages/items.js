@@ -135,7 +135,7 @@ export default function Items() {
           {allRecipes.map((item, i) => <option value={i} key={i}>{item.name}</option>)}
         </select>
         <br />
-        <input type="text" placeholder={'Enter Item Name'} onChange={(e) => setItemValue(e.target.value)} value={name}  />
+        <input type="text" placeholder={'Enter Recipe Name'} onChange={(e) => setItemValue(e.target.value)} value={name}  />
         <br />
         {currentRecipeIngredients.map((recipeItem, mappedIndex) => 
           <div key={mappedIndex}>
