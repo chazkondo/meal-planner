@@ -109,6 +109,7 @@ export default function Items() {
       .post('/api/recipes', {
         ...currentRecipe
       })
+      .then(result=>console.log(result, 'hit recipe switch'))
       .catch()
   }
 
