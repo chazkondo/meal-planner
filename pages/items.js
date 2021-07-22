@@ -96,7 +96,7 @@ export default function Items() {
     axios
       .post('/api/recipes', {
         name: recipeName,
-        type: recipeDropdown,
+        type: recipeTypes[recipeDropdown],
         ingredients: currentRecipeIngredients
       })
       .then(result=>console.log(result, 'hit recipe switch'))
