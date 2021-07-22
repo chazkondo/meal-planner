@@ -1,6 +1,13 @@
 import axios from "axios";
 import React, { useEffect, useState, useRef, memo } from "react";
 
+// Add modals for each function
+
+// ie. if adding/editings item, then provide a modal for that
+// keep the ui simple by asking if the user wants to add/edit items, or simply adjust recipes
+
+// also plan for functionality of being able to drag and drop non food items to calendar as well.
+
 export default function Items() {
   const ingredientTypes = ['Beverages – coffee/tea, juice, soda',
     'Bread/Bakery – sandwich loaves, dinner rolls, tortillas, bagels',
