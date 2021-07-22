@@ -105,7 +105,9 @@ export default function Items() {
   }
 
   function submitIngredient() {
-    
+    axios
+      .post()
+      .catch()
   }
 
   return (
