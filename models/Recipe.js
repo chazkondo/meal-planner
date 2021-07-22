@@ -9,6 +9,10 @@ const RecipeSchema = new mongoose.Schema({
         type: String,
 		required: [true, 'Please set the type']
     },
+    servings: {
+        type: Number,
+		required: [false]
+    },
 	ingredients : [{
         type: [Schema.Types.ObjectId],
         ref: 'Ingredient',
