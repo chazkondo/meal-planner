@@ -7,14 +7,13 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "a": "git add .",
+    "a": "git add . && git commit",
     "c": "git add . && git commit -m \"clean\"",
     "n": "git add . && git commit -m \"next implementation\"",
     "t": "git add . && git commit -m \"test implementation\"",
     "f": "git add . && git commit -m \"fix\"",
     "i": "git add . && git commit -m \"issue\"",
-    "s": "git status",
-    "test": "git commit"
+    "s": "git status"
   },
   "dependencies": {
     "@babel/core": "^7.12.3",
