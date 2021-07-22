@@ -4,7 +4,7 @@ import Recipe from '../../../models/Recipe';
 
 dbConnect();
 
-export default async function itemSwitch(req, res){
+export default async function recipeSwitch(req, res){
     const {method} = req;
     // const {isConfirmed} = req.body.result
 
