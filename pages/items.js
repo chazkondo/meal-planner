@@ -106,7 +106,7 @@ export default function Items() {
 
   function submitIngredient() {
     axios
-      .post()
+      .post('/api/recipes')
       .catch()
   }
 
