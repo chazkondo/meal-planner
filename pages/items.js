@@ -145,7 +145,7 @@ export default function Items() {
         </select>
         <button onClick={()=>addIngredient()}>Add Ingredient</button>
     </div>
-    <label for="color">Color</label>
+    <label htmlFor="color">Color</label>
     <input type="color" id="color" name="color" value={color} onChange={e => setColor(e.target.value)}/>
     <br />
     <br />
