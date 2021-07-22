@@ -13,6 +13,10 @@ const RecipeSchema = new mongoose.Schema({
         type: Number,
 		required: [false]
     },
+    isPrepRecipe: {
+        type: Boolean,
+		required: [false]
+    },
 	ingredients : [{
         type: [Schema.Types.ObjectId],
         ref: 'Ingredient',
