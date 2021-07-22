@@ -132,7 +132,7 @@ export default function Items() {
         <br />
         <br />
         <label htmlFor="servings">(Optional) Servings:</label>
-        <input type="number" placeholder={'Enter Amount of Servings'} onChange={(e) => setRecipeName(e.target.value)} value={recipeName}  />
+        <input type="number" placeholder={'Enter Amount of Servings'} onChange={(e) => setRecipeServings(e.target.value)} value={}  />
         <br />
         <br />
         {currentRecipeIngredients.map((recipeItem, mappedIndex) => 
