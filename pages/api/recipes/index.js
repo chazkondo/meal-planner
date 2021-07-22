@@ -1,5 +1,5 @@
 import dbConnect from '../../../utils/dbConnect';
-import Item from '../../../models/Item';
+import Recipe from '../../../models/Recipe';
 // import Connections from '../../../models/Connections';
 
 dbConnect();
