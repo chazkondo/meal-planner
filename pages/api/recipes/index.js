@@ -38,9 +38,9 @@ export default async function recipeSwitch(req, res){
                 // if (isConfirmed) {
                     const data = {...req.body, password: null, date: Date.now(), signature: 'Chaz'}
                     console.log(data, 'LETS SEE DATA ')
-                    const items = await Item.create(data);
+                    // const recipes = await Recipe.create(data);
     
-                    res.status(201).json({success: true, items})
+                    res.status(201).json({success: true, test: 'test'})
                 // } 
                 // else {
                 //     res.status(400).json({success: false, message: 'Invalid'})
