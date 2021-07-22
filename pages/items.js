@@ -104,6 +104,10 @@ export default function Items() {
     setCurrentAmountDiv(null)
   }
 
+  function submitIngredient() {
+    
+  }
+
   return (
     <div>
     <div>
