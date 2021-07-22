@@ -98,6 +98,7 @@ export default function Items() {
       .post('/api/recipes', {
         name: recipeName,
         type: recipeTypes[recipeDropdown],
+        servings: recipeServings, 
         ingredients: currentRecipeIngredients
       })
       .then(result=>console.log(result, 'hit recipe switch'))
