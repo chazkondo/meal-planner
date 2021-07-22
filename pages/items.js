@@ -19,7 +19,7 @@ export default function Items() {
   const [ingredientName, setIngredientName] = useState('')
   const [type, setType] = useState(types[0])
   const [currentRecipeIngredients, setCurrentRecipeIngredients] = useState([])
-  const [currentRecipe, setCurrentRecipe] = useState([])
+  const [currentRecipe, setCurrentRecipe] = useState({})
   const [allIngredients, setAllIngredients] = useState([])
   const [ingredientIndex, setIngredientIndex] = useState(0)
   const [allRecipes, setAllRecipes] = useState([])
