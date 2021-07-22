@@ -125,7 +125,7 @@ export default function Items() {
         <br />
         <input type="text" placeholder={'Enter Recipe Name'} onChange={(e) => setRecipeName(e.target.value)} value={recipeName}  />
         <br />
-        <label htmlFor="items">Choose a recipe type:</label>
+        <label htmlFor="recipes">Choose a recipe type:</label>
         <select id="recipes" name="recipes" onChange={(e) => setRecipeDropdown(e.target.value)} value={recipeDropdown}>
           {recipeTypes.map((item, i) => <option value={i} key={i}>{item}</option>)}
         </select>
