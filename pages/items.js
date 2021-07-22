@@ -124,12 +124,14 @@ export default function Items() {
         <input type="text" placeholder={'Enter Recipe Name'} onChange={(e) => setRecipeName(e.target.value)} value={recipeName}  />
         <br />
         {currentRecipeIngredients.map((recipeItem, mappedIndex) => 
-          <div key={mappedIndex}>
-            {recipeItem.name}
-          {currentAmountDiv === mappedIndex ? <div><input type="text" placeholder={'Enter Amount'} onChange={(e) => setCurrentAmount(e.target.value)} value={currentAmount}  /><button onClick={() => submitAmount(mappedIndex)}>Submit</button></div> : <button onClick={()=>findCurrentRecipeIndex(mappedIndex)}>{recipeItem.amount ? 'Edit Amount' : 'Add Amount'}</button>}
-          {recipeItem.amount ? <div>[ {recipeItem.amount} ]</div> : null}
-          <br />
-          </div>
+          <ul>
+            <li key={mappedIndex}>
+              {recipeItem.name}
+            {currentAmountDiv === mappedIndex ? <div><input type="text" placeholder={'Enter Amount'} onChange={(e) => setCurrentAmount(e.target.value)} value={currentAmount}  /><button onClick={() => submitAmount(mappedIndex)}>Submit</button></div> : <button onClick={()=>findCurrentRecipeIndex(mappedIndex)}>{recipeItem.amount ? 'Edit Amount' : 'Add Amount'}</button>}
+            {recipeItem.amount ? <div>[ {recipeItem.amount} ]</div> : null}
+            <br />
+            </li>
+          </ul>
         )}
         <label htmlFor="ingredients">{allIngredients.length ? 'Choose an ingredient to add:' : 'Loading'}</label>
         <select id="ingredients" name="ingredients" onChange={(e) => setIngredientDropdownValue(e)} value={ingredientIndex}>
