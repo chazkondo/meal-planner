@@ -11,8 +11,8 @@ export default async function recipeSwitch(req, res){
     switch(method) {
         case 'GET':
             try {
-                const items = await Item.find({});
-                res.status(200).json({success: true, items})
+                const recipes = await Recipe.find({});
+                res.status(200).json({success: true, recipes})
             } catch (error) {
                 res.status(400).json({success: false})
             }    
