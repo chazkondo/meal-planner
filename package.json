@@ -13,7 +13,8 @@
     "t": "git add . && git commit -m \"test implementation\"",
     "f": "git add . && git commit -m \"fix\"",
     "i": "git add . && git commit -m \"issue\"",
-    "s": "git status"
+    "s": "git status",
+    "test": "git commit -m"
   },
   "dependencies": {
     "@babel/core": "^7.12.3",
