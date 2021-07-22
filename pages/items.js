@@ -109,7 +109,7 @@ export default function Items() {
   function submitIngredient() {
     axios
       .post('/api/recipes', {
-        ...currentRecipe,
+        name: ingredientName,
         ingredients: currentRecipeIngredients
       })
       .then(result=>console.log(result, 'hit recipe switch'))
