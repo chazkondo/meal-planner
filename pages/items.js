@@ -131,7 +131,7 @@ export default function Items() {
           <br />
           </div>
         )}
-        <label htmlFor="ingredients">{allIngredients.length ? 'Choose an ingredient:' : 'Loading'}</label>
+        <label htmlFor="ingredients">{allIngredients.length ? 'Choose an ingredient to add:' : 'Loading'}</label>
         <select id="ingredients" name="ingredients" onChange={(e) => setIngredientDropdownValue(e)} value={ingredientIndex}>
           {allIngredients.map((item, i) => <option value={i} key={i}>{item.name}</option>)}
         </select>
