@@ -25,7 +25,7 @@ export default function Items() {
   const [allIngredients, setAllIngredients] = useState([])
   const [ingredientIndex, setIngredientIndex] = useState(0)
   const [allRecipes, setAllRecipes] = useState([])
-  const [ingredientDropdown, setIngredientDropdown] = useState(recipeTypes[0])
+  const [recipeDropdown, setRecipeDropdown] = useState(recipeTypes[0])
 
   const [currentAmountDiv, setCurrentAmountDiv] = useState(null)
   const [currentAmount, setCurrentAmount] = useState('')
@@ -125,8 +125,8 @@ export default function Items() {
         <input type="text" placeholder={'Enter Recipe Name'} onChange={(e) => setRecipeName(e.target.value)} value={recipeName}  />
         <br />
         <label htmlFor="items">Choose a recipe type:</label>
-        <select id="recipes" name="recipes" onChange={(e) => setDropdownValue(e)} value={type}>
-          {ingredientTypes.map((item, i) => <option value={i} key={i}>{item}</option>)}
+        <select id="recipes" name="recipes" onChange={(e) => setDropdownValue(e)} value={ingredientDropdown}>
+          {recipeTypes.map((item, i) => <option value={i} key={i}>{item}</option>)}
         </select>
         <br />
         {currentRecipeIngredients.map((recipeItem, mappedIndex) => 
