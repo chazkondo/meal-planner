@@ -130,9 +130,7 @@ export default function Items() {
           {recipeTypes.map((item, i) => <option value={i} key={i}>{item}</option>)}
         </select>
         <label htmlFor="servings">(Optional) Servings:</label>
-        <select id="servings" name="servings" onChange={(e) => setRecipeDropdown(e.target.value)} value={recipeDropdown}>
-          {recipeTypes.map((item, i) => <option value={i} key={i}>{item}</option>)}
-        </select>
+        <input type="text" placeholder={'Enter Recipe Name'} onChange={(e) => setRecipeName(e.target.value)} value={recipeName}  />
         <br />
         {currentRecipeIngredients.map((recipeItem, mappedIndex) => 
           <ul>
