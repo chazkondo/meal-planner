@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState, useRef, memo } from "react";
 
 export default function Items() {
-  const types = ['Beverages – coffee/tea, juice, soda',
+  const ingredientTypes = ['Beverages – coffee/tea, juice, soda',
     'Bread/Bakery – sandwich loaves, dinner rolls, tortillas, bagels',
     'Canned/Jarred Goods – vegetables, spaghetti sauce, ketchup',
     'Dairy – cheeses, eggs, milk, yogurt, butter',
