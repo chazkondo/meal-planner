@@ -134,6 +134,7 @@ export default function Items() {
         <label htmlFor="servings">(Optional) Servings:</label>
         <input type="number" placeholder={'Enter Amount of Servings'} onChange={(e) => setRecipeName(e.target.value)} value={recipeName}  />
         <br />
+        <br />
         {currentRecipeIngredients.map((recipeItem, mappedIndex) => 
           <ul>
             <li key={mappedIndex}>
