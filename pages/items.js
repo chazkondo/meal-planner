@@ -69,14 +69,6 @@ export default function Items() {
     }
   }
 
-  function setItemValue(e) {
-    setName(e)
-  }
-
-  function setIngredientValue(e) {
-    setIngredientName(e)
-  }
-
   function setDropdownValue(e) {
     setType(e.target.value)
   }
