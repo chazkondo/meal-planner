@@ -110,7 +110,7 @@ export default function Items() {
         ...currentRecipe
       })
       .then(result=>console.log(result, 'hit recipe switch'))
-      .catch()
+      .catch(err => console.log(err, 'an error occ. recipe switch'))
   }
 
   return (
