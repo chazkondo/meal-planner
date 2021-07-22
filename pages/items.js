@@ -18,7 +18,7 @@ export default function Items() {
   const [name, setName] = useState('')
   const [ingredientName, setIngredientName] = useState('')
   const [type, setType] = useState(types[0])
-  const [currentRecipe, setCurrentRecipe] = useState([])
+  const [currentRecipeIngredients, setCurrentRecipeIngredients] = useState([])
   const [allIngredients, setAllIngredients] = useState([])
   const [ingredientIndex, setIngredientIndex] = useState(0)
   const [allRecipes, setAllRecipes] = useState([])
@@ -84,7 +84,7 @@ export default function Items() {
   }
 
   function addIngredient() {
-    setCurrentRecipe(previous => [...previous, allIngredients[ingredientIndex]]);
+    setCurrentRecipeIngredients(previous => [...previous, allIngredients[ingredientIndex]]);
   }
 
   function findCurrentRecipeIndex(index) {
