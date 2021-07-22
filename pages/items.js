@@ -134,7 +134,7 @@ export default function Items() {
         </select>
         <br />
         {currentRecipe.map((recipeItem, mappedIndex) => 
-          <div>
+          <div key={mappedIndex}>
             {recipeItem.name}
           {currentAmountDiv === mappedIndex ? <div><input type="text" placeholder={'Enter Amount'} onChange={(e) => setCurrentAmount(e.target.value)} value={currentAmount}  /><button onClick={() => submitAmount(mappedIndex)}>Submit</button></div> : <button onClick={()=>findCurrentRecipeIndex(mappedIndex)}>Add Amount</button>}
           </div>
