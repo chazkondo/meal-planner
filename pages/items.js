@@ -121,7 +121,7 @@ export default function Items() {
     <div>
         Add Item
         <br />
-        <input type="text" placeholder={'Enter Item Name'} onChange={(e) => setItemValue(e.target.value)} value={name}  />
+        <input type="text" placeholder={'Enter Item Name'} onChange={(e) => setName(e.target.value)} value={name}  />
         <br />
         <label htmlFor="items">Choose a type:</label>
         <select id="items" name="items" onChange={(e) => setDropdownValue(e)} value={type}>
