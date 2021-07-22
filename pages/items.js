@@ -16,6 +16,7 @@ export default function Items() {
     'Other' ]
   const condensedTypes = ['Beverages', 'Bread/Bakery', 'Canned/Jarred Goods', 'Dairy', 'Dry/Baking Goods', 'Frozen Foods', 'Meat', 'Produce', 'Cleaners', 'Paper Goods', 'Personal Care', 'Other']
   const [name, setName] = useState('')
+  const [recipeName, setRecipeName] = useState('')
   const [ingredientName, setIngredientName] = useState('')
   const [type, setType] = useState(types[0])
   const [currentRecipeIngredients, setCurrentRecipeIngredients] = useState([])
@@ -135,7 +136,7 @@ export default function Items() {
           {allRecipes.map((item, i) => <option value={i} key={i}>{item.name}</option>)}
         </select>
         <br />
-        <input type="text" placeholder={'Enter Recipe Name'} onChange={(e) => setItemValue(e.target.value)} value={name}  />
+        <input type="text" placeholder={'Enter Recipe Name'} onChange={(e) => setRecipeNameValue(e.target.value)} value={recipeName}  />
         <br />
         {currentRecipeIngredients.map((recipeItem, mappedIndex) => 
           <div key={mappedIndex}>
