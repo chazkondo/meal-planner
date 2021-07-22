@@ -97,7 +97,7 @@ export default function Items() {
   function submitAmount(index) {
     let copy = currentRecipeIngredients.slice();
     copy[index] = {...copy[index], amount: currentAmount};
-    setCurrentRecipe(copy)
+    setCurrentRecipeIngredients(copy)
     copy = undefined;
     console.log(index)
     setCurrentAmount('')
