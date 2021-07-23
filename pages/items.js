@@ -54,8 +54,8 @@ export default function Items() {
   useEffect(()=>{
     axios
       .get('/api/recipes')
-      .then(ingredients => {
-        setAllIngredients(ingredients.data.ingredients)
+      .then(recipes => {
+        setAllRecipes(ingredients.data.ingredients)
       })
       .catch(err => console.log(err))
   },[])
