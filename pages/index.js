@@ -29,7 +29,7 @@ const Recipe = memo(({ item }) => {
       title={item.title}
       style={{
         backgroundColor: item.color,
-        borderColor: event.color,
+        borderColor: item.color,
         cursor: "pointer"
       }}
     >
