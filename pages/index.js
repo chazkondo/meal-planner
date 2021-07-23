@@ -22,6 +22,10 @@ const Recipe = memo(({ event }) => {
     return () => draggable.destroy();
   });
 
+  useEffect(()=>{
+    
+  })
+
   return (
     <div
       ref={elRef}
