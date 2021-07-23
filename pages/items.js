@@ -35,6 +35,8 @@ export default function Items() {
   const [recipeDropdown, setRecipeDropdown] = useState(0)
   const [recipeServings, setRecipeServings] = useState(0)
 
+  const [isPrep, setIsPrep] = useState(false)
+
   const [currentAmountDiv, setCurrentAmountDiv] = useState(null)
   const [currentAmount, setCurrentAmount] = useState('')
 
