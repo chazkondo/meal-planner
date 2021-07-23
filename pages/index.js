@@ -35,7 +35,7 @@ const Recipe = memo(({ item }) => {
     >
       <div className="fc-event-main">
         <div>
-          <strong>{item.title}</strong>
+          <strong>{item.name}</strong>
         </div>
       </div>
     </div>
