@@ -108,7 +108,8 @@ export default function Items() {
         name: recipeName,
         type: recipeTypes[recipeDropdown],
         servings: recipeServings, 
-        ingredients: currentRecipeIngredients
+        ingredients: currentRecipeIngredients,
+        isPrepRecipe: isPrep
       })
       .then(result=>console.log(result, 'hit recipe switch'))
       .catch(err => console.log(err, 'an error occ. recipe switch'))
