@@ -26,16 +26,16 @@ const Recipe = memo(({ item }) => {
     <div
       ref={elRef}
       className="fc-event fc-h-event mb-1 fc-daygrid-event fc-daygrid-block-event p-2 recipe"
-      title={item.name}
+      title={event.title}
       style={{
-        backgroundColor: item.color,
-        borderColor: item.color,
+        backgroundColor: event.color,
+        borderColor: event.color,
         cursor: "pointer"
       }}
     >
       <div className="fc-event-main">
         <div>
-          <strong>{item.name}</strong>
+          <strong>{event.title}</strong>
         </div>
       </div>
     </div>
@@ -49,10 +49,10 @@ export default function App() {
   // initial state
   const [weekendsVisible, setWeekendsVisible] = useState(true)
   const [recipes, updateRecipes] = useState([
-    { name: "Curry Stew", color: "#0097a7", id: 34432 },
-    { name: "Beef Broccoli", color: "#f44336", id: 323232, ingredients: [{name: 'Beef', amount: null, type: 'Protein'}, {name: 'Broccoli', amount: '2 heads'}, {name: 'Rice', amount: '3 cups'}, {name: 'Soy Sauce', amount: '3 Tablespoons'}, {name: 'Ginger', amount: '2 Tablespoons'}] },
-    { name: "Cereal", color: "#f57f17", id: 1111 },
-    { name: "Pancakes", color: "#90a4ae", id: 432432 }
+    { title: "Curry Stew", color: "#0097a7", id: 34432 },
+    { title: "Beef Broccoli", color: "#f44336", id: 323232, ingredients: [{name: 'Beef', amount: null, type: 'Protein'}, {name: 'Broccoli', amount: '2 heads'}, {name: 'Rice', amount: '3 cups'}, {name: 'Soy Sauce', amount: '3 Tablespoons'}, {name: 'Ginger', amount: '2 Tablespoons'}] },
+    { title: "Cereal", color: "#f57f17", id: 1111 },
+    { title: "Pancakes", color: "#90a4ae", id: 432432 }
   ])
   const [calendar, updateCalendar] = useState([])
   const [ingredientNum, setIngredientNum] = useState(1)
@@ -217,8 +217,8 @@ export default function App() {
           </Link>
         </div>
         <div id="all-recipes">
-          {recipes.map((event) => (
-            <Recipe key={event.id} event={event} />
+          {recipes.map((item) => (
+            <Recipe key={item.id} item={item} />
           ))}
         </div>
       </div>
