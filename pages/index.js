@@ -22,15 +22,6 @@ const Recipe = memo(({ event }) => {
     return () => draggable.destroy();
   });
 
-  useEffect(()=>{
-    axios
-    .get('/api/recipes')
-    .then(recipes => {
-      console.log(recipes.data.recipes, 'here')
-    })
-    .catch(err => console.log(err))
-  })
-
   return (
     <div
       ref={elRef}
@@ -65,6 +56,15 @@ export default function App() {
   ])
   const [calendar, updateCalendar] = useState([])
   const [ingredientNum, setIngredientNum] = useState(1)
+  
+  useEffect(()=>{
+    axios
+    .get('/api/recipes')
+    .then(recipes => {
+      console.log(recipes.data.recipes, 'here')
+    })
+    .catch(err => console.log(err))
+  }, [])
 
   // add external events
   const addRecipe = () => {
