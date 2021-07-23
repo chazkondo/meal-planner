@@ -31,7 +31,7 @@ export default function Items() {
   const [currentRecipe, setCurrentRecipe] = useState({})
   const [allIngredients, setAllIngredients] = useState([])
   const [ingredientIndex, setIngredientIndex] = useState(0)
-  const [allRecipes, setAllRecipes] = useState([{name: null}])
+  const [allRecipes, setAllRecipes] = useState([])
   const [recipeDropdown, setRecipeDropdown] = useState(0)
   const [recipeServings, setRecipeServings] = useState(0)
 
@@ -57,7 +57,7 @@ export default function Items() {
     axios
       .get('/api/recipes')
       .then(recipes => {
-        setAllRecipes(previous => [...previous, recipes.data.recipes])
+        setAllRecipes(recipes.data.recipes)
       })
       .catch(err => console.log(err))
   },[])
