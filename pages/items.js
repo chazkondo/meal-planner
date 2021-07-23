@@ -40,6 +40,8 @@ export default function Items() {
   const [currentAmountDiv, setCurrentAmountDiv] = useState(null)
   const [currentAmount, setCurrentAmount] = useState('')
 
+  const [recipeDropdownState, setRecipeDropdownState] = useState(0)
+
   const [color, setColor] = useState("#e66465");
 
   useEffect(()=>{
@@ -143,7 +145,7 @@ export default function Items() {
     <br />
     <div>
         Add/Edit Recipe 
-        {allRecipes.length ? <select id="recipe" name="recipe" onChange={(e) => console.log(e, 'wat is here?')} value={0}>
+        {allRecipes.length ? <select id="recipe" name="recipe" onChange={(e) => console.log(e.target.value, 'wat is here?')} value={allRecipes[0]}>
           {allRecipes.map((item, i) => <option value={i} key={i}>{item.name}</option>)}
         </select> : null}
         <br />
