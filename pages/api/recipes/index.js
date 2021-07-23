@@ -1,5 +1,6 @@
 import dbConnect from '../../../utils/dbConnect';
 import Recipe from '../../../models/Recipe';
+import { syncIndexes } from '../../../models/Connections';
 // import Connections from '../../../models/Connections';
 
 dbConnect();
@@ -11,8 +12,10 @@ export default async function recipeSwitch(req, res){
     switch(method) {
         case 'GET':
             try {
-                const recipes = await Recipe.find({}).populate("ingredients", "fullAddress _id")
-                .exec();;
+                const recipes = await Recipe.find({}).populate("ingredients", "_id name type")
+                .exec();
+
+                recipes.ingredients.map((ingredient, index) => ingredient.amount = recipes.amount[index])
                 res.status(200).json({success: true, recipes})
             } catch (error) {
                 res.status(400).json({success: false})
