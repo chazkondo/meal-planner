@@ -152,16 +152,16 @@ export default function Items() {
         <input type="checkbox" name="prep" value="prep" onChange={()=>setIsPrep(previous=>!previous)} checked={isPrep}/>
         <br />
         <br />
+        <ul>
         {currentRecipeIngredients.map((recipeItem, mappedIndex) => 
-          <ul>
             <li key={mappedIndex}>
               {recipeItem.name}
             {currentAmountDiv === mappedIndex ? <div key={`${mappedIndex} + '_amount_div'`}><input type="text" placeholder={'Enter Amount'} onChange={(e) => setCurrentAmount(e.target.value)} value={currentAmount}  /><button onClick={() => submitAmount(mappedIndex)}>Submit</button></div> : <button onClick={()=>findCurrentRecipeIndex(mappedIndex)}>{recipeItem.amount ? 'Edit Amount' : 'Add Amount'}</button>}
             {recipeItem.amount ? <div key={`${mappedIndex} + 'set_amount_div'`}>[ {recipeItem.amount} ]</div> : null}
             <br />
             </li>
-          </ul>
         )}
+        </ul>
         <label htmlFor="ingredients">{allIngredients.length ? 'Choose an ingredient to add:' : 'Loading'}</label>
         <select id="ingredients" name="ingredients" onChange={(e) => setIngredientDropdownValue(e)} value={ingredientIndex}>
           {allIngredients.map((item, i) => <option value={i} key={i}>{item.name}</option>)}
