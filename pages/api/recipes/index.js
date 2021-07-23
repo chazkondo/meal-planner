@@ -15,9 +15,9 @@ export default async function recipeSwitch(req, res){
                 const recipes = await Recipe.find({}).populate("ingredients", "_id name type")
                 .exec();
 
-                recipes.map((recipe, recipeIndex) => recipe.ingredients.forEach((ingredient, ingredientIndex) => ingredient = 'dook'))
+                // const editedRecipes = recipes.map((recipe, recipeIndex) => recipe.ingredients.map((ingre, ingredientIndex) => {...ingre, amount: recipe.amount[ingredientIndex]}))
                 console.log(recipes, 'hello??')
-                res.status(200).json({success: true, recipes})
+                res.status(200).json({success: true, recipes: editedRecipes})
             } catch (error) {
                 console.log(error, 'what is the error here')
                 res.status(400).json({success: false})
