@@ -132,6 +132,7 @@ export default function App() {
 
   // handle event receive
   const handleEventReceive = (eventInfo) => {
+    console.log(eventInfo)
     const newEvent = {
       id: eventInfo.draggedEl.getAttribute("data-id"),
       title: eventInfo.draggedEl.getAttribute("title"),
