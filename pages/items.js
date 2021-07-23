@@ -132,9 +132,10 @@ export default function Items() {
     <br />
     <br />
     <div>
-        Add/Edit Recipe <select multiple={true} id="recipe" name="recipe" onChange={(e) => setIngredientDropdownValue(e)} value={currentRecipeIngredients}>
+        Add/Edit Recipe 
+        {allRecipes.length ? <select multiple={true} id="recipe" name="recipe" onChange={(e) => setIngredientDropdownValue(e)} value={currentRecipeIngredients}>
           {allRecipes.map((item, i) => <option value={i} key={i}>{item.name}</option>)}
-        </select>
+        </select> : null}
         <br />
         <input type="text" placeholder={'Enter Recipe Name'} onChange={(e) => setRecipeName(e.target.value)} value={recipeName}  />
         <br />
