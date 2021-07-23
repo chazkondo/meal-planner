@@ -26,7 +26,7 @@ const Recipe = memo(({ item }) => {
     <div
       ref={elRef}
       className="fc-event fc-h-event mb-1 fc-daygrid-event fc-daygrid-block-event p-2 recipe"
-      title={item.title}
+      title={item.name}
       style={{
         backgroundColor: item.color,
         borderColor: item.color,
@@ -54,6 +54,7 @@ export default function App() {
     { title: "Cereal", color: "#f57f17", id: 1111 },
     { title: "Pancakes", color: "#90a4ae", id: 432432 }
   ])
+  const [apiRecipes, setApiRecipes] = useState([])
   const [calendar, updateCalendar] = useState([])
   const [ingredientNum, setIngredientNum] = useState(1)
   
@@ -62,6 +63,7 @@ export default function App() {
     .get('/api/recipes')
     .then(recipes => {
       console.log(recipes.data.recipes, 'here')
+      setApiRecipes(recipes.data.recipes)
     })
     .catch(err => console.log(err))
   }, [])
@@ -217,7 +219,7 @@ export default function App() {
           </Link>
         </div>
         <div id="all-recipes">
-          {recipes.map((item) => (
+          {apiRecipes.map((item) => (
             <Recipe key={item.id} item={item} />
           ))}
         </div>
