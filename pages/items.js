@@ -145,7 +145,7 @@ export default function Items() {
     <br />
     <div>
         Add/Edit Recipe 
-        {allRecipes.length ? <select id="recipe" name="recipe" onChange={(e) => console.log(e.target.value, 'wat is here?')} value={allRecipes[0]}>
+        {allRecipes.length ? <select id="recipe" name="recipe" onChange={(e) => console.log(e.target.value, 'wat is here?')} value={allRecipes}>
           {allRecipes.map((item, i) => <option value={i} key={i}>{item.name}</option>)}
         </select> : null}
         <br />
