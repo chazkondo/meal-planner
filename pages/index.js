@@ -133,10 +133,10 @@ export default function App() {
   // handle event receive
   const handleEventReceive = (eventInfo) => {
     console.log(eventInfo)
-    console.log(eventInfo.draggedEl.getAttribute("title"), 'hello?')
+    console.log(eventInfo.draggedEl.getAttribute("name"), 'hello?')
     const newEvent = {
       id: eventInfo.draggedEl.getAttribute("data-id"),
-      title: eventInfo.draggedEl.getAttribute("title"),
+      name: eventInfo.draggedEl.getAttribute("name"),
       color: eventInfo.draggedEl.getAttribute("data-color"),
       _date: eventInfo.event.start,
       custom: eventInfo.draggedEl.getAttribute("data-custom"),
