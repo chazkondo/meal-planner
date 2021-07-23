@@ -8,13 +8,13 @@ import Link from 'next/link'
 import Alert from "sweetalert2";
 import axios from "axios";
 
-const Recipe = memo(({ event }) => {
+const Recipe = memo(({ item }) => {
   let elRef = useRef(null);
 
   useEffect(() => {
     let draggable = new Draggable(elRef.current, {
       eventData: function () {
-        return { ...event, create: true };
+        return { ...item, create: true };
       }
     });
 
@@ -26,7 +26,7 @@ const Recipe = memo(({ event }) => {
     <div
       ref={elRef}
       className="fc-event fc-h-event mb-1 fc-daygrid-event fc-daygrid-block-event p-2 recipe"
-      title={event.title}
+      title={item.title}
       style={{
         backgroundColor: event.color,
         borderColor: event.color,
