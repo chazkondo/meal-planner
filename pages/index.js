@@ -26,7 +26,7 @@ const Recipe = memo(({ item }) => {
     <div
       ref={elRef}
       className="fc-event fc-h-event mb-1 fc-daygrid-event fc-daygrid-block-event p-2 recipe"
-      title={item.title}
+      title={item.name}
       style={{
         backgroundColor: item.color,
         borderColor: item.color,
@@ -35,7 +35,7 @@ const Recipe = memo(({ item }) => {
     >
       <div className="fc-event-main">
         <div>
-          <strong>{item.title}</strong>
+          <strong>{item.name}</strong>
         </div>
       </div>
     </div>
