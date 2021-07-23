@@ -19,6 +19,7 @@ export default async function recipeSwitch(req, res){
                 recipes.ingredients.map(ingred=>console.log(ingred.name), 'hello?')
                 res.status(200).json({success: true, recipes})
             } catch (error) {
+                console.log(error, 'what is the error here')
                 res.status(400).json({success: false})
             }    
             break;
