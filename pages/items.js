@@ -55,8 +55,7 @@ export default function Items() {
     axios
       .get('/api/recipes')
       .then(recipes => {
-        console.log(recipes)
-        // setAllRecipes(ingredients.data.ingredients)
+        setAllRecipes(recipes.data.recipes)
       })
       .catch(err => console.log(err))
   },[])
