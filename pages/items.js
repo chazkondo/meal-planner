@@ -144,8 +144,8 @@ export default function Items() {
         <input type="number" placeholder={'Enter Amount of Servings'} onChange={(e) => setRecipeServings(e.target.value)} value={recipeServings}  />
         <br />
         <br />
-        <label htmlFor="servings">(Optional) Servings:</label>
-        <input type="checkbox" name="vehicle1" value="Bike"></input>
+        <label htmlFor="prep">(Optional) Prep Recipe</label>
+        <input type="checkbox" name="prep" value="prep"></input>
         <br />
         <br />
         {currentRecipeIngredients.map((recipeItem, mappedIndex) => 
