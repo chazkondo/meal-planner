@@ -37,7 +37,6 @@ export default async function recipeSwitch(req, res){
                 //         }
                 // if (isConfirmed) {
                     const data = {...req.body, password: null, date: Date.now(), signature: 'Chaz'}
-                    console.log(data, 'LETS SEE DATA ')
                     const amount = data.ingredients.map(ingredient => ingredient.amount || '')
                     data.amount = amount
                     const recipes = await Recipe.create(data)
