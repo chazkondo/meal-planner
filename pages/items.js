@@ -147,6 +147,7 @@ export default function Items() {
         <label htmlFor="servings">(Optional) Servings:</label>
         <input type="checkbox" name="vehicle1" value="Bike"></input>
         <br />
+        <br />
         {currentRecipeIngredients.map((recipeItem, mappedIndex) => 
           <ul>
             <li key={mappedIndex}>
