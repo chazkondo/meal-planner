@@ -40,7 +40,7 @@ export default async function recipeSwitch(req, res){
                     console.log(data, 'LETS SEE DATA ')
                     const amount = data.ingredients.map(ingredient => ingredient.amount || '')
                     data.amount = amount
-                    // const recipes = await Recipe.create(data);
+                    const recipes = await Recipe.create(data)
     
                     res.status(201).json({success: true, test: true})
                 // } 
