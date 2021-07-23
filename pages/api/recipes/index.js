@@ -42,7 +42,7 @@ export default async function recipeSwitch(req, res){
                     data.amount = amount
                     const recipes = await Recipe.create(data)
     
-                    res.status(201).json({success: true, test: true})
+                    res.status(201).json({success: true, recipes})
                 // } 
                 // else {
                 //     res.status(400).json({success: false, message: 'Invalid'})
