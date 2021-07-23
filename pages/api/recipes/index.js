@@ -11,7 +11,8 @@ export default async function recipeSwitch(req, res){
     switch(method) {
         case 'GET':
             try {
-                const recipes = await Recipe.find({});
+                const recipes = await Recipe.find({}).populate("ingredients", "fullAddress _id")
+                .exec();;
                 res.status(200).json({success: true, recipes})
             } catch (error) {
                 res.status(400).json({success: false})
