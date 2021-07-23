@@ -27,7 +27,6 @@ const Recipe = memo(({ event }) => {
     .get('/api/recipes')
     .then(recipes => {
       console.log(recipes.data.recipes, 'here')
-      setAllRecipes(recipes.data.recipes)
     })
     .catch(err => console.log(err))
   })
