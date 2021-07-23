@@ -147,7 +147,7 @@ export default function Items() {
         <br />
         <br />
         <label htmlFor="prep">(Optional) Prep Recipe</label>
-        <input type="checkbox" name="prep" value="prep" onChange={e=>console.log(e, 'what is here')} checked={isPrep}/>
+        <input type="checkbox" name="prep" value="prep" onChange={()=>setIsPrep(previous=>!previous)} checked={isPrep}/>
         <br />
         <br />
         {currentRecipeIngredients.map((recipeItem, mappedIndex) => 
