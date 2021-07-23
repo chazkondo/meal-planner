@@ -109,7 +109,8 @@ export default function Items() {
         type: recipeTypes[recipeDropdown],
         servings: recipeServings, 
         ingredients: currentRecipeIngredients,
-        isPrepRecipe: isPrep
+        isPrepRecipe: isPrep,
+        color,
       })
       .then(result=>console.log(result, 'hit recipe switch'))
       .catch(err => console.log(err, 'an error occ. recipe switch'))
@@ -155,7 +156,7 @@ export default function Items() {
           <ul>
             <li key={mappedIndex}>
               {recipeItem.name}
-            {currentAmountDiv === mappedIndex ? <div><input type="text" placeholder={'Enter Amount'} onChange={(e) => setCurrentAmount(e.target.value)} value={currentAmount}  /><button onClick={() => submitAmount(mappedIndex)}>Submit</button></div> : <button onClick={()=>findCurrentRecipeIndex(mappedIndex)}>{recipeItem.amount ? 'Edit Amount' : 'Add Amount'}</button>}
+            {currentAmountDiv === mappedIndex ? <div key={`${mappedIndex} + '_amount_div'`}><input type="text" placeholder={'Enter Amount'} onChange={(e) => setCurrentAmount(e.target.value)} value={currentAmount}  /><button onClick={() => submitAmount(mappedIndex)}>Submit</button></div> : <button onClick={()=>findCurrentRecipeIndex(mappedIndex)}>{recipeItem.amount ? 'Edit Amount' : 'Add Amount'}</button>}
             {recipeItem.amount ? <div>[ {recipeItem.amount} ]</div> : null}
             <br />
             </li>
