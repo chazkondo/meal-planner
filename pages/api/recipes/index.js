@@ -16,7 +16,8 @@ export default async function recipeSwitch(req, res){
                 .exec();
 
                 // recipes.ingredients.map((ingredient, index) => ingredient.amount = recipes.amount[index])
-                recipes.ingredients.map(ingred=>console.log(ingred.name), 'hello?')
+                // await recipes.ingredients.map(ingred=>console.log(ingred.name), 'hello?')
+                console.log(recipes, 'hello')
                 res.status(200).json({success: true, recipes})
             } catch (error) {
                 console.log(error, 'what is the error here')
