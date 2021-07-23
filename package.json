@@ -12,7 +12,7 @@
     "n": "git add . && git commit -m \"next implementation\"",
     "t": "git add . && git commit -m \"test implementation\"",
     "f": "git add . && git commit -m \"fix\"",
-    "i": "git add . && git commit -m \"issue\"",
+    "d": "git add . && git commit -m \"debug issue\"",
     "s": "git status"
   },
   "dependencies": {
