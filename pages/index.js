@@ -28,7 +28,7 @@ const Recipe = memo(({ item }) => {
       className="fc-event fc-h-event mb-1 fc-daygrid-event fc-daygrid-block-event p-2 recipe"
       title={item.title}
       style={{
-        backgroundColor: event.color,
+        backgroundColor: item.color,
         borderColor: event.color,
         cursor: "pointer"
       }}
