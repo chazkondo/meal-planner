@@ -203,7 +203,7 @@ export default function App() {
     <div className="App">
       <div className="recipe-wrapper">
         <div className="recipe-title flex-center">
-          <Link href="/recipes">
+          <Link href="/items">
             <a className="link">Add Grocery Item</a>
           </Link>
         </div>
