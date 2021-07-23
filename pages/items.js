@@ -31,7 +31,7 @@ export default function Items() {
   const [currentRecipe, setCurrentRecipe] = useState({})
   const [allIngredients, setAllIngredients] = useState([])
   const [ingredientIndex, setIngredientIndex] = useState(0)
-  const [allRecipes, setAllRecipes] = useState([null])
+  const [allRecipes, setAllRecipes] = useState([{name: null}])
   const [recipeDropdown, setRecipeDropdown] = useState(0)
   const [recipeServings, setRecipeServings] = useState(0)
 
@@ -40,7 +40,7 @@ export default function Items() {
   const [currentAmountDiv, setCurrentAmountDiv] = useState(null)
   const [currentAmount, setCurrentAmount] = useState('')
 
-  const [recipeDropdownState, setRecipeDropdownState] = useState()
+  const [recipeDropdownState, setRecipeDropdownState] = useState(0)
 
   const [color, setColor] = useState("#e66465");
 
