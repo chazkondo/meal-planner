@@ -31,7 +31,7 @@ export default function Items() {
   const [currentRecipe, setCurrentRecipe] = useState({})
   const [allIngredients, setAllIngredients] = useState([])
   const [ingredientIndex, setIngredientIndex] = useState(0)
-  const [allRecipes, setAllRecipes] = useState([])
+  const [allRecipes, setAllRecipes] = useState([null])
   const [recipeDropdown, setRecipeDropdown] = useState(0)
   const [recipeServings, setRecipeServings] = useState(0)
 
@@ -40,7 +40,7 @@ export default function Items() {
   const [currentAmountDiv, setCurrentAmountDiv] = useState(null)
   const [currentAmount, setCurrentAmount] = useState('')
 
-  const [recipeDropdownState, setRecipeDropdownState] = useState(0)
+  const [recipeDropdownState, setRecipeDropdownState] = useState()
 
   const [color, setColor] = useState("#e66465");
 
@@ -145,7 +145,7 @@ export default function Items() {
     <br />
     <div>
         Add/Edit Recipe 
-        {allRecipes.length ? <select id="recipe" name="recipe" onChange={(e) => {console.log(e.target.value, 'wat?')}} value={recipeDropdownState}>
+        {allRecipes.length ? <select id="recipe" name="recipe" onChange={(e) => setRecipeDropdownState(e.target.value)} value={recipeDropdownState}>
           {allRecipes.map((item, i) => <option value={i} key={i}>{item.name}</option>)}
         </select> : null}
         <br />
