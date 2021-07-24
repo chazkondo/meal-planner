@@ -1,5 +1,6 @@
 import dbConnect from '../../../utils/dbConnect';
 import Recipe from '../../../models/Recipe';
+import Ingredient from '../../../models/Ingredient';
 import { syncIndexes } from '../../../models/Connections';
 // import Connections from '../../../models/Connections';
 
