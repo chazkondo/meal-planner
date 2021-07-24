@@ -4,8 +4,6 @@ import Ingredient from '../../../models/Ingredient';
 import { syncIndexes } from '../../../models/Connections';
 // import Connections from '../../../models/Connections';
 
-import mongoose from 'mongoose';
-
 dbConnect();
 
 
