@@ -3,9 +3,11 @@ import Recipe from '../../../models/Recipe';
 import { syncIndexes } from '../../../models/Connections';
 // import Connections from '../../../models/Connections';
 
-dbConnect();
+import mongoose from 'mongoose';
+
 
 export default async function recipeSwitch(req, res){
+    const db = await dbConnect();
     const {method} = req;
     // const {isConfirmed} = req.body.result
     const Ingredient =
