@@ -8,6 +8,8 @@ dbConnect();
 export default async function recipeSwitch(req, res){
     const {method} = req;
     // const {isConfirmed} = req.body.result
+    const Ingredient =
+    mongoose.models.Ingredient || db.model('Ingredient', IngredientSchema);
 
     switch(method) {
         case 'GET':
