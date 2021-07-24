@@ -6,13 +6,11 @@ import { syncIndexes } from '../../../models/Connections';
 
 import mongoose from 'mongoose';
 
+dbConnect();
+
 
 export default async function recipeSwitch(req, res){
-    const db = await dbConnect();
     const {method} = req;
-    // const {isConfirmed} = req.body.result
-    // const Ingredient =
-    // mongoose.models.Ingredient || db.model('Ingredient', IngredientSchema);
 
     switch(method) {
         case 'GET':
