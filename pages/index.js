@@ -178,9 +178,14 @@ export default function App() {
 
   function getIngredients(id) {
     const parsedId = parseFloat(id);
-    const recipe = recipes.find(element=>element.id === parsedId).ingredients
-
-    return recipe.map(ingredient=>` <span>${ingredient.name}${ingredient.amount ? (' (' + ingredient.amount + ')') : ''}</span>`)
+    if (apiRecipes.length) {
+      console.log(apiRecipes, ' here are the api recipes')
+      const recipe = apiRecipes.find(element=>element.id === parsedId).ingredients
+  
+      return recipe.map(ingredient=>` <span>${ingredient.name}${ingredient.amount ? (' (' + ingredient.amount + ')') : ''}</span>`)
+    } else {
+      alert('No recipes!')
+    }
   }
 
   function addIngredientInput(num) {
