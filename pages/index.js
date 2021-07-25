@@ -56,7 +56,6 @@ export default function App() {
     axios
     .get('/api/recipes')
     .then(recipes => {
-      console.log(recipes.data.recipes, 'here')
       setApiRecipes(recipes.data.recipes)
     })
     .catch(err => console.log(err))
