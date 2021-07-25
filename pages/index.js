@@ -61,33 +61,6 @@ export default function App() {
     .catch(err => console.log(err))
   }, [])
 
-  // add external events
-  const addRecipe = () => {
-    let myresult;
-    // axios call- if good show
-    Alert.fire({
-      title: 'Recipe FORM Form',
-      html: `
-        <input type="text" id="name" class="swal2-input" placeholder="Recipe Name">
-        <input type="color" id="color" value="ffffff">
-      `,
-      confirmButtonText: 'Submit',
-      focusConfirm: false,
-      preConfirm: () => {
-        const name = Alert.getPopup().querySelector('#name').value
-        const color = Alert.getPopup().querySelector('#color').value
-        if (!name || !color) {
-          Alert.showValidationMessage(`Please enter name and color`)
-        }
-        return { name: name, color: color }
-      }
-    }).then((result) => {
-      myresult = result;
-      addIngredient(true)
-    })
-
-  };
-
   // Recursive function
   function addIngredient(bool, increment) {
     let num = 1;
