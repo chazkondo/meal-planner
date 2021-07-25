@@ -66,6 +66,7 @@ export default function App() {
     console.log(eventInfo.draggedEl.getAttribute("name"), 'hello?')
     const newEvent = {
       id: eventInfo.draggedEl.getAttribute("data-id"),
+      title: eventInfo.draggedEl.getAttribute("name"),
       name: eventInfo.draggedEl.getAttribute("name"),
       color: eventInfo.draggedEl.getAttribute("data-color"),
       _date: eventInfo.event.start,
