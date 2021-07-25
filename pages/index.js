@@ -177,11 +177,9 @@ export default function App() {
   }
 
   function getIngredients(id) {
-    const parsedId = parseFloat(id);
-    console.log(parsedId, 'the parsed id')
     if (apiRecipes.length) {
       console.log(apiRecipes, ' here are the api recipes')
-      const recipe = apiRecipes.find(element=>element._id === parsedId).ingredients
+      const recipe = apiRecipes.find(element=>element._id === id).ingredients
   
       return recipe.map(ingredient=>` <span>${ingredient.name}${ingredient.amount ? (' (' + ingredient.amount + ')') : ''}</span>`)
     } else {
@@ -201,7 +199,7 @@ export default function App() {
       title: eventClick.event.title + '<div style="font-size: 20">' + eventClick.event.start.toString().slice(0, 15) + '</div>',
       html:
       `<div>` +
-        getIngredients(eventClick.event._def.publicId) +
+        getIngredients(eventClick.event._def.extendedProps._id) +
       '</div>',
 
       showCancelButton: true,
