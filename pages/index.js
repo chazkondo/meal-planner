@@ -181,9 +181,8 @@ export default function App() {
       console.log(apiRecipes, ' here are the api recipes')
       const recipe = apiRecipes.find(element=>element._id === id).ingredients
       console.log(recipe, ' wait what is here?')
-      const slice = recipe.amount.slice()
   
-      return recipe.map((ingredient, i)=>` <span>${ingredient.name}${slice[i] ? (' (' + slice[i] + ')') : ''}</span>`)
+      return recipe.map((ingredient, i)=>` <span>${ingredient.name}${recipe[i] ? (' (' + recipe[i] + ')') : ''}</span>`)
     } else {
       alert('No recipes!')
     }
