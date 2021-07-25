@@ -61,41 +61,6 @@ export default function App() {
     .catch(err => console.log(err))
   }, [])
 
-  // Recursive function
-  function addIngredient(bool, increment) {
-    let num = 1;
-    if (increment) {
-      num = num + increment
-    }
-    if (bool) {
-      Alert.fire({
-        title: 'Ingredient #' + num,
-        html: `
-          <input type="text" id="name" class="swal2-input" placeholder="Ingredient">
-          <div>
-            Check box if adding another ingredient.
-            <input type="checkbox" id="checkbox" class="swal2-input">
-          </div>
-        `,
-        confirmButtonText: 'Submit',
-        focusConfirm: false,
-        preConfirm: () => {
-          const name = Alert.getPopup().querySelector('#name').value
-          const checkbox = Alert.getPopup().querySelector('#checkbox').checked
-          if (!name) {
-            Alert.showValidationMessage(`Please enter name`)
-          }
-          return { name: name, checkbox: checkbox }
-        }
-      })
-      .then(result =>{
-        addIngredient(result.value.checkbox, num)
-      })
-    } else {
-      alert('ELSE WAS HIT')
-    }
-  }
-
   // handle event receive
   const handleEventReceive = (eventInfo) => {
     console.log(eventInfo.draggedEl.getAttribute("name"), 'hello?')
