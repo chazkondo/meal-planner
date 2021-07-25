@@ -196,6 +196,7 @@ export default function App() {
   }
 
   function eventClick(eventClick) {
+    console.log(eventClick, ' wait what is here!?!')
     Alert.fire({
       title: eventClick.event.title + '<div style="font-size: 20">' + eventClick.event.start.toString().slice(0, 15) + '</div>',
       html:
