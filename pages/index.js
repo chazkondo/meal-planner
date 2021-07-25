@@ -56,6 +56,7 @@ export default function App() {
     axios
     .get('/api/recipes')
     .then(recipes => {
+      recipes.data.recipes.map(recipe => recipe.title = recipe.name)
       setApiRecipes(recipes.data.recipes)
     })
     .catch(err => console.log(err))
@@ -145,7 +146,7 @@ export default function App() {
 
   return (
     <div className="App">
-      <div onClick={()=>console.log(calendar, 'calendar')} className="recipe-wrapper">
+      <div onClick={()=>console.log(apiRecipes, 'calendar')} className="recipe-wrapper">
         <div className="recipe-title flex-center">
           <Link href="/items">
             <a className="link">Add Grocery Item</a>
