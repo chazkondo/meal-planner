@@ -132,7 +132,7 @@ export default function App() {
       showCancelButton: true,
       confirmButtonColor: "#d33",
       cancelButtonColor: "#3085d6",
-      confirmButtonText: "Remove Event",
+      confirmButtonText: "Remove",
       cancelButtonText: "Close",
     }).then((result) => {
       if (result.value) {
