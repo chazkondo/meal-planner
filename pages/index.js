@@ -178,12 +178,9 @@ export default function App() {
 
   function getIngredients(id) {
     if (apiRecipes.length) {
-      console.log(apiRecipes, ' here are the api recipes')
       const recipe = apiRecipes.find(element=>element._id === id)
       const recipeIngredients = recipe.ingredients
       const amountArr = recipe.amount
-
-      console.log(amountArr, ' wait what is here?')
   
       return recipeIngredients.map((ingredient, i)=>` <span>${ingredient.name}${amountArr[i] ? (' (' + amountArr[i] + ')') : ''}</span>`)
     } else {
@@ -200,7 +197,7 @@ export default function App() {
   function eventClick(eventClick) {
     console.log(eventClick, ' wait what is here!?!')
     Alert.fire({
-      title: eventClick.event.title + '<div style="font-size: 20">' + eventClick.event.start.toString().slice(0, 15) + '</div>',
+      title: eventClick.event._def.extendedProps.name + '<div style="font-size: 20">' + eventClick.event.start.toString().slice(0, 15) + '</div>',
       html:
       `<div>` +
         getIngredients(eventClick.event._def.extendedProps._id) +
