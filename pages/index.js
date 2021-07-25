@@ -118,12 +118,6 @@ export default function App() {
     }
   }
 
-  function addIngredientInput(num) {
-    num = num + 1;
-
-    return `<input type="text" id="name" class="swal2-input" placeholder="Ingredient">`
-  }
-
   function eventClick(eventClick) {
     console.log(eventClick, ' wait what is here!?!')
     Alert.fire({
