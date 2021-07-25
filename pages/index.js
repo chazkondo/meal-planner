@@ -185,7 +185,7 @@ export default function App() {
 
       console.log(amountArr, ' wait what is here?')
   
-      return recipeIngredients.map((ingredient, i)=>` <span>${ingredient.name}${recipe[i] ? (' (' + recipe[i] + ')') : ''}</span>`)
+      return recipeIngredients.map((ingredient, i)=>` <span>${ingredient.name}${amountArr[i] ? (' (' + amountArr[i] + ')') : ''}</span>`)
     } else {
       alert('No recipes!')
     }
