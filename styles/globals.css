@@ -110,3 +110,7 @@ a {
     width: 95vw;
   }
 }
+
+.fc-popover {
+  z-index: 10 !important;
+}

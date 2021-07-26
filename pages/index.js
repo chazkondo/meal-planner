@@ -66,12 +66,11 @@ export default function App() {
   const handleEventReceive = (eventInfo) => {
     console.log(eventInfo, 'where is the color?')
     const newEvent = {
-      id: eventInfo.draggedEl.getAttribute("data-id"),
+      id: eventInfo.event._def.extendedProps._id,
       title: eventInfo.draggedEl.getAttribute("name"),
       name: eventInfo.draggedEl.getAttribute("name"),
       color: eventInfo.event._def.ui.backgroundColor,
       _date: eventInfo.event.start,
-      custom: eventInfo.draggedEl.getAttribute("data-custom"),
       _instance: eventInfo.event._instance.defId,
     };
 
