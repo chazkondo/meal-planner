@@ -76,14 +76,6 @@ export default function App() {
     .catch(err => console.log(err))
   }, [])
 
-  useEffect(()=>{
-    console.log('put use effect being hit')
-    axios
-      .put('/api/calendar', {calendar})
-      .then(response => console.log(response, ' ? something response for calendar put?'))
-      .catch(err=> console.log(err, ' an error with calendar put'))
-  }, [calendar])
-
   // handle event receive
   const handleEventReceive = (eventInfo) => {
     console.log(eventInfo, 'where is the color?')
@@ -119,6 +111,13 @@ export default function App() {
       //   };
       // });
     };
+
+  function updateCalendarDB() {
+    axios
+    .put('/api/calendar', {calendar})
+    .then(response => console.log(response, ' ? something response for calendar put?'))
+    .catch(err=> console.log(err, ' an error with calendar put'))
+  }
 
   function handleCheck(e) {
     if (e.target.checked) {
