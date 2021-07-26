@@ -1,5 +1,5 @@
 import dbConnect from '../../../utils/dbConnect';
-import Recipe from '../../../models/Recipe';
+import Calendar from '../../../models/Recipe';
 import Ingredient from '../../../models/Ingredient';
 import { syncIndexes } from '../../../models/Connections';
 // import Connections from '../../../models/Connections';
@@ -7,7 +7,7 @@ import { syncIndexes } from '../../../models/Connections';
 dbConnect();
 
 
-export default async function recipeSwitch(req, res){
+export default async function calendarSwitch(req, res){
     const {method} = req;
 
     switch(method) {
