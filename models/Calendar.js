@@ -5,18 +5,6 @@ const CalendarSchema = new mongoose.Schema({
         type: [Schema.Types.ObjectId],
         ref: 'Ingredient',
     }],
-    amount: [{
-        type: String,
-        required: [false]
-    }],
-    color: {
-        type: String,
-        required: [true, 'Please add a hex color']
-    },
-	date: {
-        type: Date,
-        required: [true]
-    },
 	signature: {
 		type: String,
 		required: [true, 'Please provide a signature']
