@@ -56,45 +56,71 @@ export default async function calendarSwitch(req, res){
             }
             break;
         case 'PUT':
-            try {
-                // const forwarded = req.headers['x-forwarded-for'];
-                // const ip = forwarded ? forwarded.split(/, /)[0] : req.connection.remoteAddress
-                // const existingRecord = await Connections.find({connection: ip})
-                // if (existingRecord.length) {
-                //     if (existingRecord[0].attempt >= 4) {
-                //         return res.status(200).json({success: false, blacklist: true})
-                //     }
-                //     if (req.body.password === process.env.PASSWORD || req.body.password === process.env.PASSWORD1 || req.body.password === process.env.PASSWORD2) {
-                //         let signature;
-                //         if (req.body.password === process.env.PASSWORD) {
-                //             signature = 'Mom'
-                //         } else if (req.body.password === process.env.PASSWORD1) {
-                //             signature = 'Dad'
-                //         } else if (req.body.password === process.env.PASSWORD2) {
-                //             signature = 'Grandma'
-                //         }
-                // if (isConfirmed) {
-
-                console.log(req.body, ' something was sent to the back end')
-                    // const data = { entries: [...req.body.calendar], signature: 'Chaz' }
-                    // const entries = await Calendar.create(data)
-    
-                    // res.status(201).json({success: true, entries})
-                // } 
-                // else {
-                //     res.status(400).json({success: false, message: 'Invalid'})
-                // }
-                //     } else {
-                //         res.status(400).json({success: false, message: 'Invalid password'})
-                //     }
-                // }
-            } catch (error) {
-                console.log(error)
-                res.status(400).json({success: false})
-            }
+            await updateUser(req, res);
             break;
         default:
             res.status(400).json({success: false, default: true})
             break;
     }
+
 }
+
+    //change organization
+    export const updateUser = async (req, res) => {
+        const db = await dbConnect();
+      
+        const Session =
+          mongoose.models?.Session || db.model("Session", SessionSchema);
+        const User = mongoose.models?.User || db.model("User", UserSchema);
+      
+        const session = await getSession({ req });
+        const mongooseSession = await mongoose.startSession();
+      
+        const { _id: newOrganizationId } = req.body;
+      
+        try {
+          mongooseSession.startTransaction();
+      
+          const userArr = await Session.findOne(
+            { accessToken: session.accessToken },
+            "userId",
+            { mongooseSession }
+          );
+      
+          const [userId] = userArr.userId;
+      
+          const userDoc = await User.findOne({ _id: userId }, "organizations", {
+            mongooseSession,
+          }).lean();
+      
+          const newOrganizationInfo = userDoc.organizations.find(
+            (org) => `${org.organization}` === newOrganizationId
+          );
+      
+          await User.updateOne(
+            { _id: userId, email: session.user.email },
+            {
+              currentOrganization: newOrganizationInfo,
+            },
+            { mongooseSession }
+          );
+      
+          await mongooseSession.commitTransaction();
+          mongooseSession.endSession();
+      
+          res.status(200).json({
+            success: true,
+            message: "Successfully updated user current organization.",
+          });
+        } catch (err) {
+          console.log("ERROR?", err.message);
+      
+          await mongooseSession.abortTransaction();
+          mongooseSession.endSession();
+      
+          res.status(400).json({
+            success: false,
+            message: "Failed to update user current organization.",
+          });
+        }
+      };
