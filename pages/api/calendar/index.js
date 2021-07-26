@@ -69,10 +69,6 @@ export default async function calendarSwitch(req, res){
     export const updateUser = async (req, res) => {
         const db = await dbConnect();
       
-        const Session =
-          mongoose.models?.Session || db.model("Session", SessionSchema);
-        const User = mongoose.models?.User || db.model("User", UserSchema);
-      
         const session = await getSession({ req });
         const mongooseSession = await mongoose.startSession();
       
