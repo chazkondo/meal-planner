@@ -14,8 +14,7 @@ const Recipe = memo(({ item }) => {
   useEffect(() => {
     let draggable = new Draggable(elRef.current, {
       eventData: function () {
-        console.log(item, 'memo wat?')
-        return { ...item, color: null, create: true };
+        return { ...item, create: true };
       }
     });
 
