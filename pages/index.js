@@ -117,8 +117,8 @@ export default function App() {
   function updateCalendarDB(item) {
     axios
       .post('/api/calendar', {calendar: [...calendar, item]})
-      .then(response => console.log(response, ' ? something response for calendar put?'))
-      .catch(err=> console.log(err, ' an error with calendar put'))
+      .then(response => console.log(response, ' ? something response for calendar post?'))
+      .catch(err=> console.log(err, ' an error with calendar post'))
   }
 
   function handleCheck(e) {
