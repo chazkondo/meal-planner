@@ -73,7 +73,10 @@ export default function App() {
         setFlag(1)
       }
       for (let i=0; i<calendarEntries.data.calendarEntries.length; i++) {
-        calendarEntries.data.calendarEntries[i]._date = new Date(calendarEntries.data.calendarEntries[i]._date)
+        calendarEntries.data.calendarEntries[i]._date = new Date(calendarEntries.data.calendarEntries[i]._date);
+        calendarEntries.data.calendarEntries[i].start = new Date(calendarEntries.data.calendarEntries[i]._date);
+        calendarEntries.data.calendarEntries[i].end = new Date(calendarEntries.data.calendarEntries[i]._date);
+        calendarEntries.data.calendarEntries[i].name = calendarEntries.data.calendarEntries[i].title
       }
       updateCalendar(calendarEntries.data.calendarEntries)
     })
