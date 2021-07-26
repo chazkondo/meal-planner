@@ -37,11 +37,11 @@ export default async function calendarSwitch(req, res){
                 //             signature = 'Grandma'
                 //         }
                 // if (isConfirmed) {
-                    console.log(req.body, ' something was sent to the back end')
-                    const data = {entry: {...req.body}, signature: 'test'}
-                    const entries = await Calendar.create(data)
+                    const data = {...req.body, signature: 'test'}
+                    console.log(data, 'da crap?')
+                    // const entries = await Calendar.create(data)
     
-                    res.status(201).json({success: true, entries})
+                    // res.status(201).json({success: true, entries})
                 // } 
                 // else {
                 //     res.status(400).json({success: false, message: 'Invalid'})
