@@ -102,6 +102,7 @@ export default function App() {
 
     // handle event move
     const handleEventMove = (e) => {
+      console.log('this fired')
       const event = calendar.find(item=>item._instance === e.event._instance.defId)
       event._date = e.event.start
       // const newEvent = {
