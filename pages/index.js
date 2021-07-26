@@ -62,6 +62,15 @@ export default function App() {
     .catch(err => console.log(err))
   }, [])
 
+  useEffect(()=>{
+    axios
+    .get('/api/calendar')
+    .then(calendarEntries => {
+      console.log(calendarEntries, ': CALENDAR ENTRIES')
+    })
+    .catch(err => console.log(err))
+  }, [])
+
   // handle event receive
   const handleEventReceive = (eventInfo) => {
     console.log(eventInfo, 'where is the color?')
