@@ -91,6 +91,7 @@ export default function App() {
 
   // handle event receive
   const handleEventReceive = (eventInfo) => {
+
     const newEvent = {
       id: eventInfo.event._def.extendedProps._id,
       title: eventInfo.draggedEl.getAttribute("name"),
@@ -145,7 +146,7 @@ export default function App() {
   function getIngredients(id) {
     if (apiRecipes.length) {
       console.log(id, 'wat da id?')
-      const recipe = apiRecipes.find(element=>{console.log(element, 'what da element here wat?'); return element._id === id})
+      const recipe = apiRecipes.find(element=>element._id === id)
       const recipeIngredients = recipe.ingredients
       const amountArr = recipe.amount
   
