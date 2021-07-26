@@ -12,7 +12,7 @@ export default async function calendarSwitch(req, res){
             try {
                 const calendarEntries = await Calendar.find({})
 
-                res.status(200).json({success: true, recipes})
+                res.status(200).json({success: true, calendarEntries})
             } catch (error) {
                 console.log(error, 'what is the error here')
                 res.status(400).json({success: false})
