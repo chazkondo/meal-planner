@@ -82,7 +82,7 @@ export default function App() {
         calendarEntries.data.calendarEntries[i].allDay = true;
         calendarEntries.data.calendarEntries[i].start = new Date(calendarEntries.data.calendarEntries[i]._date);
         calendarEntries.data.calendarEntries[i].name = calendarEntries.data.calendarEntries[i].title;
-        calendarEntries.data.calendarEntries[i]._id = calendarEntries.data.calendarEntries[i].id
+        // calendarEntries.data.calendarEntries[i]._id = calendarEntries.data.calendarEntries[i].id
       }
       updateCalendar(calendarEntries.data.calendarEntries)
     })
@@ -146,7 +146,7 @@ export default function App() {
   function getIngredients(id) {
     if (apiRecipes.length) {
       console.log(id, 'wat da id?')
-      const recipe = apiRecipes.find(element=>element._id === id)
+      const recipe = apiRecipes.find(element=>{console.log(element, 'da crap here again?'), element.id === id})
       const recipeIngredients = recipe.ingredients
       const amountArr = recipe.amount
   
@@ -157,6 +157,7 @@ export default function App() {
   }
 
   function eventClick(eventClick) {
+    console.log(eventClick.event, 'send the correct id')
     Alert.fire({
       title: eventClick.event._def.extendedProps.name + '<div style="font-size: 20">' + eventClick.event.start.toString().slice(0, 15) + '</div>',
       html:
