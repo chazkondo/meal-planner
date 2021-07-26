@@ -13,7 +13,7 @@ export default async function calendarSwitch(req, res){
     switch(method) {
         case 'GET':
             try {
-                const recipes = await Recipe.find({}).populate("ingredients", "_id name type")
+                const recipes = await Calendar.find({}).populate("ingredients", "_id name type")
                 .exec();
 
                 res.status(200).json({success: true, recipes})
