@@ -1,7 +1,7 @@
 import mongoose, { Schema } from "mongoose";
 
 const CalendarSchema = new mongoose.Schema({
-	ingredients : [{
+	entries : [{
         type: [Schema.Types.ObjectId],
         ref: 'Ingredient',
     }],
