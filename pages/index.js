@@ -66,7 +66,7 @@ export default function App() {
     axios
     .get('/api/calendar')
     .then(calendarEntries => {
-      console.log(calendarEntries, ': CALENDAR ENTRIES')
+      updateCalendar(calendarEntries)
     })
     .catch(err => console.log(err))
   }, [])
