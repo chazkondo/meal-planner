@@ -112,9 +112,9 @@ export default function App() {
       // });
     };
 
-  function updateCalendarDB() {
+  function updateCalendarDB(item) {
     axios
-    .put('/api/calendar', {calendar})
+    .put('/api/calendar', {calendar: [...calendar, item]})
     .then(response => console.log(response, ' ? something response for calendar put?'))
     .catch(err=> console.log(err, ' an error with calendar put'))
   }
