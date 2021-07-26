@@ -68,11 +68,12 @@ export default function App() {
     axios
     .get('/api/calendar')
     .then(calendarEntries => {
-      console.log(calendarEntries.data.calendarEntries, '???')
+      console.log(calendarEntries, '???')
       if (!calendarEntries.data.calendarEntries.length) {
         setFlag(1)
       }
-      updateCalendar([...calendarEntries.data.calendarEntries])
+      const data = calendarEntries.data.calendarEntries.map(entry => entry._date = new Date(entry._date))
+      updateCalendar(data)
     })
     .catch(err => console.log(err))
   }, [])
