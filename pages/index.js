@@ -72,7 +72,7 @@ export default function App() {
       if (!calendarEntries.data.calendarEntries.length) {
         setFlag(1)
       }
-      updateCalendar([...calendarEntries.data.calendarEntries.entries])
+      updateCalendar([...calendarEntries.data.calendarEntries])
     })
     .catch(err => console.log(err))
   }, [])

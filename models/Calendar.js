@@ -1,14 +1,14 @@
 import mongoose from "mongoose";
 
 const CalendarSchema = new mongoose.Schema({
-	entries : [{
+	entry : {
         id: String,
         color: String,
         name: String,
         title: String,
         _date: Date,
         _instance: String
-    }],
+    },
 	signature: {
 		type: String,
 		required: [true, 'Please provide a signature']
