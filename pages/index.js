@@ -69,12 +69,19 @@ export default function App() {
     .get('/api/calendar')
     .then(calendarEntries => {
       if (!calendarEntries.data.calendarEntries.length) {
-
+        setFlag(1)
       }
       updateCalendar(calendarEntries.data.calendarEntries)
     })
     .catch(err => console.log(err))
   }, [])
+
+  useEffect(()=>{
+    axios
+      .put('/api/calendar', {calendar})
+      .then(response => console.log(response, ' ? something response for calendar put?'))
+      .catch(err=> console.log(err, ' an error with calendar put'))
+  }, [calendar])
 
   // handle event receive
   const handleEventReceive = (eventInfo) => {
