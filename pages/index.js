@@ -51,6 +51,8 @@ export default function App() {
   const [apiRecipes, setApiRecipes] = useState([])
   const [calendar, updateCalendar] = useState([])
   const [ingredientNum, setIngredientNum] = useState(1)
+
+  const [noEntriesInDatabaseFlag, setFlag] = useState(0)
   
   useEffect(()=>{
     axios
@@ -66,7 +68,10 @@ export default function App() {
     axios
     .get('/api/calendar')
     .then(calendarEntries => {
-      updateCalendar(calendarEntries)
+      if (!calendarEntries.data.calendarEntries.length) {
+
+      }
+      updateCalendar(calendarEntries.data.calendarEntries)
     })
     .catch(err => console.log(err))
   }, [])
