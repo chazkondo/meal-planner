@@ -2,8 +2,12 @@ import mongoose, { Schema } from "mongoose";
 
 const CalendarSchema = new mongoose.Schema({
 	entries : [{
-        type: [Schema.Types.ObjectId],
-        ref: 'Ingredient',
+        id: String,
+        color: String,
+        name: String,
+        title: String,
+        _date: Date,
+        _instance: String
     }],
 	signature: {
 		type: String,
