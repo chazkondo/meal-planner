@@ -77,6 +77,7 @@ export default function App() {
   }, [])
 
   useEffect(()=>{
+    console.log('put use effect being hit')
     axios
       .put('/api/calendar', {calendar})
       .then(response => console.log(response, ' ? something response for calendar put?'))
