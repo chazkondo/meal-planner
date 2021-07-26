@@ -14,7 +14,8 @@ const Recipe = memo(({ item }) => {
   useEffect(() => {
     let draggable = new Draggable(elRef.current, {
       eventData: function () {
-        return { ...item, create: true };
+
+        return { ...item, create: false };
       }
     });
 
@@ -96,8 +97,8 @@ export default function App() {
       _instance: eventInfo.event._instance.defId,
     };
 
-    updateCalendarDB(newEvent)
-    updateCalendar(previous=>[...previous, newEvent]);
+    // updateCalendarDB(newEvent)
+    // updateCalendar(previous=>[...previous, newEvent]);
   };
 
     // handle event move
