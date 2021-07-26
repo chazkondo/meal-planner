@@ -69,37 +69,25 @@ export default async function calendarSwitch(req, res){
     export const updateUser = async (req, res) => {
         const db = await dbConnect();
       
-        const session = await getSession({ req });
         const mongooseSession = await mongoose.startSession();
-      
-        const { _id: newOrganizationId } = req.body;
-      
+            
         try {
           mongooseSession.startTransaction();
       
-          const userArr = await Session.findOne(
-            { accessToken: session.accessToken },
-            "userId",
-            { mongooseSession }
-          );
+        //   const userArr = await Session.findOne(
+        //     { accessToken: session.accessToken },
+        //     "userId",
+        //     { mongooseSession }
+        //   );
       
-          const [userId] = userArr.userId;
       
-          const userDoc = await User.findOne({ _id: userId }, "organizations", {
-            mongooseSession,
-          }).lean();
-      
-          const newOrganizationInfo = userDoc.organizations.find(
-            (org) => `${org.organization}` === newOrganizationId
-          );
-      
-          await User.updateOne(
-            { _id: userId, email: session.user.email },
-            {
-              currentOrganization: newOrganizationInfo,
-            },
-            { mongooseSession }
-          );
+        //   await User.updateOne(
+        //     { _id: userId, email: session.user.email },
+        //     {
+        //       currentOrganization: newOrganizationInfo,
+        //     },
+        //     { mongooseSession }
+        //   );
       
           await mongooseSession.commitTransaction();
           mongooseSession.endSession();
