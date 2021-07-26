@@ -8,6 +8,12 @@ import Link from 'next/link'
 import Alert from "sweetalert2";
 import axios from "axios";
 
+Date.prototype.addDays = function(days) {
+  var date = new Date(this.valueOf());
+  date.setDate(date.getDate() + days);
+  return date;
+}
+
 const Recipe = memo(({ item }) => {
   let elRef = useRef(null);
 
@@ -73,11 +79,10 @@ export default function App() {
         setFlag(1)
       }
       for (let i=0; i<calendarEntries.data.calendarEntries.length; i++) {
-        calendarEntries.data.calendarEntries[i].date = new Date(calendarEntries.data.calendarEntries[i]._date);
+        calendarEntries.data.calendarEntries[i].allDay = true;
         calendarEntries.data.calendarEntries[i].start = new Date(calendarEntries.data.calendarEntries[i]._date);
-        calendarEntries.data.calendarEntries[i].end = new Date(calendarEntries.data.calendarEntries[i]._date);
         calendarEntries.data.calendarEntries[i].name = calendarEntries.data.calendarEntries[i].title;
-        calendarEntries.data.calendarEntries[i].backgroundColor = calendarEntries.data.calendarEntries[i].color
+        calendarEntries.data.calendarEntries[i]._id = calendarEntries.data.calendarEntries[i].id
       }
       updateCalendar(calendarEntries.data.calendarEntries)
     })
@@ -140,6 +145,7 @@ export default function App() {
 
   function getIngredients(id) {
     if (apiRecipes.length) {
+      console.log(id, 'wat da id?')
       const recipe = apiRecipes.find(element=>element._id === id)
       const recipeIngredients = recipe.ingredients
       const amountArr = recipe.amount
