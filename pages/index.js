@@ -72,8 +72,10 @@ export default function App() {
       if (!calendarEntries.data.calendarEntries.length) {
         setFlag(1)
       }
-      const data = calendarEntries.data.calendarEntries.map(entry => entry._date = new Date(entry._date))
-      updateCalendar(data)
+      for (let i=0; i<calendarEntries.data.calendarEntries.length; i++) {
+        calendarEntries.data.calendarEntries[i]._date = new Date(calendarEntries.data.calendarEntries[i]._date)
+      }
+      updateCalendar(calendarEntries.data.calendarEntries)
     })
     .catch(err => console.log(err))
   }, [])
