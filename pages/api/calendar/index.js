@@ -75,10 +75,9 @@ export default async function calendarSwitch(req, res){
                 //         }
                 // if (isConfirmed) {
 
-                console.log(req.body, ' something was sent to the bag end')
-                    // const amount = req.body.ingredients.map(ingredient => ingredient.amount || '')
-                    // const data = {...req.body, password: null, date: Date.now(), signature: 'Chaz', amount}
-                    // const recipes = await Recipe.create(data)
+                console.log(req.body, ' something was sent to the back end')
+                    const data = { entries: [...req.body.calendar], signature: 'Chaz' }
+                    const recipes = await Recipe.create(data)
     
                     // res.status(201).json({success: true, recipes})
                 // } 
