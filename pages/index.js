@@ -91,7 +91,6 @@ export default function App() {
 
   // handle event receive
   const handleEventReceive = (eventInfo) => {
-    console.log(eventInfo, 'where is the color?')
     const newEvent = {
       id: eventInfo.event._def.extendedProps._id,
       title: eventInfo.draggedEl.getAttribute("name"),
