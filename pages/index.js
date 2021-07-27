@@ -115,7 +115,7 @@ export default function App() {
       console.log(e, ' find the new date please ... e.revert() should be good for axios call')
       // console.log(event, 'the event')
       // updateCalendarDB(event)
-      // const movedFromDate = event._date;
+      // const movedFromDate = event._date
       event._date = e.event.start
       console.log(event, 'did a change occur?')
 
