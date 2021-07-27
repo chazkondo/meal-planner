@@ -112,7 +112,6 @@ export default function App() {
       // console.log(calendar, 'calendar yo')
       const event = calendar.find(item => item._id === id)
       console.log(event, ' this should be the correct event now ?')
-      console.log(e, ' find the new date please ... e.revert() should be good for axios call')
       event._date = e.event.start
       console.log(event, 'did a change occur?')
 
