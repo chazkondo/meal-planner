@@ -62,6 +62,7 @@ export default function App() {
 
   const [dbUpdatedFlag, setDbUpdatedFlag] = useState(0)
   const [dbChange, detectPostToDB] = useState(0)
+  const [currentEvent, setCurrentEvent] = useState({})
   
   useEffect(()=>{
     axios
