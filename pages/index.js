@@ -77,7 +77,7 @@ export default function App() {
     .then(calendarEntries => {
       console.log(calendarEntries, 'this was hit => CALENDAR ENTRIES')
       for (let i=0; i<calendarEntries.data.calendarEntries.length; i++) {
-        if() {}
+        if(calendarEntries) { // do nothing}
         calendarEntries.data.calendarEntries[i].allDay = true;
         calendarEntries.data.calendarEntries[i].start = new Date(calendarEntries.data.calendarEntries[i]._date);
         calendarEntries.data.calendarEntries[i].name = calendarEntries.data.calendarEntries[i].title;
