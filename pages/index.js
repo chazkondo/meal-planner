@@ -100,7 +100,7 @@ export default function App() {
       _instance: e.event._instance.defId,
     };
 
-    postToCalendarDB(newEvent)
+    postToCalendarDB(newEvent, e)
     updateCalendar(previous=>[...previous, newEvent]);
   };
 
