@@ -90,6 +90,25 @@ export default function App() {
       updateCalendar([...calendarEntries.data.calendarEntries])
     })
     .catch(err => console.log(err))
+  }, [])
+
+  useEffect(()=>{
+    axios
+    .get('/api/calendar')
+    .then(calendarEntries => {
+      console.log(calendarEntries, 'this was hit => CALENDAR ENTRIES')
+      for (let i=0; i<calendarEntries.data.calendarEntries.length; i++) {
+        if(calendarEntries.data.calendarEntries[i]._instance) { // do nothing} 
+          // check if the instance has already occurred
+        }
+        calendarEntries.data.calendarEntries[i].allDay = true;
+        calendarEntries.data.calendarEntries[i].start = new Date(calendarEntries.data.calendarEntries[i]._date);
+        calendarEntries.data.calendarEntries[i].name = calendarEntries.data.calendarEntries[i].title;
+        // calendarEntries.data.calendarEntries[i]._id = calendarEntries.data.calendarEntries[i].id
+      }
+      updateActualCalendar([...calendarEntries.data.calendarEntries])
+    })
+    .catch(err => console.log(err))
   }, [dbUpdatedFlag])
 
   // handle event receive
@@ -204,6 +223,7 @@ export default function App() {
           <Link href="/items">
             <a className="link">Add Grocery Item</a>
           </Link>
+          <h1>Test</h1>
         </div>
         <div id="all-recipes">
           {apiRecipes.map((item) => (
