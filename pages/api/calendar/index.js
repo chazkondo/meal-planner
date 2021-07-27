@@ -1,5 +1,6 @@
 import dbConnect from '../../../utils/dbConnect';
 import Calendar from '../../../models/Calendar';
+import mongoose from 'mongoose';
 
 dbConnect();
 
