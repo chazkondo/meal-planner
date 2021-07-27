@@ -123,13 +123,13 @@ export default function App() {
     };
 
     postToCalendarDB(newEvent, e)
-    // updateCalendar(previous=>[...previous, newEvent]);
+    updateCalendar(previous=>[...previous, newEvent]);
   };
 
     // handle event move
     const handleEventMove = (e) => {
       const id = e.event._def.extendedProps._id
-
+      console.log(id, 'do i get the id tho?')
       const event = actualCalendar.find(item => item._id === id)
 
 
@@ -218,7 +218,7 @@ export default function App() {
 
   return (
     <div className="App">
-      <div onClick={()=>console.log(calendar, 'calendar')} className="recipe-wrapper">
+      <div onClick={()=>console.log(actualCalendar, 'actual calendar')} className="recipe-wrapper">
         <div className="recipe-title flex-center">
           <Link href="/items">
             <a className="link">Add Grocery Item</a>
