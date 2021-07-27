@@ -74,6 +74,7 @@ export default async function calendarSwitch(req, res){
             
         try {
           mongooseSession.startTransaction();
+          console.log(req, 'what is being sent here?')
       
         //   const userArr = await Session.findOne(
         //     { accessToken: session.accessToken },
@@ -82,7 +83,7 @@ export default async function calendarSwitch(req, res){
         //   );
       
       
-        //   await User.updateOne(
+        //   await Calendar.updateOne(
         //     { _id: userId, email: session.user.email },
         //     {
         //       currentOrganization: newOrganizationInfo,
