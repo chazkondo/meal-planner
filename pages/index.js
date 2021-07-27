@@ -64,6 +64,7 @@ export default function App() {
     axios
     .get('/api/recipes')
     .then(recipes => {
+      console.log('THIS WAS HIT')
       recipes.data.recipes.map(recipe => recipe.title = recipe.name)
       setApiRecipes(recipes.data.recipes)
     })
@@ -108,7 +109,7 @@ export default function App() {
     // handle event move
     const handleEventMove = (e) => {
       const id = e.event._def.extendedProps._id
-      
+
       let event
       event = calendar.find(item => item._id === id)
 
