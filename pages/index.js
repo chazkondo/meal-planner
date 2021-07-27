@@ -128,6 +128,7 @@ export default function App() {
     };
 
     postToCalendarDB(newEvent, e)
+    console.log('this is being fired')
     updateCalendar(previous=>[...previous, newEvent]);
   };
 
@@ -169,7 +170,7 @@ export default function App() {
         setDbUpdatedFlag(previous => previous + 1)
         calendar[calendar.length]._id = response.data.entry._id
       })
-      .catch(err=> {e.revert();console.log(err, ' an error with calendar post')})
+      .catch(err=> {e.revert();console.log(err, ' an error with calendar postasdashdjk')})
   }
 
   function updateCalendarDB(item, e) {
