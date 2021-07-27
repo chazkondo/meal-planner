@@ -63,6 +63,8 @@ export default function App() {
   const [dbUpdatedFlag, setDbUpdatedFlag] = useState(0)
   const [dbChange, detectPostToDB] = useState(0)
   const [currentEvent, setCurrentEvent] = useState({})
+
+  const [theEvent, setTheEvent] = useState({})
   
   useEffect(()=>{
     axios
@@ -97,7 +99,7 @@ export default function App() {
 
   useEffect(()=>{
     if (dbChange) {
-      postToCalendarDB(newEvent, e)
+      postToCalendarDB(currentEvent, theEvent)
     }
   }, [dbChange])
 
@@ -136,6 +138,7 @@ export default function App() {
     };
 
     setCurrentEvent(newEvent)
+    setTheEvent(e)
     updateCalendar(previous=>[...previous, newEvent]);
     detectPostToDB(previous=>previous+1)
     console.log('this is being fired')
@@ -178,7 +181,7 @@ export default function App() {
         console.log(response, '  this is the response')
         setDbUpdatedFlag(previous => previous + 1)
         console.log(calendar, 'THIS IS THE CALENDAR OBJ WHAT?')
-        calendar[calendar.length]._id = response.data.entry._id
+        calendar[calendar.length-1]._id = response.data.entry._id
       })
       .catch(err=> {e.revert();console.log(err, ' an error with calendar postasdashdjk')})
   }
