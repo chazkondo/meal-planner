@@ -75,7 +75,7 @@ export default function App() {
     axios
     .get('/api/calendar')
     .then(calendarEntries => {
-      console.log(calendarEntries, '???')
+      console.log(calendarEntries, 'this was hit => CALENDAR ENTRIES')
       if (!calendarEntries.data.calendarEntries.length) {
         setFlag(1)
       }
