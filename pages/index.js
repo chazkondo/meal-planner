@@ -111,7 +111,7 @@ export default function App() {
       const id = e.event._def.extendedProps._id
 
       let event
-      event = calendar.find(item => item._id === id)
+      const event = calendar.find(item => item._id === id)
 
       if (!event) {
         event = calendar.find(item => item.id === id)
