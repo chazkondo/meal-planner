@@ -116,6 +116,7 @@ export default function App() {
       }
 
       event._date = e.event.start
+      console.log(event, 'test implementation')
 
       updateCalendarDB(event, e)
       // const newEvent = {
