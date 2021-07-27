@@ -56,6 +56,8 @@ export default function App() {
   const [weekendsVisible, setWeekendsVisible] = useState(true)
   const [apiRecipes, setApiRecipes] = useState([])
   const [calendar, updateCalendar] = useState([])
+
+  const [actualCalendar, updateActualCalendar] = useState([])
   const [ingredientNum, setIngredientNum] = useState(1)
 
   const [dbUpdatedFlag, setDbUpdatedFlag] = useState(0)
