@@ -132,7 +132,7 @@ export default function App() {
       // });
     };
 
-  function postToCalendarDB(item) {
+  function postToCalendarDB(item, e) {
     axios
       .post('/api/calendar', {...item})
       .then(response => {
