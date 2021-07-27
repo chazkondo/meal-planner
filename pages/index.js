@@ -89,8 +89,8 @@ export default function App() {
   }, [dbUpdatedFlag])
 
   // handle event receive
-  const handleEventReceive = (eventInfo) => {
-
+  const handleEventReceive = (eventInfo, e) => {
+    
     const newEvent = {
       id: eventInfo.event._def.extendedProps._id,
       title: eventInfo.draggedEl.getAttribute("name"),
