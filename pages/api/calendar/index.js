@@ -86,7 +86,7 @@ export default async function calendarSwitch(req, res){
       
       
           await Calendar.updateOne(
-            { _id, signature },
+            { _id },
             {
               ...req.body
             },
