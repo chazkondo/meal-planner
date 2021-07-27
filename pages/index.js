@@ -79,7 +79,8 @@ export default function App() {
     .then(calendarEntries => {
       console.log(calendarEntries, 'this was hit => CALENDAR ENTRIES')
       for (let i=0; i<calendarEntries.data.calendarEntries.length; i++) {
-        if(calendarEntries.data.calendarEntries[i]._instance) { // do nothing} 
+        if(!calendarEntries.data.calendarEntries[i]._id) { // do nothing} 
+          console.log(calendarEntries.data.calendarEntries[i], 'what is here')
           // check if the instance has already occurred
         }
         calendarEntries.data.calendarEntries[i].allDay = true;
