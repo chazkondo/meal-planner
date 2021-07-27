@@ -99,7 +99,7 @@ export default function App() {
     if (dbChange) {
       postToCalendarDB(newEvent, e)
     }
-  })
+  }, [dbChange])
 
   useEffect(()=>{
     if (dbUpdatedFlag) {
