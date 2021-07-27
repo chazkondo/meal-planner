@@ -167,6 +167,7 @@ export default function App() {
       .then(response => {
         console.log(response, '  this is the response')
         setDbUpdatedFlag(previous => previous + 1)
+        calendar[calendar.length-1]._id = response.data.entry._id
       })
       .catch(err=> {e.revert();console.log(err, ' an error with calendar post')})
   }
