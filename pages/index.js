@@ -20,6 +20,7 @@ const Recipe = memo(({ item }) => {
   useEffect(() => {
     let draggable = new Draggable(elRef.current, {
       eventData: function () {
+        console.log('THIS WAS HIT')
         return { ...item, create: true };
       }
     });
@@ -154,10 +155,12 @@ export default function App() {
       const event = actualCalendar.find(item => item._id === id)
       if (!event) {
         instance = e.event._instance.instanceID
+
+      } else {
+        event._date = e.event.start
       }
 
 
-      event._date = e.event.start
 
       updateCalendarDB(event, e)
       // const newEvent = {
@@ -252,7 +255,7 @@ export default function App() {
           <Link href="/items">
             <a className="link">Add Grocery Item</a>
           </Link>
-          <h1 onClick={()=>console.log('calendar length: ', calendar.length, 'actual cal length: ', actualCalendar.length)}>Test</h1>
+          <h1 onClick={()=>updateCalendar([])}>Test</h1>
         </div>
         <div id="all-recipes">
           {apiRecipes.map((item) => (
