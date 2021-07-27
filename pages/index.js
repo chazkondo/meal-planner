@@ -85,7 +85,7 @@ export default function App() {
         calendarEntries.data.calendarEntries[i].name = calendarEntries.data.calendarEntries[i].title;
         // calendarEntries.data.calendarEntries[i]._id = calendarEntries.data.calendarEntries[i].id
       }
-      updateCalendar(calendarEntries.data.calendarEntries)
+      updateCalendar([...calendarEntries.data.calendarEntries])
     })
     .catch(err => console.log(err))
   }, [dbUpdatedFlag])
@@ -102,7 +102,7 @@ export default function App() {
     };
 
     postToCalendarDB(newEvent, e)
-    updateCalendar(previous=>[...previous, newEvent]);
+    // updateCalendar(previous=>[...previous, newEvent]);
   };
 
     // handle event move
