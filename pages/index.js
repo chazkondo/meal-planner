@@ -140,7 +140,7 @@ export default function App() {
   function updateCalendarDB(item) {
     axios
     .put('/api/calendar', {...item})
-    .then(response => console.log(response, ' ? something response for calendar post?'))
+    .then(response => console.log(response,item , ' ? something response for calendar post?'))
     .catch(err=> console.log(err, ' an error with calendar post'))
   }
 
