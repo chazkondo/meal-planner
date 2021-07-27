@@ -95,7 +95,7 @@ export default async function calendarSwitch(req, res){
       
           res.status(200).json({
             success: true,
-            message: "Successfully updated user current organization.",
+            message: "Successful.",
           });
         } catch (err) {
           console.log("ERROR?", err.message);
