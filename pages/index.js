@@ -113,7 +113,6 @@ export default function App() {
       const event = calendar.find(item => item._id === id)
       console.log(event, ' this should be the correct event now ?')
       event._date = e.event.start
-      console.log(event, 'did a change occur?')
 
       updateCalendarDB(event, e)
       // const newEvent = {
