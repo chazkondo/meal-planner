@@ -86,9 +86,9 @@ export default async function calendarSwitch(req, res){
       
       
           await Calendar.updateOne(
-            { _id: userId, email: session.user.email },
+            { _id, signature },
             {
-              currentOrganization: newOrganizationInfo,
+              ...req.body
             },
             { mongooseSession }
           );
