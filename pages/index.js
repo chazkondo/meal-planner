@@ -107,7 +107,7 @@ export default function App() {
         calendarEntries.data.calendarEntries[i].name = calendarEntries.data.calendarEntries[i].title;
         // calendarEntries.data.calendarEntries[i]._id = calendarEntries.data.calendarEntries[i].id
       }
-      updateActualCalendar([...calendarEntries.data.calendarEntries])
+      updateCalendar([...calendarEntries.data.calendarEntries])
     })
     .catch(err => console.log(err))
   }, [dbUpdatedFlag])
