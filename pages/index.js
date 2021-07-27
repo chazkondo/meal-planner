@@ -111,7 +111,6 @@ export default function App() {
       const id = e.event._def.extendedProps._id
       // console.log(calendar, 'calendar yo')
       const event = calendar.find(item => item._id === id)
-      console.log(event, ' this should be the correct event now ?')
       event._date = e.event.start
 
       updateCalendarDB(event, e)
