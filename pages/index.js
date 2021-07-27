@@ -69,7 +69,7 @@ export default function App() {
       setApiRecipes(recipes.data.recipes)
     })
     .catch(err => console.log(err))
-  }, [calendar])
+  }, [])
 
   useEffect(()=>{
     axios
