@@ -59,6 +59,8 @@ export default function App() {
   const [ingredientNum, setIngredientNum] = useState(1)
 
   const [noEntriesInDatabaseFlag, setFlag] = useState(0)
+
+  const [dbUpdatedFlag, setDB]
   
   useEffect(()=>{
     axios
@@ -76,9 +78,6 @@ export default function App() {
     .get('/api/calendar')
     .then(calendarEntries => {
       console.log(calendarEntries, 'this was hit => CALENDAR ENTRIES')
-      if (!calendarEntries.data.calendarEntries.length) {
-        setFlag(1)
-      }
       for (let i=0; i<calendarEntries.data.calendarEntries.length; i++) {
         calendarEntries.data.calendarEntries[i].allDay = true;
         calendarEntries.data.calendarEntries[i].start = new Date(calendarEntries.data.calendarEntries[i]._date);
