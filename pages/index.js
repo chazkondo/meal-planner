@@ -109,7 +109,6 @@ export default function App() {
     const handleEventMove = (e) => {
       // console.log('this fired', e.event._def.extendedProps._id)
       const id = e.event._def.extendedProps._id
-      // console.log(calendar, 'calendar yo')
       const event = calendar.find(item => item._id === id)
       event._date = e.event.start
 
