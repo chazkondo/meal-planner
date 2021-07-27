@@ -90,7 +90,7 @@ export default function App() {
 
   // handle event receive
   const handleEventReceive = (eventInfo, e) => {
-    
+    console.log(e, 'does this exist?')
     const newEvent = {
       id: eventInfo.event._def.extendedProps._id,
       title: eventInfo.draggedEl.getAttribute("name"),
