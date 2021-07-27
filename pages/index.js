@@ -58,8 +58,6 @@ export default function App() {
   const [calendar, updateCalendar] = useState([])
   const [ingredientNum, setIngredientNum] = useState(1)
 
-  const [noEntriesInDatabaseFlag, setFlag] = useState(0)
-
   const [dbUpdatedFlag, setDB]
   
   useEffect(()=>{
