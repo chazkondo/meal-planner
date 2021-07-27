@@ -128,6 +128,7 @@ export default function App() {
 
     // handle event move
     const handleEventMove = (e) => {
+      // The issue happening here is that id is defaulting to recipe id when there hasn't been a refresh for the overall calendar obj
       const id = e.event._def.extendedProps._id
       console.log(id, 'do i get the id tho?')
       const event = actualCalendar.find(item => item._id === id)
