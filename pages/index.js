@@ -90,15 +90,14 @@ export default function App() {
   }, [dbUpdatedFlag])
 
   // handle event receive
-  const handleEventReceive = (eventInfo, e) => {
-    console.log(e, 'does this exist?')
+  const handleEventReceive = (e) => {
     const newEvent = {
-      id: eventInfo.event._def.extendedProps._id,
-      title: eventInfo.draggedEl.getAttribute("name"),
-      name: eventInfo.draggedEl.getAttribute("name"),
-      color: eventInfo.event._def.ui.backgroundColor,
-      _date: eventInfo.event.start,
-      _instance: eventInfo.event._instance.defId,
+      id: e.event._def.extendedProps._id,
+      title: e.draggedEl.getAttribute("name"),
+      name: e.draggedEl.getAttribute("name"),
+      color: e.event._def.ui.backgroundColor,
+      _date: e.event.start,
+      _instance: e.event._instance.defId,
     };
 
     postToCalendarDB(newEvent)
