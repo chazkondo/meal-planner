@@ -130,7 +130,7 @@ export default function App() {
     const handleEventMove = (e) => {
       const id = e.event._def.extendedProps._id
 
-      const event = calendar.find(item => item._id === id)
+      const event = actualCalendar.find(item => item._id === id)
 
 
       event._date = e.event.start
@@ -223,7 +223,7 @@ export default function App() {
           <Link href="/items">
             <a className="link">Add Grocery Item</a>
           </Link>
-          <h1>Test</h1>
+          <h1 onClick={()=>console.log('calendar length: ', calendar.length, 'actual cal length: ', actualCalendar.length)}>Test</h1>
         </div>
         <div id="all-recipes">
           {apiRecipes.map((item) => (
