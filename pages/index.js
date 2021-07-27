@@ -195,7 +195,7 @@ export default function App() {
   }
 
   function eventClick(eventClick) {
-    console.log(eventClick.event, 'send the correct id')
+    console.log(eventClick.event, ' EVENT BEING CLICKED ')
     Alert.fire({
       title: eventClick.event._def.extendedProps.name + '<div style="font-size: 20">' + eventClick.event.start.toString().slice(0, 15) + '</div>',
       html:
