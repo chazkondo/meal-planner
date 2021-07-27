@@ -85,7 +85,7 @@ export default function App() {
       updateCalendar(calendarEntries.data.calendarEntries)
     })
     .catch(err => console.log(err))
-  }, [])
+  }, [dbUpdatedFlag])
 
   // handle event receive
   const handleEventReceive = (eventInfo) => {
@@ -134,7 +134,10 @@ export default function App() {
   function postToCalendarDB(item) {
     axios
       .post('/api/calendar', {...item})
-      .then(response => console.log(response, ' ? something response for calendar post?'))
+      .then(response => {
+        console.log(response, '  this is the response')
+        setDbUpdatedFlag(previous => previous + 1)
+      })
       .catch(err=> console.log(err, ' an error with calendar post'))
   }
 
