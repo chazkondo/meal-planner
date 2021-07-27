@@ -77,7 +77,8 @@ export default function App() {
     .then(calendarEntries => {
       console.log(calendarEntries, 'this was hit => CALENDAR ENTRIES')
       for (let i=0; i<calendarEntries.data.calendarEntries.length; i++) {
-        if(calendarEntries) { // do nothing} 
+        if(calendarEntries.data.calendarEntries[i]._instance) { // do nothing} 
+          
         }
         calendarEntries.data.calendarEntries[i].allDay = true;
         calendarEntries.data.calendarEntries[i].start = new Date(calendarEntries.data.calendarEntries[i]._date);
@@ -139,7 +140,7 @@ export default function App() {
         console.log(response, '  this is the response')
         setDbUpdatedFlag(previous => previous + 1)
       })
-      .catch(err=> {console.log(err, ' an error with calendar post')})
+      .catch(err=> {e.revert();console.log(err, ' an error with calendar post')})
   }
 
   function updateCalendarDB(item, e) {
