@@ -134,6 +134,10 @@ export default function App() {
       .catch(err=> console.log(err, ' an error with calendar post'))
   }
 
+  function updateCalendarDB(item) {
+    
+  }
+
   function handleCheck(e) {
     if (e.target.checked) {
       setExpandedView(5)
