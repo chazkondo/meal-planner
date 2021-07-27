@@ -118,6 +118,8 @@ export default function App() {
       // const movedFromDate = event._date;
       event._date = e.event.start
       console.log(event, 'did a change occur?')
+
+      updateCalendarDB(event, e)
       // const newEvent = {
       //   id: eventInfo.draggedEl.getAttribute("data-id"),
       //   title: eventInfo.draggedEl.getAttribute("title"),
@@ -142,11 +144,11 @@ export default function App() {
       .catch(err=> console.log(err, ' an error with calendar post'))
   }
 
-  function updateCalendarDB(item) {
+  function updateCalendarDB(item, e) {
     axios
     .put('/api/calendar', {...item})
     .then(response => console.log(response, ' ? something response for calendar post?'))
-    .catch(err=> console.log(err, ' an error with calendar post'))
+    .catch(err=> {console.log(err, ' an error with calendar post'); e.revert()})
   }
 
   function handleCheck(e) {
