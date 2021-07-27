@@ -111,6 +111,10 @@ export default function App() {
       const event = calendar.find(item => item._id === id)
       event._date = e.event.start
 
+      if (!event) {
+        
+      }
+
       updateCalendarDB(event, e)
       // const newEvent = {
       //   id: eventInfo.draggedEl.getAttribute("data-id"),
@@ -121,7 +125,7 @@ export default function App() {
       //   custom: eventInfo.draggedEl.getAttribute("data-custom")
       // };
   
-      
+
       // setState((state) => {
       //   return {
       //     ...state,
