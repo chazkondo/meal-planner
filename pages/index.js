@@ -108,10 +108,11 @@ export default function App() {
     // handle event move
     const handleEventMove = (e) => {
       const id = e.event._def.extendedProps._id
+      let event
       const event = calendar.find(item => item._id === id)
 
       if (!event) {
-
+        const event = calendar.find(item => item._id === id)
       }
 
       event._date = e.event.start
