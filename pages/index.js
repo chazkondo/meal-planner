@@ -108,7 +108,7 @@ export default function App() {
     // handle event move
     const handleEventMove = (e) => {
       console.log('this fired')
-      const event = calendar.find(item=>{ console.log(e.event); return item._instance === e.event._instance.defId})
+      const event = calendar.find(item=>{ console.log(e.event, 'ad', item); return item._def.extendedProps === e.event._id})
       console.log(event)
       updateCalendarDB(event)
       const movedFromDate = event._date;
@@ -140,7 +140,7 @@ export default function App() {
   function updateCalendarDB(item) {
     axios
     .put('/api/calendar', {...item})
-    .then(response => console.log(response,item , ' ? something response for calendar post?'))
+    .then(response => console.log(response, ' ? something response for calendar post?'))
     .catch(err=> console.log(err, ' an error with calendar post'))
   }
 
