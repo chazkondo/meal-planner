@@ -76,7 +76,7 @@ export default async function calendarSwitch(req, res){
           mongooseSession.startTransaction();
           console.log(req, 'what is being sent here?')
 
-          const id = req.body._id
+          const {_id, signature} = req.body
       
         //   const userArr = await Session.findOne(
         //     { accessToken: session.accessToken },
