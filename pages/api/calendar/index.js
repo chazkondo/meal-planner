@@ -85,13 +85,13 @@ export default async function calendarSwitch(req, res){
         //   );
       
       
-        //   await Calendar.updateOne(
-        //     { _id: userId, email: session.user.email },
-        //     {
-        //       currentOrganization: newOrganizationInfo,
-        //     },
-        //     { mongooseSession }
-        //   );
+          await Calendar.updateOne(
+            { _id: userId, email: session.user.email },
+            {
+              currentOrganization: newOrganizationInfo,
+            },
+            { mongooseSession }
+          );
       
           await mongooseSession.commitTransaction();
           mongooseSession.endSession();
