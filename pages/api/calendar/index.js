@@ -74,7 +74,7 @@ export default async function calendarSwitch(req, res){
             
         try {
           mongooseSession.startTransaction();
-          console.log(req, 'what is being sent here?')
+          console.log(req.body, 'what is being sent here?')
 
           const {_id, signature} = req.body
       
