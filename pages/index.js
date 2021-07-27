@@ -109,11 +109,12 @@ export default function App() {
     const handleEventMove = (e) => {
       const id = e.event._def.extendedProps._id
       const event = calendar.find(item => item._id === id)
-      event._date = e.event.start
 
       if (!event) {
-        
+
       }
+
+      event._date = e.event.start
 
       updateCalendarDB(event, e)
       // const newEvent = {
