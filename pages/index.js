@@ -110,7 +110,6 @@ export default function App() {
     const handleEventMove = (e) => {
       const id = e.event._def.extendedProps._id
 
-      let event
       const event = calendar.find(item => item._id === id)
 
 
