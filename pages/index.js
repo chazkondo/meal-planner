@@ -139,7 +139,7 @@ export default function App() {
         console.log(response, '  this is the response')
         setDbUpdatedFlag(previous => previous + 1)
       })
-      .catch(err=> console.log(err, ' an error with calendar post'))
+      .catch(err=> {console.log(err, ' an error with calendar post')})
   }
 
   function updateCalendarDB(item, e) {
