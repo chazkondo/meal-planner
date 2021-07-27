@@ -112,7 +112,7 @@ export default function App() {
       event = calendar.find(item => item._id === id)
 
       if (!event) {
-        event = calendar.find(item => item._id === id)
+        event = calendar.find(item => item.id === id)
       }
 
       event._date = e.event.start
