@@ -146,6 +146,7 @@ export default function App() {
 
     // handle event move
     const handleEventMove = (e) => {
+      console.log(e, 'one more time')
       // The issue happening here is that id is defaulting to recipe id when there hasn't been a refresh for the overall calendar obj
       const id = e.event._def.extendedProps._id
       console.log(id, 'do i get the id tho?')
@@ -181,7 +182,9 @@ export default function App() {
         console.log(response, '  this is the response')
         setDbUpdatedFlag(previous => previous + 1)
         console.log(calendar, 'THIS IS THE CALENDAR OBJ WHAT?')
-        calendar[calendar.length-1]._id = response.data.entry._id
+        const copy = calendar.slice()
+        copy[calendar.length-1]._id = response.data.entry._id
+        updateCalendar(copy)
       })
       .catch(err=> {e.revert();console.log(err, ' an error with calendar postasdashdjk')})
   }
