@@ -117,7 +117,7 @@ export default function App() {
       // updateCalendarDB(event)
       // const movedFromDate = event._date;
       event._date = e.event.start
-      // console.log(event, )
+      console.log(event, 'did a change occur?')
       // const newEvent = {
       //   id: eventInfo.draggedEl.getAttribute("data-id"),
       //   title: eventInfo.draggedEl.getAttribute("title"),
