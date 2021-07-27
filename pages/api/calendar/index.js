@@ -40,9 +40,9 @@ export default async function calendarSwitch(req, res){
                 // if (isConfirmed) {
                     const data = {...req.body, signature: 'test'}
                     console.log(data, 'da crap?')
-                    const entries = await Calendar.create(data)
+                    const entry = await Calendar.create(data)
     
-                    res.status(201).json({success: true, entries})
+                    res.status(201).json({success: true, entry })
                 // } 
                 // else {
                 //     res.status(400).json({success: false, message: 'Invalid'})
