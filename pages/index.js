@@ -98,6 +98,8 @@ export default function App() {
       axios
       .get('/api/calendar')
       .then(calendarEntries => {
+        // on update, get access to the new id by checking what was posted.
+        // maybe the best way to do this is to keep a simple hash map
         console.log(calendarEntries, 'this was hit => CALENDAR ENTRIES')
         for (let i=0; i<calendarEntries.data.calendarEntries.length; i++) {
           if(calendarEntries.data.calendarEntries[i]._instance) { // do nothing} 
