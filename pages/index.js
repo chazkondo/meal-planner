@@ -127,7 +127,7 @@ export default function App() {
       // });
     };
 
-  function updateCalendarDB(item) {
+  function postToCalendarDB(item) {
     axios
       .post('/api/calendar', {...item})
       .then(response => console.log(response, ' ? something response for calendar post?'))
