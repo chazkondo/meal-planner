@@ -127,22 +127,22 @@ export default function App() {
   }, [dbUpdatedFlag])
 
   // handle event receive
-  const handleEventReceive = (e) => {
-    const newEvent = {
-      id: e.event._def.extendedProps._id,
-      title: e.draggedEl.getAttribute("name"),
-      name: e.draggedEl.getAttribute("name"),
-      color: e.event._def.ui.backgroundColor,
-      _date: e.event.start,
-      _instance: e.event._instance.defId,
-    };
+  // const handleEventReceive = (e) => {
+  //   const newEvent = {
+  //     id: e.event._def.extendedProps._id,
+  //     title: e.draggedEl.getAttribute("name"),
+  //     name: e.draggedEl.getAttribute("name"),
+  //     color: e.event._def.ui.backgroundColor,
+  //     _date: e.event.start,
+  //     _instance: e.event._instance.defId,
+  //   };
 
-    setCurrentEvent(newEvent)
-    setTheEvent(e)
-    updateCalendar(previous=>[...previous, newEvent]);
-    detectPostToDB(previous=>previous+1)
-    console.log('this is being fired')
-  };
+  //   setCurrentEvent(newEvent)
+  //   setTheEvent(e)
+  //   updateCalendar(previous=>[...previous, newEvent]);
+  //   detectPostToDB(previous=>previous+1)
+  //   console.log('this is being fired')
+  // };
 
     // handle event move
     const handleEventMove = (e) => {
@@ -183,7 +183,7 @@ export default function App() {
         setDbUpdatedFlag(previous => previous + 1)
         console.log(calendar, 'THIS IS THE CALENDAR OBJ WHAT?')
         const copy = calendar.slice()
-        copy[calendar.length-1]._id = response.data.entry._id
+        copy[calendar.length-1].id = response.data.entry._id
         updateCalendar(copy)
       })
       .catch(err=> {e.revert();console.log(err, ' an error with calendar postasdashdjk')})
@@ -273,7 +273,7 @@ export default function App() {
           events={calendar}
           droppable={true}
           fixedWeekCount={false}
-          eventReceive={handleEventReceive}
+          eventReceive={}
           eventDrop={handleEventMove}
           eventClick={eventClick}
         />
