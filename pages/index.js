@@ -146,15 +146,7 @@ export default function App() {
 
 
       updateCalendarDB(event, e)
-      // const newEvent = {
-      //   id: eventInfo.draggedEl.getAttribute("data-id"),
-      //   title: eventInfo.draggedEl.getAttribute("title"),
-      //   color: eventInfo.draggedEl.getAttribute("data-color"),
-      //   start: eventInfo.date,
-      //   end: eventInfo.date,
-      //   custom: eventInfo.draggedEl.getAttribute("data-custom")
-      // };
-  
+
     };
 
   function postToCalendarDB(item, e, uuid) {
