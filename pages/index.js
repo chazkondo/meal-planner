@@ -139,7 +139,7 @@ export default function App() {
     const handleEventMove = (e) => {
       console.log(e, 'one more time')
       const id = e.event._def.extendedProps._id
-      const event = calendar.find(item => item._id === id) || actualCalendar.find(item => item._uuid === e.event._def.extendedProps.uuid)
+      const event = calendar.find(item => item._id === id) || actualCalendar.find(item => item.uuid === e.event._def.extendedProps.uuid)
       if (!event) {
         console.log('An error occurred in event move')
       }
