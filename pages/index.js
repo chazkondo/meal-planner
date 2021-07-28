@@ -19,6 +19,7 @@ import { uuid } from 'uuidv4';
 
 // check: how many calls to db I'm making via post
 // only one call, in one function, however that function is being called in a useEffect that is listening to something else
+// the use effect is listening to dbChange
 
 
 Date.prototype.addDays = function(days) {
