@@ -172,6 +172,9 @@ export default function App() {
     .catch(err=> {console.log(err, ' an error with calendar post'); e.revert()})
   }
 
+  function findItem() {
+  }
+
   function handleCheck(e) {
     if (e.target.checked) {
       setExpandedView(5)
