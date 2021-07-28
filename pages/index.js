@@ -110,9 +110,7 @@ export default function App() {
           console.log(calendarEntries.data.calendarEntries[i], 'what is here')
           // check if the instance has already occurred
         }
-        calendarEntries.data.calendarEntries[i].allDay = true;
-        calendarEntries.data.calendarEntries[i].start = new Date(calendarEntries.data.calendarEntries[i]._date);
-        calendarEntries.data.calendarEntries[i].name = calendarEntries.data.calendarEntries[i].title;
+        calendarEntries.data.calendarEntries[i].start = new Date(calendarEntries.data.calendarEntries[i].start);
         // calendarEntries.data.calendarEntries[i]._id = calendarEntries.data.calendarEntries[i].id
       }
       updateCalendar([...calendarEntries.data.calendarEntries])
@@ -132,7 +130,6 @@ export default function App() {
           if(calendarEntries.data.calendarEntries[i]._instance) { // do nothing} 
             // check if the instance has already occurred
           }
-          calendarEntries.data.calendarEntries[i].allDay = true;
           calendarEntries.data.calendarEntries[i].start = new Date(calendarEntries.data.calendarEntries[i]._date);
           calendarEntries.data.calendarEntries[i].name = calendarEntries.data.calendarEntries[i].title;
           // calendarEntries.data.calendarEntries[i]._id = calendarEntries.data.calendarEntries[i].id
