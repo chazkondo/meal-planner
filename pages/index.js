@@ -136,6 +136,8 @@ export default function App() {
       allDay: true
     };
 
+    console.log(newEvent, 'what is the recipe id here?')
+
     postToCalendarDB(newEvent, e, e.event._def.extendedProps.uuid)
   };
 
