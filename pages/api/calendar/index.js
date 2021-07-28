@@ -69,7 +69,7 @@ export default async function calendarSwitch(req, res){
 
 }
 
-    //change organization
+    //update calendar obj
     export const updateUser = async (req, res) => {
         const db = await dbConnect();
       
@@ -115,3 +115,50 @@ export default async function calendarSwitch(req, res){
           });
         }
       };
+
+    //change organization
+    export const updateUser = async (req, res) => {
+      const db = await dbConnect();
+    
+      const mongooseSession = await mongoose.startSession();
+          
+      try {
+        mongooseSession.startTransaction();
+        console.log(req.body, 'what is being sent here?')
+
+        const {_id, signature} = req.body
+    
+      //   const userArr = await Session.findOne(
+      //     { accessToken: session.accessToken },
+      //     "userId",
+      //     { mongooseSession }
+      //   );
+    
+    
+        await Calendar.updateOne(
+          { _id },
+          {
+            ...req.body
+          },
+          { mongooseSession }
+        );
+    
+        await mongooseSession.commitTransaction();
+        mongooseSession.endSession();
+    
+        res.status(200).json({
+          success: true,
+          message: "Successful.",
+        });
+      } catch (err) {
+        console.log("ERROR?", err.message);
+    
+        await mongooseSession.abortTransaction();
+        mongooseSession.endSession();
+    
+        res.status(400).json({
+          success: false,
+          message: "Failed to update user current organization.",
+        });
+      }
+    };
