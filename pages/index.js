@@ -36,6 +36,8 @@ import { v4 as uuid_v4 } from "uuid";
 
 // implement delete from db now
 
+// When I delete, I will also have to filter the calendar
+
 
 Date.prototype.addDays = function(days) {
   var date = new Date(this.valueOf());
