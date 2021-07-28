@@ -165,11 +165,11 @@ export default function App() {
       // });
     };
 
-  function postToCalendarDB(item, e) {
+  function postToCalendarDB(item, e, uuid) {
     axios
       .post('/api/calendar', {...item})
       .then(response => {
-        updateActualCalendar(previous => [...previous, response.data.entry])
+        updateActualCalendar(previous => [...previous, {...response.data.entry, uuid}])
       })
       .catch(err=> {
         e.revert();
