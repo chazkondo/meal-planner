@@ -152,16 +152,13 @@ export default function App() {
     // handle event move
     const handleEventMove = (e) => {
       console.log(e, 'one more time')
-      const instance = e.event._instance.instanceID
+      let event;
       // The issue happening here is that id is defaulting to recipe id when there hasn't been a refresh for the overall calendar obj
       const id = e.event._def.extendedProps._id
-      const event = calendar.find(item => item._id === id)
+      event = calendar.find(item => item._id === id)
       if (!event) {
-        console.log(calendar, 'for real')
-        alert('CASE WHERE EVENT DOES NOT EXIST IN CALENDAR ARRAY')
-        const frontEndId = e.event._def.extendedProps.uuid
-        const frontEndEvent = calendar.find(item => item._uuid === frontEndId)
-        console.log(frontEndEvent, 'found?')
+        event = calendar.find(item => item._uuid === e.event._def.extendedProps.uuid)
+        event._date = e.event.start
       } else {
         event._date = e.event.start
       }
@@ -169,6 +166,7 @@ export default function App() {
 
 
       updateCalendarDB(event, e)
+      event = undefined;
       // const newEvent = {
       //   id: eventInfo.draggedEl.getAttribute("data-id"),
       //   title: eventInfo.draggedEl.getAttribute("title"),
