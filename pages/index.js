@@ -14,6 +14,8 @@ import { uuid } from 'uuidv4';
 // first step is to see if post is working properly
 // post is working fine.
 
+// issue: post is happening multiple times
+// issue: there are duplicates on front end and in db
 
 
 Date.prototype.addDays = function(days) {
