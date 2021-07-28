@@ -138,7 +138,6 @@ export default function App() {
     }
 
     postToCalendarDB(newEvent, e)
-    updateCalendar(previous=>[...previous, frontEndEvent]);
   };
 
     // handle event move
