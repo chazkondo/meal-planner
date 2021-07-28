@@ -17,6 +17,8 @@ import { uuid } from 'uuidv4';
 // issue: post is happening multiple times
 // issue: there are duplicates on front end and in db
 
+// check: how many calls to db I'm making via post
+
 
 Date.prototype.addDays = function(days) {
   var date = new Date(this.valueOf());
