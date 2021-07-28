@@ -34,6 +34,8 @@ import { v4 as uuid_v4 } from "uuid";
 // issue from mapping ingredients again due to db changes
 // fixed issue using a helper function to find which event i'm trying to address for the db
 
+// implement delete from db now
+
 
 Date.prototype.addDays = function(days) {
   var date = new Date(this.valueOf());
