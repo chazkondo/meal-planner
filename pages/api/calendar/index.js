@@ -59,7 +59,7 @@ export default async function calendarSwitch(req, res){
         case 'PUT':
             await updateUser(req, res);
             break;
-        case 'PATCH':
+        case 'DELETE':
           await deleteItem(req, res);
           break;
         default:
