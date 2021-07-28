@@ -156,6 +156,7 @@ export default function App() {
       // The issue happening here is that id is defaulting to recipe id when there hasn't been a refresh for the overall calendar obj
       const id = e.event._def.extendedProps._id
       event = calendar.find(item => item._id === id)
+      console.log(event, 'what is event before it hits if statement?')
       if (!event) {
         event = calendar.find(item => item._uuid === e.event._def.extendedProps.uuid)
         event._date = e.event.start
