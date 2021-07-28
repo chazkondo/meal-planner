@@ -127,12 +127,10 @@ export default async function calendarSwitch(req, res){
         mongooseSession.startTransaction();
         console.log('hello?!', req.query, '?????????what is being sent here?')
 
-        const {_id, signature} = req.body
+        const {_id, signature} = req.query
     
     
-        await Calendar.findOneAndDelete()(
-          { _id }
-        );
+        await Calendar.findOneAndDelete({ _id });
     
         await mongooseSession.commitTransaction();
         mongooseSession.endSession();
