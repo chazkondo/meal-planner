@@ -142,15 +142,15 @@ export default function App() {
 
   // handle event receive
   const handleEventReceive = (e) => {
-
+    console.log(e, 'title here?')
     // 
     const newEvent = {
       recipe_id: e.event._def.extendedProps._id,
-      title: e.draggedEl.getAttribute("title"),
+      title: e.event._def.title,
       color: e.event._def.ui.backgroundColor,
       start: e.event.start,
       _instance: e.event._instance.defId,
-      all_day: true
+      allDay: true
     };
 
     const frontEndEvent = {
