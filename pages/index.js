@@ -271,7 +271,7 @@ export default function App() {
           <Link href="/items">
             <a className="link">Add Grocery Item</a>
           </Link>
-          <h1 onClick={()=>updateCalendar([])}>Test</h1>
+          <h1>Test</h1>
         </div>
         <div id="all-recipes">
           {apiRecipes.map((item) => (
