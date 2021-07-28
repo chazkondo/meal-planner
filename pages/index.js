@@ -129,6 +129,8 @@ export default function App() {
 
   // handle event receive
   const handleEventReceive = (e) => {
+
+    // do axios call here wow, that was dumb
     const newEvent = {
       id: e.event._def.extendedProps._id,
       title: e.draggedEl.getAttribute("name"),
@@ -151,9 +153,9 @@ export default function App() {
       let instance
       // The issue happening here is that id is defaulting to recipe id when there hasn't been a refresh for the overall calendar obj
       const id = e.event._def.extendedProps._id
-      console.log(id, 'do i get the id tho?')
-      const event = actualCalendar.find(item => item._id === id)
+      const event = calendar.find(item => item._id === id)
       if (!event) {
+        console.log(event, 'for real')
         alert('CASE WHERE EVENT DOES NOT EXIST IN CALENDAR ARRAY')
         instance = e.event._instance.instanceID
 
