@@ -156,10 +156,9 @@ export default function App() {
       const id = e.event._def.extendedProps._id
       const event = calendar.find(item => item._id === id)
       if (!event) {
-        console.log(event, 'for real')
+        console.log(calendar, 'for real')
         alert('CASE WHERE EVENT DOES NOT EXIST IN CALENDAR ARRAY')
-        instance = e.event._instance.instanceID
-
+        const frontEndId = e.event._def.extendedProps.uuid
       } else {
         event._date = e.event.start
       }
