@@ -155,13 +155,6 @@ export default function App() {
       //   custom: eventInfo.draggedEl.getAttribute("data-custom")
       // };
   
-
-      // setState((state) => {
-      //   return {
-      //     ...state,
-      //     calendarEvents: state.calendarEvents.concat(newEvent)
-      //   };
-      // });
     };
 
   function postToCalendarDB(item, e, uuid) {
