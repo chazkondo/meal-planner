@@ -6,7 +6,7 @@ dbConnect();
 
 
 export default async function calendarSwitch(req, res){
-    const {method} = req;
+    const { method } = req;
 
     switch(method) {
         case 'GET':
@@ -59,7 +59,7 @@ export default async function calendarSwitch(req, res){
         case 'PUT':
             await updateUser(req, res);
             break;
-        case 'DELETE':
+        case 'PATCH':
           await deleteItem(req, res);
           break;
         default:
@@ -118,6 +118,7 @@ export default async function calendarSwitch(req, res){
 
     //change organization
     export const deleteItem = async (req, res) => {
+      console.log(req, 'um what is happening?')
       await dbConnect();
     
       const mongooseSession = await mongoose.startSession();
