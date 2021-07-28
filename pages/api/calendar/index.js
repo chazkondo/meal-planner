@@ -118,14 +118,14 @@ export default async function calendarSwitch(req, res){
 
     //change organization
     export const deleteItem = async (req, res) => {
-      console.log(req, 'um what is happening?')
+      console.log(req.query, 'um what is happening?')
       await dbConnect();
     
       const mongooseSession = await mongoose.startSession();
           
       try {
         mongooseSession.startTransaction();
-        console.log('hello?!', req.body, '?????????what is being sent here?')
+        console.log('hello?!', req.query, '?????????what is being sent here?')
 
         const {_id, signature} = req.body
     
