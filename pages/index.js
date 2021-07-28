@@ -32,6 +32,7 @@ import { v4 as uuid_v4 } from "uuid";
 // success. function now edits the correct db obj on move
 
 // issue from mapping ingredients again due to db changes
+// fixed issue using a helper function to find which event i'm trying to address for the db
 
 
 Date.prototype.addDays = function(days) {
