@@ -130,7 +130,7 @@ export default function App() {
   // handle event receive
   const handleEventReceive = (e) => {
 
-    // do axios call here wow, that was dumb
+    // !!!!!!!!!!!!do axios call here wow, that was dumb
     const newEvent = {
       id: e.event._def.extendedProps._id,
       title: e.draggedEl.getAttribute("name"),
