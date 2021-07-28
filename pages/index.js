@@ -204,7 +204,7 @@ export default function App() {
 
   function eventClick(eventClick) {
     const event = findItem(eventClick)
-    console.log(event, 'what is here?')
+    console.log(eventClick, 'what is event clicked??')
     Alert.fire({
       title: eventClick.event._def.title + '<div style="font-size: 20">' + eventClick.event.start.toString().slice(0, 15) + '</div>',
       html:
