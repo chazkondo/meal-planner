@@ -128,19 +128,9 @@ export default async function calendarSwitch(req, res){
 
         const {_id, signature} = req.body
     
-      //   const userArr = await Session.findOne(
-      //     { accessToken: session.accessToken },
-      //     "userId",
-      //     { mongooseSession }
-      //   );
     
-    
-        await Calendar.updateOne(
-          { _id },
-          {
-            ...req.body
-          },
-          { mongooseSession }
+        await Calendar.findOneAndDelete()(
+          { _id }
         );
     
         await mongooseSession.commitTransaction();
