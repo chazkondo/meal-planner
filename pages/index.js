@@ -182,12 +182,7 @@ export default function App() {
     axios
       .post('/api/calendar', {...item})
       .then(response => {
-        console.log(response, '  this is the response')
-        setDbUpdatedFlag(previous => previous + 1)
-        console.log(calendar, 'THIS IS THE CALENDAR OBJ WHAT?')
-        const copy = calendar.slice()
-        copy[calendar.length-1].id = response.data.entry._id
-        updateActualCalendar(copy)
+        updateActualCalendar(previous => [...previous, response.data.entry])
       })
       .catch(err=> {e.revert();console.log(err, ' an error with calendar postasdashdjk')})
   }
