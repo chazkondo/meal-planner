@@ -59,6 +59,9 @@ export default async function calendarSwitch(req, res){
         case 'PUT':
             await updateUser(req, res);
             break;
+        case 'DELETE':
+          await updateUser(req, res);
+          break;
         default:
             res.status(400).json({success: false, default: true})
             break;
