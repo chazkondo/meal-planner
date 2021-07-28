@@ -172,9 +172,9 @@ export default function App() {
     .catch(err=> {console.log(err, ' an error with calendar post'); e.revert()})
   }
 
-  function findItem() {
+  function findItem(event) {
     // Either maps to item from db or item in the current state
-    
+
   }
 
   function handleCheck(e) {
