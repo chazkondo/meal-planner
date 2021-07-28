@@ -38,6 +38,8 @@ import { v4 as uuid_v4 } from "uuid";
 
 // When I delete, I will also have to filter both the calendars
 
+// if uuid exist, filter 
+
 
 Date.prototype.addDays = function(days) {
   var date = new Date(this.valueOf());
