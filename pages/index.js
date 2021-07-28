@@ -194,9 +194,9 @@ export default function App() {
   }
 
   function eventClick(eventClick) {
-    console.log(eventClick.event._def, ' Etest what is here ')
+    console.log(eventClick, ' Etest what is here ')
     Alert.fire({
-      title: eventClick.event._def.extendedProps.name + '<div style="font-size: 20">' + eventClick.event.start.toString().slice(0, 15) + '</div>',
+      title: eventClick.event._def.extendedProps.title + '<div style="font-size: 20">' + eventClick.event.start.toString().slice(0, 15) + '</div>',
       html:
       `<div>` +
         getIngredients(eventClick.event._def.publicId ? eventClick.event._def.publicId : eventClick.event._def.extendedProps.recipe_id) +
