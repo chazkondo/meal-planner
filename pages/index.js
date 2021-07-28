@@ -25,6 +25,9 @@ import { v4 as uuid_v4 } from "uuid";
 
 // fixed the code so only one post was getting added to db on drop, however, the front end still displays two.
 
+// When I repull data from db and replace calendar, full calendar refuses to update completely to the arr.
+
+
 
 Date.prototype.addDays = function(days) {
   var date = new Date(this.valueOf());
