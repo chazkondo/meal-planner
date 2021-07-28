@@ -6,7 +6,7 @@ const CalendarSchema = new mongoose.Schema({
         ref: "Organization",
         required: [true, 'Please provide the ID']
     },
-    all_day: {
+    allDay: {
         type: Boolean,
         required: [true, 'Please provide the color hex']
     },
