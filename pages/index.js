@@ -229,6 +229,9 @@ export default function App() {
           // utilize remove() function
           eventClick.event.remove(); // It will remove event from the calendar
           // if uuid exists, then this item has not been added to calendar arr, but is in actualCalendar arr
+          // delete from db first
+
+          
           const newArr = actualCalendar.filter(events => {console.log(events._id, event._id); return events._id !== event._id})
           console.log(newArr, 'did it work?')
           updateActualCalendar(newArr)
