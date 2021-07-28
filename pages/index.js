@@ -143,7 +143,7 @@ export default function App() {
 
     // handle event move
     const handleEventMove = (e) => {
-      const event = calendar.find(item => item._id === id) || actualCalendar.find(item => item.uuid === e.event._def.extendedProps.uuid)
+      const event = findItem(e)
 
       event.start = e.event.start
 
@@ -198,7 +198,8 @@ export default function App() {
   }
 
   function eventClick(eventClick) {
-    console.log(eventClick, ' Etest what is here ')
+    const event = findItem(eventClick)
+    console.log(event, 'what is here?')
     Alert.fire({
       title: eventClick.event._def.extendedProps.title + '<div style="font-size: 20">' + eventClick.event.start.toString().slice(0, 15) + '</div>',
       html:
