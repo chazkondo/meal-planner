@@ -147,7 +147,7 @@ export default function App() {
       const event = calendar.find(item => item._id === id) || calendar.find(item => item._uuid === e.event._def.extendedProps.uuid)
       console.log(event, 'what is event before it hits if statement?')
 
-      event._date = e.event.start
+      event.start = e.event.start
 
 
 
