@@ -204,7 +204,7 @@ export default function App() {
       title: eventClick.event._def.extendedProps.title + '<div style="font-size: 20">' + eventClick.event.start.toString().slice(0, 15) + '</div>',
       html:
       `<div>` +
-        getIngredients(eventClick.event._def.publicId ? eventClick.event._def.publicId : eventClick.event._def.extendedProps.recipe_id) +
+        getIngredients(event.recipe_id) +
       '</div>',
 
       showCancelButton: true,
