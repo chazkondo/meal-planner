@@ -132,12 +132,7 @@ export default function App() {
       allDay: true
     };
 
-    const frontEndEvent = {
-      ...newEvent,
-      _uuid: e.event._def.extendedProps.uuid
-    }
-
-    postToCalendarDB(newEvent, e)
+    postToCalendarDB(newEvent, e, e.event._def.extendedProps.uuid)
   };
 
     // handle event move
