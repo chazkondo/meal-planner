@@ -150,6 +150,7 @@ export default function App() {
       color: e.event._def.ui.backgroundColor,
       start: e.event.start,
       _instance: e.event._instance.defId,
+      all_day: true
     };
 
     const frontEndEvent = {
