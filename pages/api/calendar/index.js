@@ -117,8 +117,8 @@ export default async function calendarSwitch(req, res){
       };
 
     //change organization
-    export const updateUser = async (req, res) => {
-      const db = await dbConnect();
+    export const deleteItem = async (req, res) => {
+      await dbConnect();
     
       const mongooseSession = await mongoose.startSession();
           
