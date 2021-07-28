@@ -18,7 +18,7 @@ const CalendarSchema = new mongoose.Schema({
         type: String,
         required: [true, 'Please provide the name/title']
     },
-    _date: {
+    start: {
         type: Date,
         required: [true, 'Please provide the date']
     },
