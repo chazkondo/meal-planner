@@ -222,7 +222,7 @@ export default function App() {
     }).then((result) => {
       if (result.value) {
         const newArr = calendar.filter(events => events._instance !== eventClick.event._instance.defId)
-        updateCalendar(newArr)
+        updateCalendar([])
         eventClick.event.remove(); // It will remove event from the calendar
         Alert.fire("Deleted!", "Your item has been deleted.", "success");
       }
