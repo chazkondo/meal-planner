@@ -114,6 +114,7 @@ export default function App() {
         // calendarEntries.data.calendarEntries[i]._id = calendarEntries.data.calendarEntries[i].id
       }
       updateCalendar([...calendarEntries.data.calendarEntries])
+      updateActualCalendar([...calendarEntries.data.calendarEntries])
     })
     .catch(err => console.log(err))
   }, [])
@@ -186,7 +187,7 @@ export default function App() {
         console.log(calendar, 'THIS IS THE CALENDAR OBJ WHAT?')
         const copy = calendar.slice()
         copy[calendar.length-1].id = response.data.entry._id
-        updateCalendar(copy)
+        updateActualCalendar(copy)
       })
       .catch(err=> {e.revert();console.log(err, ' an error with calendar postasdashdjk')})
   }
