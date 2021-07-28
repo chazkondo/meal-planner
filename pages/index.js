@@ -154,7 +154,6 @@ export default function App() {
     setCurrentEvent(newEvent)
     setTheEvent(e)
     updateCalendar(previous=>[...previous, newEvent]);
-    detectPostToDB(previous=>previous+1)
     console.log('this is being fired')
   };
 
