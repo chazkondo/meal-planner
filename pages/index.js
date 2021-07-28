@@ -249,7 +249,8 @@ export default function App() {
           eventDrop={handleEventMove}
           eventClick={eventClick}
         />
-      <div style={{color: 'white'}}>Expanded View <input style={{marginTop: 20}} type="checkbox" defaultChecked={checked} onChange={e=>handleCheck(e)} /></div>
+        <div style={{color: 'white'}}>Expanded View <input style={{marginTop: 20}} type="checkbox" defaultChecked={checked} onChange={e=>handleCheck(e)} />
+      </div>
       <div><button onClick={()=>console.log(calendar, 'heres the state for u')}>Login</button></div>
       </div>
     </div>
