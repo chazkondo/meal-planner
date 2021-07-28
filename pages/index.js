@@ -128,22 +128,22 @@ export default function App() {
   }, [dbUpdatedFlag])
 
   // handle event receive
-  // const handleEventReceive = (e) => {
-  //   const newEvent = {
-  //     id: e.event._def.extendedProps._id,
-  //     title: e.draggedEl.getAttribute("name"),
-  //     name: e.draggedEl.getAttribute("name"),
-  //     color: e.event._def.ui.backgroundColor,
-  //     _date: e.event.start,
-  //     _instance: e.event._instance.defId,
-  //   };
+  const handleEventReceive = (e) => {
+    const newEvent = {
+      id: e.event._def.extendedProps._id,
+      title: e.draggedEl.getAttribute("name"),
+      name: e.draggedEl.getAttribute("name"),
+      color: e.event._def.ui.backgroundColor,
+      _date: e.event.start,
+      _instance: e.event._instance.defId,
+    };
 
-  //   setCurrentEvent(newEvent)
-  //   setTheEvent(e)
-  //   updateCalendar(previous=>[...previous, newEvent]);
-  //   detectPostToDB(previous=>previous+1)
-  //   console.log('this is being fired')
-  // };
+    setCurrentEvent(newEvent)
+    setTheEvent(e)
+    updateCalendar(previous=>[...previous, newEvent]);
+    detectPostToDB(previous=>previous+1)
+    console.log('this is being fired')
+  };
 
     // handle event move
     const handleEventMove = (e) => {
@@ -154,6 +154,7 @@ export default function App() {
       console.log(id, 'do i get the id tho?')
       const event = actualCalendar.find(item => item._id === id)
       if (!event) {
+        alert('CASE WHERE EVENT DOES NOT EXIST IN CALENDAR ARRAY')
         instance = e.event._instance.instanceID
 
       } else {
@@ -280,7 +281,7 @@ export default function App() {
           events={calendar}
           droppable={true}
           fixedWeekCount={false}
-          eventReceive={e=>console.log(e)}
+          eventReceive={handleEventReceive}
           eventDrop={handleEventMove}
           eventClick={eventClick}
         />
