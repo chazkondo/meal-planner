@@ -241,7 +241,7 @@ export default function App() {
 
   return (
     <div className="App">
-      <div onClick={()=>console.log(calendar, ' calendar')} className="recipe-wrapper">
+      <div onClick={()=>console.log(calendar, ' calendar', actualCalendar, ' actual')} className="recipe-wrapper">
         <div className="recipe-title flex-center">
           <Link href="/items">
             <a className="link">Add Grocery Item</a>
