@@ -177,7 +177,10 @@ export default function App() {
       .then(response => {
         updateActualCalendar(previous => [...previous, response.data.entry])
       })
-      .catch(err=> {e.revert();console.log(err, ' an error with calendar postasdashdjk')})
+      .catch(err=> {
+        e.revert();
+        console.log(err, ' an error with calendar postasdashdjk')
+      })
   }
 
   function updateCalendarDB(item, e) {
