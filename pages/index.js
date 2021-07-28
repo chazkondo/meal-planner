@@ -140,7 +140,9 @@ export default function App() {
       console.log(e, 'one more time')
       const id = e.event._def.extendedProps._id
       const event = calendar.find(item => item._id === id) || calendar.find(item => item._uuid === e.event._def.extendedProps.uuid)
-      console.log(event, 'what is event before it hits if statement?')
+      if (!event) {
+        console.log('An error occurred in event move')
+      }
 
       event.start = e.event.start
 
