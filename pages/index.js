@@ -181,7 +181,7 @@ export default function App() {
 
   function deleteFromCalendarDB(itemId, e) {
     axios
-      .delete('/api/calendar', {itemId})
+      .delete('/api/calendar', {...itemId})
       .then(res=>console.log(res, 'delete res'))
       .catch(err=>{console.log(err, ' an error with calendar post'); e.revert()})
   }
@@ -237,7 +237,8 @@ export default function App() {
           eventClick.event.remove(); // It will remove event from the calendar
           // if uuid exists, then this item has not been added to calendar arr, but is in actualCalendar arr
           // delete from db first
-          deleteFromCalendarDB(event._id, eventClick)
+          console.log(event, 'HELLO EVENT?')
+          deleteFromCalendarDB(event, eventClick)
 
           const newArr = actualCalendar.filter(events => {console.log(events._id, event._id); return events._id !== event._id})
           console.log(newArr, 'did it work?')
