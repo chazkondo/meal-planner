@@ -143,7 +143,6 @@ export default function App() {
 
     // handle event move
     const handleEventMove = (e) => {
-      const id = e.event._def.extendedProps._id
       const event = calendar.find(item => item._id === id) || actualCalendar.find(item => item.uuid === e.event._def.extendedProps.uuid)
 
       event.start = e.event.start
@@ -174,7 +173,7 @@ export default function App() {
 
   function findItem(event) {
     // Either maps to item from db or item in the current state
-
+    return calendar.find(item => item._id === id) || actualCalendar.find(item => item.uuid === e.event._def.extendedProps.uuid)
   }
 
   function handleCheck(e) {
