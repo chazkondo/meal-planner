@@ -118,28 +118,6 @@ export default function App() {
     .catch(err => console.log(err))
   }, [])
 
-  useEffect(()=>{
-    if (dbUpdatedFlag) {
-      axios
-      .get('/api/calendar')
-      .then(calendarEntries => {
-        // on update, get access to the new id by checking what was posted.
-        // maybe the best way to do this is to keep a simple hash map
-        console.log(calendarEntries, 'this was hit => CALENDAR ENTRIES')
-        for (let i=0; i<calendarEntries.data.calendarEntries.length; i++) {
-          if(calendarEntries.data.calendarEntries[i]._instance) { // do nothing} 
-            // check if the instance has already occurred
-          }
-          calendarEntries.data.calendarEntries[i].start = new Date(calendarEntries.data.calendarEntries[i]._date);
-          calendarEntries.data.calendarEntries[i].name = calendarEntries.data.calendarEntries[i].title;
-          // calendarEntries.data.calendarEntries[i]._id = calendarEntries.data.calendarEntries[i].id
-        }
-        updateCalendar([...calendarEntries.data.calendarEntries])
-      })
-      .catch(err => console.log(err))
-    }
-  }, [dbUpdatedFlag])
-
   // handle event receive
   const handleEventReceive = (e) => {
     console.log(e, 'title here?')
