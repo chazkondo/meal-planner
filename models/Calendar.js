@@ -1,8 +1,9 @@
-import mongoose from "mongoose";
+import mongoose, {Schema} from "mongoose";
 
 const CalendarSchema = new mongoose.Schema({
-	id: {
-        type: String,
+	recipe_id: {
+        type: Schema.Types.ObjectId,
+        ref: "Organization",
         required: [true, 'Please provide the ID']
     },
     color: {
