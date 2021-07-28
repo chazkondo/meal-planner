@@ -21,6 +21,8 @@ import { uuid } from 'uuidv4';
 // only one call, in one function, however that function is being called in a useEffect that is listening to something else
 // the use effect is listening to dbChange
 
+// deleted use Effect
+
 
 Date.prototype.addDays = function(days) {
   var date = new Date(this.valueOf());
