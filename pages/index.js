@@ -143,12 +143,10 @@ export default function App() {
     // handle event move
     const handleEventMove = (e) => {
       console.log(e, 'one more time')
-      let event;
       const id = e.event._def.extendedProps._id
-      event = calendar.find(item => item._id === id)
+      const event = calendar.find(item => item._id === id) || calendar.find(item => item._uuid === e.event._def.extendedProps.uuid)
       console.log(event, 'what is event before it hits if statement?')
       if (!event) {
-        event = calendar.find(item => item._uuid === e.event._def.extendedProps.uuid)
         event._date = e.event.start
       } else {
         event._date = e.event.start
