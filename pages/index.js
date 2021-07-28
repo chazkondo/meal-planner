@@ -139,7 +139,6 @@ export default function App() {
       color: e.event._def.ui.backgroundColor,
       _date: e.event.start,
       _instance: e.event._instance.defId,
-      foo: 'BAR'
     };
 
     setCurrentEvent(newEvent)
