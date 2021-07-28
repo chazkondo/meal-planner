@@ -7,6 +7,7 @@ import Link from 'next/link'
 
 import Alert from "sweetalert2";
 import axios from "axios";
+import { uuid } from 'uuidv4';
 
 Date.prototype.addDays = function(days) {
   var date = new Date(this.valueOf());
