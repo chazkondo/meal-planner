@@ -160,6 +160,8 @@ export default function App() {
         console.log(calendar, 'for real')
         alert('CASE WHERE EVENT DOES NOT EXIST IN CALENDAR ARRAY')
         const frontEndId = e.event._def.extendedProps.uuid
+        const frontEndEvent = calendar.find(item => item._uuid === frontEndId)
+        console.log(frontEndEvent, 'found?')
       } else {
         event._date = e.event.start
       }
