@@ -149,10 +149,9 @@ export default function App() {
     // 
     const newEvent = {
       recipe_id: e.event._def.extendedProps._id,
-      title: e.draggedEl.getAttribute("name"),
-      name: e.draggedEl.getAttribute("name"),
+      title: e.draggedEl.getAttribute("title"),
       color: e.event._def.ui.backgroundColor,
-      _date: e.event.start,
+      start: e.event.start,
       _instance: e.event._instance.defId,
     };
 
