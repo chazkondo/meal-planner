@@ -60,7 +60,7 @@ export default async function calendarSwitch(req, res){
             await updateUser(req, res);
             break;
         case 'DELETE':
-          const confirmation = await Calendar.findOneAndDelete({_id: req.body._id})
+          await deleteItem(req, res);
           break;
         default:
             res.status(400).json({success: false, default: true})
