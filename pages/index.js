@@ -196,7 +196,6 @@ export default function App() {
     };
 
   function postToCalendarDB(item, e) {
-    // THIS IS WHERE I NEED TO FIX: ON POST UPDATE THE LATEST CALENDAR ARR OBJ WITH THE CORRECT _ID
     axios
       .post('/api/calendar', {...item})
       .then(response => {
