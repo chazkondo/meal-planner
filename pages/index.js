@@ -31,6 +31,8 @@ import { v4 as uuid_v4 } from "uuid";
 
 // success. function now edits the correct db obj on move
 
+// issue from mapping ingredients again due to db changes
+
 
 Date.prototype.addDays = function(days) {
   var date = new Date(this.valueOf());
@@ -195,7 +197,7 @@ export default function App() {
       title: eventClick.event._def.extendedProps.name + '<div style="font-size: 20">' + eventClick.event.start.toString().slice(0, 15) + '</div>',
       html:
       `<div>` +
-        getIngredients(eventClick.event._def.publicId ? eventClick.event._def.publicId : eventClick.event._def.extendedProps._id) +
+        getIngredients(eventClick.event._def.publicId ? eventClick.event._def.publicId : eventClick.event._def.extendedProps.recipe_id) +
       '</div>',
 
       showCancelButton: true,
