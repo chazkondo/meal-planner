@@ -148,11 +148,14 @@ export default function App() {
       color: e.event._def.ui.backgroundColor,
       _date: e.event.start,
       _instance: e.event._instance.defId,
-      _uuid: e.event._def.extendedProps.uuid
     };
 
-    setCurrentEvent(newEvent)
-    setTheEvent(e)
+    const frontEndEvent = {
+      ...newEvent,
+      _uuid: e.event._def.extendedProps.uuid
+    }
+
+    postToCalendarDB(newEvent, e)
     updateCalendar(previous=>[...previous, newEvent]);
     console.log('this is being fired')
   };
