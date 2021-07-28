@@ -38,7 +38,8 @@ import { v4 as uuid_v4 } from "uuid";
 
 // When I delete, I will also have to filter both the calendars
 
-// if uuid exist, filter 
+// if uuid exist, remove the item from actual calendar arr using uuid.
+// if uuid doesn't exist remove from both calendars using id
 
 
 Date.prototype.addDays = function(days) {
@@ -206,7 +207,7 @@ export default function App() {
 
   function eventClick(eventClick) {
     const event = findItem(eventClick)
-    console.log(eventClick, 'what is event clicked??')
+    console.log(event._id, 'what is event clicked??')
     Alert.fire({
       title: eventClick.event._def.title + '<div style="font-size: 20">' + eventClick.event.start.toString().slice(0, 15) + '</div>',
       html:
@@ -222,7 +223,7 @@ export default function App() {
     }).then((result) => {
       if (result.value) {
         const newArr = calendar.filter(events => events._instance !== eventClick.event._instance.defId)
-        updateCalendar([])
+        updateCalendar(newArr)
         eventClick.event.remove(); // It will remove event from the calendar
         Alert.fire("Deleted!", "Your item has been deleted.", "success");
       }
