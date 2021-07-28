@@ -236,7 +236,7 @@ export default function App() {
         </div>
         <div id="all-recipes">
           {apiRecipes.map((item) => (
-            <Recipe key={item.id} item={item} />
+            <Recipe key={item._id} item={item} />
           ))}
         </div>
       </div>
