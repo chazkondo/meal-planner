@@ -113,12 +113,6 @@ export default function App() {
   }, [])
 
   useEffect(()=>{
-    if (dbChange) {
-      postToCalendarDB(currentEvent, theEvent)
-    }
-  }, [dbChange])
-
-  useEffect(()=>{
     if (dbUpdatedFlag) {
       axios
       .get('/api/calendar')
