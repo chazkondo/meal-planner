@@ -29,6 +29,8 @@ import { v4 as uuid_v4 } from "uuid";
 // Because of this ^, I will use an alternative arr that reflects the correct db - this should be okay because
 // when I post to db, the new arr will refresh, and if it doesn't post, then I will use the revert function
 
+// success. function now edits the correct db obj on move
+
 
 Date.prototype.addDays = function(days) {
   var date = new Date(this.valueOf());
