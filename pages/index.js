@@ -156,8 +156,7 @@ export default function App() {
     }
 
     postToCalendarDB(newEvent, e)
-    updateCalendar(previous=>[...previous, newEvent]);
-    console.log('this is being fired')
+    updateCalendar(previous=>[...previous, frontEndEvent]);
   };
 
     // handle event move
