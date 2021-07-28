@@ -173,6 +173,8 @@ export default function App() {
   }
 
   function findItem() {
+    // Either maps to item from db or item in the current state
+    
   }
 
   function handleCheck(e) {
