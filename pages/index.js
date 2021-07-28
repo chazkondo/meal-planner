@@ -23,6 +23,8 @@ import { v4 as uuid_v4 } from "uuid";
 
 // deleted use Effect
 
+// fixed the code so only one post was getting added to db on drop, however, the front end still displays two.
+
 
 Date.prototype.addDays = function(days) {
   var date = new Date(this.valueOf());
@@ -131,7 +133,7 @@ export default function App() {
           calendarEntries.data.calendarEntries[i].name = calendarEntries.data.calendarEntries[i].title;
           // calendarEntries.data.calendarEntries[i]._id = calendarEntries.data.calendarEntries[i].id
         }
-        updateActualCalendar([...calendarEntries.data.calendarEntries])
+        updateCalendar([...calendarEntries.data.calendarEntries])
       })
       .catch(err => console.log(err))
     }
