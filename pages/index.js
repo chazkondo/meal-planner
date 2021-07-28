@@ -171,7 +171,7 @@ export default function App() {
     .catch(err=> {console.log(err, ' an error with calendar post'); e.revert()})
   }
 
-  function findItem(event) {
+  function findItem(e) {
     // Either maps to item from db or item in the current state
     return calendar.find(item => item._id === e.event._def.extendedProps._id) || actualCalendar.find(item => item.uuid === e.event._def.extendedProps.uuid)
   }
