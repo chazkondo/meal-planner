@@ -21,7 +21,7 @@ const Recipe = memo(({ item }) => {
     let draggable = new Draggable(elRef.current, {
       eventData: function () {
         console.log('THIS WAS HIT')
-        return { ...item, create: true };
+        return { ...item, uuid: 'something unique', create: true };
       }
     });
 
