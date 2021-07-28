@@ -202,7 +202,7 @@ export default function App() {
     const event = findItem(eventClick)
     console.log(event, 'what is here?')
     Alert.fire({
-      title: eventClick.event._def.extendedProps.title + '<div style="font-size: 20">' + eventClick.event.start.toString().slice(0, 15) + '</div>',
+      title: eventClick.event._def.title + '<div style="font-size: 20">' + eventClick.event.start.toString().slice(0, 15) + '</div>',
       html:
       `<div>` +
         getIngredients(event.recipe_id) +
