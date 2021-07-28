@@ -226,6 +226,9 @@ export default function App() {
         updateCalendar(newArr)
         eventClick.event.remove(); // It will remove event from the calendar
         Alert.fire("Deleted!", "Your item has been deleted.", "success");
+        if (eventClick.event._def.extendedProps.uuid) {
+          // 
+        }
       }
     });
   };
