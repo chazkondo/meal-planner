@@ -152,7 +152,6 @@ export default function App() {
 
 
       updateCalendarDB(event, e)
-      event = undefined;
       // const newEvent = {
       //   id: eventInfo.draggedEl.getAttribute("data-id"),
       //   title: eventInfo.draggedEl.getAttribute("title"),
