@@ -7,7 +7,7 @@ import Link from 'next/link'
 
 import Alert from "sweetalert2";
 import axios from "axios";
-import { v4 } from 'uuidv4';
+import { v4 as uuid_v4 } from "uuid";
 
 // Test work flow
 
@@ -37,7 +37,7 @@ const Recipe = memo(({ item }) => {
     let draggable = new Draggable(elRef.current, {
       eventData: function () {
         console.log('THIS WAS HIT')
-        return { ...item, uuid: v4(), create: true };
+        return { ...item, uuid: uuid_v4(), create: true };
       }
     });
 
