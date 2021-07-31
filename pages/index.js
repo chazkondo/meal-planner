@@ -276,7 +276,7 @@ export default function App() {
             <Recipe key={item._id} item={item} />
           ))}
         </div>
-        <div>Change to</div>
+        <div className="recipe-title flex-center">Bruh</div>
       </div>
       <div className="calendar-wrapper">
         <FullCalendar
