@@ -273,6 +273,7 @@ export default function App() {
     }).then((result) => {
       console.log(result, 'what ?')
       if (result.value) {
+        console.log(result.value, 'what is here?')
       }
     })
   }
