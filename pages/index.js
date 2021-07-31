@@ -262,7 +262,7 @@ export default function App() {
 
   function add () {
     Alert.fire({
-      title: 'Create New Recipe' + '<div style="font-size: 20">' + eventClick.event.start.toString().slice(0, 15) + '</div>',
+      title: 'Create New Recipe',
       html: '',
 
       showCancelButton: true,
