@@ -219,6 +219,8 @@ export default function App() {
     function deleteCallback(success) {
       if (success) {
         Alert.fire("Deleted!", "Your item has been deleted.", "success");
+      } else {
+        Alert.fire("Oops!", "An network error occurred.", "failure");
       }
     }
 
