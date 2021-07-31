@@ -262,14 +262,14 @@ export default function App() {
 
   function add () {
     Alert.fire({
-      title: 'Create new...',
+      title: 'create new',
       html: '',
 
-      showCancelButton: true,
+      showDenyButton: true,
       confirmButtonColor: "green",
-      cancelButtonColor: "yellow",
+      denyButtonColor: "orange",
       confirmButtonText: "Recipe",
-      cancelButtonText: "Item",
+      denyButtonText: "Item",
     }).then((result) => {
       console.log(result, 'what ?')
       if (result.value) {
