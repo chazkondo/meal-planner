@@ -78,6 +78,9 @@ export default function App() {
       setApiRecipes(recipes.data.recipes)
     })
     .catch(err => console.log(err))
+
+    axios
+    .get('/api/ingredients')
   }, [])
 
   useEffect(()=>{
