@@ -217,7 +217,7 @@ export default function App() {
   }
 
   function eventClick(eventClick) {
-    
+    const isRecipe = eventClick.event.extendedProps.recipe_id || eventClick.event.extendedProps.isRecipe
     function deleteCallback(success) {
       if (success) {
         Alert.fire("Deleted!", "Your item has been deleted.", "success");
@@ -229,7 +229,7 @@ export default function App() {
 
     Alert.fire({
       title: eventClick.event._def.title + '<div style="font-size: 20">' + eventClick.event.start.toString().slice(0, 15) + '</div>',
-      html: eventClick.event.extendedProps.recipe_id ? 
+      html: isRecipe ? 
       `<div>` +
         getIngredients(event.recipe_id) +
       '</div>' : null,
