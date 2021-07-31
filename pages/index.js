@@ -71,6 +71,16 @@ export default function App() {
   const [currentEvent, setCurrentEvent] = useState({})
 
   const [theEvent, setTheEvent] = useState({})
+
+  const [navigationBlocker, setNavigationBlocker] = useState(undefined)
+
+  useEffect(()=>{
+    if (navigationBlocker) {
+      window.onbeforeunload = () => true
+    } else {
+      window.onbeforeunload = undefined
+    }
+})
   
   useEffect(()=>{
     axios
