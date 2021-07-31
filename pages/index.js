@@ -271,7 +271,6 @@ export default function App() {
       confirmButtonText: "Recipe",
       denyButtonText: "Item",
     }).then((result) => {
-      console.log(result, 'what ?')
       if (result.isConfirmed) {
         alert('Confirmed')
       }
