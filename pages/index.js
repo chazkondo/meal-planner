@@ -299,7 +299,7 @@ export default function App() {
         <div className="recipe-title flex-center">
         <Link href="/">
           <a className="toggle-list" onClick={()=>toggleIngredients(previous=>!previous)}>
-            {ingredientsToggled ? '[ Toggle Recipes ]' : '[ Toggle Grocery Items ]a'}
+            {ingredientsToggled ? '[ Toggle Recipes ]' : '[ Toggle Grocery Items ]'}
           </a>
         </Link>
         </div>
