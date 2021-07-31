@@ -124,7 +124,7 @@ export default function App() {
 
     console.log(newEvent, 'what is the recipe id here?')
 
-    postToCalendarDB(newEvent, e, e.event._def.extendedProps.uuid)
+    // postToCalendarDB(newEvent, e, e.event._def.extendedProps.uuid)
   };
 
     // handle event move
