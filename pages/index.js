@@ -179,11 +179,11 @@ export default function App() {
     .catch(err=> {console.log(err, ' an error with calendar post'); e.revert()})
   }
 
-  function deleteFromCalendarDB(itemId, e) {
+  function deleteFromCalendarDB(itemId, e, callback) {
     axios
       .delete('/api/calendar', {params: {_id: itemId._id}})
-      .then(res=>deleteCallback(true))
-      .catch(err=>{console.log(err, ' an error with calendar post'); e.revert(); deleteCallback(false)})
+      .then(res=>callback(true))
+      .catch(err=>{console.log(err, ' an error with calendar post'); e.revert(); callback(false)})
   }
 
   function findItem(e) {
