@@ -202,10 +202,6 @@ export default function App() {
 
   function eventClick(eventClick) {
     
-    if (eventClick.event.extendedProps.recipe_id) {
-      showRecipeAlert(eventClick)
-    }
-
     function deleteCallback(success) {
       if (success) {
         Alert.fire("Deleted!", "Your item has been deleted.", "success");
@@ -214,15 +210,14 @@ export default function App() {
       }
     }
 
-  function showRecipeAlert(e) {
     const event = findItem(e)
 
     Alert.fire({
-      title: e.event._def.title + '<div style="font-size: 20">' + e.event.start.toString().slice(0, 15) + '</div>',
-      html:
+      title: eventClick.event._def.title + '<div style="font-size: 20">' + eventClick.event.start.toString().slice(0, 15) + '</div>',
+      html: eventClick.event.extendedProps.recipe_id ? 
       `<div>` +
         getIngredients(event.recipe_id) +
-      '</div>',
+      '</div>' : null,
 
       showCancelButton: true,
       confirmButtonColor: "#d33",
@@ -248,43 +243,6 @@ export default function App() {
         }
       }
     });
-  };
-
-  function showItemAlert(e) {
-    const event = findItem(e)
-
-    Alert.fire({
-      title: e.event._def.title + '<div style="font-size: 20">' + e.event.start.toString().slice(0, 15) + '</div>',
-      html:
-      `<div>` +
-        getIngredients(event.recipe_id) +
-      '</div>',
-
-      showCancelButton: true,
-      confirmButtonColor: "#d33",
-      cancelButtonColor: "#3085d6",
-      confirmButtonText: "Remove",
-      cancelButtonText: "Close",
-    }).then((result) => {
-      if (result.value) {
-        const newArr = actualCalendar.filter(events => events._id !== event._id)
-        updateActualCalendar(newArr)
-        // IF event was just added on front end UI
-        if (e.event._def.extendedProps.uuid) {
-          // utilize remove() function
-          e.event.remove(); // It will remove event from the calendar
-          // if uuid exists, then this item has not been added to calendar arr, but is in actualCalendar arr
-          // delete from db first
-          deleteFromCalendarDB(event, e, deleteCallback)
-
-        } else {
-          const calendarArr = calendar.filter(events => events._id !== event._id)
-          updateCalendar(calendarArr)
-          deleteFromCalendarDB(event, null, deleteCallback)
-        }
-      }
-    });
-  };
   }
 
   return (
