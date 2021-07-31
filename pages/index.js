@@ -76,7 +76,7 @@ export default function App() {
     .get('/api/recipes')
     .then(recipes => {
       console.log('THIS WAS HIT')
-      recipes.data.recipes.map(recipe => recipe.title = recipe.name)
+      recipes.data.recipes.map(recipe => {recipe.title = recipe.name; recipe.isRecipe = true})
       setApiRecipes(recipes.data.recipes)
     })
     .catch(err => console.log(err))
