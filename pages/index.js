@@ -210,7 +210,7 @@ export default function App() {
       }
     }
 
-    const event = findItem(e)
+    const event = findItem(eventClick)
 
     Alert.fire({
       title: eventClick.event._def.title + '<div style="font-size: 20">' + eventClick.event.start.toString().slice(0, 15) + '</div>',
@@ -229,9 +229,9 @@ export default function App() {
         const newArr = actualCalendar.filter(events => events._id !== event._id)
         updateActualCalendar(newArr)
         // IF event was just added on front end UI
-        if (e.event._def.extendedProps.uuid) {
+        if (eventClick.event._def.extendedProps.uuid) {
           // utilize remove() function
-          e.event.remove(); // It will remove event from the calendar
+          eventClick.event.remove(); // It will remove event from the calendar
           // if uuid exists, then this item has not been added to calendar arr, but is in actualCalendar arr
           // delete from db first
           deleteFromCalendarDB(event, e, deleteCallback)
