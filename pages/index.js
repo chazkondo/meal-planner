@@ -272,10 +272,10 @@ export default function App() {
       denyButtonText: "Item",
     }).then((result) => {
       console.log(result, 'what ?')
-      if (result.value.isConfirmed) {
+      if (result.isConfirmed) {
         alert('Confirmed')
       }
-      if (result.value.isDenied) {
+      if (result.isDenied) {
         alert('Denied')
       }
     })
