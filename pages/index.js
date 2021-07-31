@@ -243,7 +243,7 @@ export default function App() {
 
         } else {
           
-          const calendarArr = calendar.filter(events => {console.log(events._id, 'hello?'); return events._instance !== eventClick.event._instance.defId})
+          const calendarArr = calendar.filter(events => events._id !== event._id)
           updateCalendar(calendarArr)
           console.log(event, 'what we got here')
         }
