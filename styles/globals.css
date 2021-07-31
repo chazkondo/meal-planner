@@ -38,6 +38,10 @@ a {
   height: 7vh
 }
 
+.toggle-list {
+  font-size: 0.85em;
+}
+
 #all-recipes {
   padding: 0 10px;
   border: 1px solid #ccc;
