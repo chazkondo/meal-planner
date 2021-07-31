@@ -262,7 +262,7 @@ export default function App() {
 
   function add () {
     Alert.fire({
-      title: eventClick.event._def.title + '<div style="font-size: 20">' + eventClick.event.start.toString().slice(0, 15) + '</div>',
+      title: 'Create New Recipe' + '<div style="font-size: 20">' + eventClick.event.start.toString().slice(0, 15) + '</div>',
       html: isRecipe ? 
       `<div>` +
         getIngredients(event.recipe_id) +
