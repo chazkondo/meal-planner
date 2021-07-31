@@ -253,6 +253,7 @@ export default function App() {
           const calendarArr = calendar.filter(events => events._id !== event._id)
           updateCalendar(calendarArr)
           console.log(event, 'what we got here')
+          deleteFromCalendarDB(event, null, deleteCallback)
         }
       }
     });
