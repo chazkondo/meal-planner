@@ -3,6 +3,11 @@ import mongoose, {Schema} from "mongoose";
 const CalendarSchema = new mongoose.Schema({
 	recipe_id: {
         type: Schema.Types.ObjectId,
+        ref: "Recipe",
+        required: [false, 'Please provide the ID']
+    },
+    item_id: {
+        type: Schema.Types.ObjectId,
         ref: "Organization",
         required: [false, 'Please provide the ID']
     },
