@@ -244,7 +244,7 @@ export default function App() {
           const newArr = actualCalendar.filter(events => events._id !== event._id)
           updateActualCalendar(newArr)
         } else {
-
+          console.log(eventClick.event._def, 'what we got here')
         }
       }
     });
