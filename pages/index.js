@@ -126,6 +126,14 @@ export default function App() {
 
       postToCalendarDB(newEvent, e, e.event._def.extendedProps.uuid)
     } else {
+      const newEvent = {
+        recipe_id: e.event._def.extendedProps._id,
+        title: e.event._def.title,
+        color: e.event._def.ui.backgroundColor,
+        start: e.event.start,
+        _instance: e.event._instance.defId,
+        allDay: true
+      };
       alert('Post to calendar db with item')
     }
 
