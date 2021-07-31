@@ -229,8 +229,8 @@ export default function App() {
       cancelButtonText: "Close",
     }).then((result) => {
       if (result.value) {
-        const newArr = calendar.filter(events => {console.log(events, 'hello?'); return events._instance !== eventClick.event._instance.defId})
-        updateCalendar(newArr)
+        // const newArr = calendar.filter(events => {console.log(events, 'hello?'); return events._instance !== eventClick.event._instance.defId})
+        // updateCalendar(newArr)
         Alert.fire("Deleted!", "Your item has been deleted.", "success");
         // IF event was just added on front end UI
         if (eventClick.event._def.extendedProps.uuid) {
