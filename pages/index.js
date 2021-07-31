@@ -242,6 +242,9 @@ export default function App() {
           const newArr = actualCalendar.filter(events => events._id !== event._id)
           updateActualCalendar(newArr)
         } else {
+          
+          const newArr = calendar.filter(events => {console.log(events, 'hello?'); return events._instance !== eventClick.event._instance.defId})
+          // updateCalendar(newArr)
           console.log(eventClick.event._def.extendedProps._id, 'what we got here')
         }
       }
