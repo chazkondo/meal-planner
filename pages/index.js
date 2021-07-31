@@ -239,7 +239,7 @@ export default function App() {
     <div className="App">
       <div onClick={()=>console.log(calendar, ' calendar', actualCalendar, ' actual')} className="recipe-wrapper">
         <div className="recipe-title flex-center">
-          <Link href="/">
+          <Link href="/" onClick={()=>toggleIngredients(previous => !previous)}>
             <a className="link">Add Grocery Item</a>
           </Link>
         </div>
