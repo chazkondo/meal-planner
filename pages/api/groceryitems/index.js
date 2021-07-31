@@ -13,7 +13,8 @@ export default async function groceryItemSwitch(req, res){
         case 'GET':
             try {
                 const items = await Item.find({});
-                res.status(200).json({success: true, items})
+                const ingredients = await Ingredient.find({});
+                res.status(200).json({success: true, groceryItems: [...items, ...ingredients]})
             } catch (error) {
                 res.status(400).json({success: false})
             }    
