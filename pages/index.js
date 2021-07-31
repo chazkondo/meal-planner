@@ -113,18 +113,22 @@ export default function App() {
   const handleEventReceive = (e) => {
     console.log(e, 'what is the item?')
     // 
-    const newEvent = {
-      recipe_id: e.event._def.extendedProps._id,
-      title: e.event._def.title,
-      color: e.event._def.ui.backgroundColor,
-      start: e.event.start,
-      _instance: e.event._instance.defId,
-      allDay: true
-    };
+    if (e.event._def.extendedProps.isRecipe) {
+      const newEvent = {
+        recipe_id: e.event._def.extendedProps._id,
+        title: e.event._def.title,
+        color: e.event._def.ui.backgroundColor,
+        start: e.event.start,
+        _instance: e.event._instance.defId,
+        allDay: true
+      };
+
+      postToCalendarDB(newEvent, e, e.event._def.extendedProps.uuid)
+    }
 
     console.log(newEvent, 'what is the recipe id here?')
 
-    // postToCalendarDB(newEvent, e, e.event._def.extendedProps.uuid)
+    postToCalendarDB(newEvent, e, e.event._def.extendedProps.uuid)
   };
 
     // handle event move
