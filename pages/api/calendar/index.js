@@ -128,7 +128,6 @@ export default async function calendarSwitch(req, res){
 
         const {_id, signature} = req.query
     
-    
         await Calendar.findOneAndDelete({ _id });
     
         await mongooseSession.commitTransaction();
@@ -146,7 +145,7 @@ export default async function calendarSwitch(req, res){
     
         res.status(400).json({
           success: false,
-          message: "Failed to update user current organization.",
+          message: "Failed to delete item.",
         });
       }
     };
