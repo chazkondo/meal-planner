@@ -111,7 +111,7 @@ export default function App() {
 
   // handle event receive
   const handleEventReceive = (e) => {
-    console.log(e, 'what is the recipe id?')
+    console.log(e, 'what is the item?')
     // 
     const newEvent = {
       recipe_id: e.event._def.extendedProps._id,
