@@ -8,7 +8,7 @@ const CalendarSchema = new mongoose.Schema({
     },
     item_id: {
         type: Schema.Types.ObjectId,
-        ref: "Organization",
+        ref: "Item",
         required: [false, 'Please provide the ID']
     },
     allDay: {

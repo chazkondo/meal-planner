@@ -124,6 +124,8 @@ export default function App() {
       };
 
       postToCalendarDB(newEvent, e, e.event._def.extendedProps.uuid)
+    } else {
+      alert('Post to calendar db with item')
     }
 
   };
