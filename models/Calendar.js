@@ -17,7 +17,7 @@ const CalendarSchema = new mongoose.Schema({
     },
     color: {
         type: String,
-        required: [true, 'Please provide the color hex']
+        required: [false, 'Please provide the color hex']
     },
     title: {
         type: String,
