@@ -215,6 +215,11 @@ export default function App() {
   function eventClick(eventClick) {
     const event = findItem(eventClick)
     console.log(event._id, 'what is event clicked??')
+
+    function deleteCallback() {
+      Alert.fire("Deleted!", "Your item has been deleted.", "success");
+    }
+
     Alert.fire({
       title: eventClick.event._def.title + '<div style="font-size: 20">' + eventClick.event.start.toString().slice(0, 15) + '</div>',
       html:
@@ -231,7 +236,6 @@ export default function App() {
       if (result.value) {
         const newArr = actualCalendar.filter(events => events._id !== event._id)
         updateActualCalendar(newArr)
-        Alert.fire("Deleted!", "Your item has been deleted.", "success");
         // IF event was just added on front end UI
         if (eventClick.event._def.extendedProps.uuid) {
           // utilize remove() function
@@ -239,10 +243,9 @@ export default function App() {
           // if uuid exists, then this item has not been added to calendar arr, but is in actualCalendar arr
           // delete from db first
           console.log(event, 'HELLO EVENT?')
-          deleteFromCalendarDB(event, eventClick)
+          deleteFromCalendarDB(event, eventClick, deleteCallback)
 
         } else {
-          
           const calendarArr = calendar.filter(events => events._id !== event._id)
           updateCalendar(calendarArr)
           console.log(event, 'what we got here')
