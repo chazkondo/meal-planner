@@ -72,7 +72,7 @@ export default function App() {
 
   const [theEvent, setTheEvent] = useState({})
 
-  const [navigationBlocker, setNavigationBlocker] = useState(undefined)
+  const [navigationBlocker, setNavigationBlocker] = useState(false)
 
   useEffect(()=>{
     if (navigationBlocker) {
@@ -80,7 +80,7 @@ export default function App() {
     } else {
       window.onbeforeunload = undefined
     }
-})
+}, [navigationBlocker])
   
   useEffect(()=>{
     axios
@@ -160,29 +160,34 @@ export default function App() {
     };
 
   function postToCalendarDB(item, e, uuid) {
+    setNavigationBlocker(true)
     axios
       .post('/api/calendar', {...item})
       .then(response => {
         updateActualCalendar(previous => [...previous, {...response.data.entry, uuid}])
+        setNavigationBlocker(false)
       })
       .catch(err=> {
         e.revert();
         console.log(err, ' an error with calendar postasdashdjk')
+        setNavigationBlocker(false)
       })
   }
 
   function updateCalendarDB(item, e) {
+    setNavigationBlocker(true)
     axios
     .put('/api/calendar', {...item})
-    .then(response => console.log(response, ' ? something response for calendar post?'))
-    .catch(err=> {console.log(err, ' an error with calendar post'); e.revert()})
+    .then(response => setNavigationBlocker(false))
+    .catch(err=> {console.log(err, ' an error with calendar post'); e.revert(); setNavigationBlocker(false)})
   }
 
   function deleteFromCalendarDB(itemId, e, callback) {
+    setNavigationBlocker(true)
     axios
       .delete('/api/calendar', {params: {_id: itemId._id}})
-      .then(res=>callback(true))
-      .catch(err=>{console.log(err, ' an error with calendar post'); if (e) e.revert(); callback(false)})
+      .then(res=>{callback(true); setNavigationBlocker(false)})
+      .catch(err=>{console.log(err, ' an error with calendar post'); if (e) e.revert(); callback(false); setNavigationBlocker(false)})
   }
 
   function findItem(e) {
