@@ -9,6 +9,10 @@ const IngredientSchema = new mongoose.Schema({
         type: String,
 		required: [true, 'Please set the type']
     },
+	price: {
+		type: Number,
+		required: [false]
+	},
 	date: {
         type: Date,
         required: [true]
