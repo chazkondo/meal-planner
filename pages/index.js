@@ -61,6 +61,8 @@ export default function App() {
   const [calendar, updateCalendar] = useState([])
 
   const [actualCalendar, updateActualCalendar] = useState([])
+
+  const [ingredientsToggled, toggleIngredients] = useState(false)
   const [ingredientNum, setIngredientNum] = useState(1)
 
   const [dbUpdatedFlag, setDbUpdatedFlag] = useState(0)
