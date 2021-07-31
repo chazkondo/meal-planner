@@ -245,7 +245,7 @@ export default function App() {
           
           // const newArr = calendar.filter(events => {console.log(events, 'hello?'); return events._instance !== eventClick.event._instance.defId})
           // updateCalendar(newArr)
-          console.log(eventClick.event._def.extendedProps._id, 'what we got here')
+          console.log(event, 'what we got here')
         }
       }
     });
