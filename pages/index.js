@@ -82,7 +82,7 @@ export default function App() {
     axios
     .get('/api/ingredients')
     .then(ingredients => {
-      recipes.data.recipes.map(recipe => recipe.title = recipe.name)
+      ingredients.data.ingredients.map(ingredient => ingredient.title = ingredient.name)
       setApiIngredients(ingredients.data.ingredients)
     })
     .catch(err => console.log(err))
@@ -243,6 +243,9 @@ export default function App() {
         </div>
         <div id="all-recipes">
           {apiRecipes.map((item) => (
+            <Recipe key={item._id} item={item} />
+          ))}
+          {ingredients.map((item) => (
             <Recipe key={item._id} item={item} />
           ))}
         </div>
