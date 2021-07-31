@@ -308,7 +308,7 @@ export default function App() {
             add: {
               text: '+',
               click: function() {
-                alert('clicked the custom button!');
+                add()
               }
             }
           }}
