@@ -265,7 +265,7 @@ export default function App() {
       <div onClick={()=>console.log(calendar, ' calendar', actualCalendar, ' actual')} className="recipe-wrapper">
         <div className="recipe-title flex-center">
           <Link href="/">
-            <a className="link">{ingredientsToggled ? 'Grocery Items' : 'Recipes'}</a>
+            <a>{ingredientsToggled ? 'Grocery Items' : 'Recipes'}</a>
           </Link>
         </div>
         <div id="all-recipes">
@@ -276,7 +276,7 @@ export default function App() {
             <Recipe key={item._id} item={item} />
           ))}
         </div>
-        <div className="recipe-title flex-center">Bruh</div>
+        <div className="recipe-title flex-center"><a>{ingredientsToggled ? 'Toggle To Recipes' : 'Toggle To Grocery Items'}</a></div>
       </div>
       <div className="calendar-wrapper">
         <FullCalendar
