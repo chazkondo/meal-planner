@@ -244,10 +244,10 @@ export default function App() {
           </Link>
         </div>
         <div id="all-recipes">
-          {apiRecipes.map((item) => (
+          {ingredientsToggled ? ingredients.map((item) => (
             <Recipe key={item._id} item={item} />
-          ))}
-          {ingredients.map((item) => (
+          )) : 
+          apiRecipes.map((item) => (
             <Recipe key={item._id} item={item} />
           ))}
         </div>
