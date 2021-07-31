@@ -202,7 +202,9 @@ export default function App() {
 
   function eventClick(eventClick) {
     
-    console.log(eventClick, 'what is event clicked??')
+    if (eventClick.event.extendedProps.recipe_id) {
+      showRecipeAlert(eventClick)
+    }
 
     function deleteCallback(success) {
       if (success) {
