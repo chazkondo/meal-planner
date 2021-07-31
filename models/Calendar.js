@@ -4,7 +4,7 @@ const CalendarSchema = new mongoose.Schema({
 	recipe_id: {
         type: Schema.Types.ObjectId,
         ref: "Organization",
-        required: [true, 'Please provide the ID']
+        required: [false, 'Please provide the ID']
     },
     allDay: {
         type: Boolean,
