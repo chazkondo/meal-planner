@@ -216,8 +216,10 @@ export default function App() {
     const event = findItem(eventClick)
     console.log(event._id, 'what is event clicked??')
 
-    function deleteCallback() {
-      Alert.fire("Deleted!", "Your item has been deleted.", "success");
+    function deleteCallback(success) {
+      if (success) {
+        Alert.fire("Deleted!", "Your item has been deleted.", "success");
+      }
     }
 
     Alert.fire({
