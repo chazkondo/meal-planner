@@ -262,14 +262,14 @@ export default function App() {
 
   function add () {
     Alert.fire({
-      title: 'Create New Recipe',
+      title: 'Create new...',
       html: '',
 
       showCancelButton: true,
-      confirmButtonColor: "#d33",
-      cancelButtonColor: "#3085d6",
-      confirmButtonText: "Remove",
-      cancelButtonText: "Close",
+      confirmButtonColor: "green",
+      cancelButtonColor: "yellow",
+      confirmButtonText: "Recipe",
+      cancelButtonText: "Item",
     }).then((result) => {
       console.log(result, 'what ?')
       if (result.value) {
