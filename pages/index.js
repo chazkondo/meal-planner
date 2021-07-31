@@ -276,7 +276,11 @@ export default function App() {
             <Recipe key={item._id} item={item} />
           ))}
         </div>
-        <div className="recipe-title flex-center"><a>{ingredientsToggled ? 'Toggle To Recipes' : 'Toggle To Grocery Items'}</a></div>
+        <div className="recipe-title flex-center">
+          <a onClick={()=>toggleIngredients(previous=>!previous)}>
+            {ingredientsToggled ? 'Toggle To Recipes' : 'Toggle To Grocery Items'}
+          </a>
+        </div>
       </div>
       <div className="calendar-wrapper">
         <FullCalendar
