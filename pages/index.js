@@ -9,39 +9,6 @@ import Alert from "sweetalert2";
 import axios from "axios";
 import { v4 as uuid_v4 } from "uuid";
 
-// Test work flow
-
-// first step is to see if post is working properly
-// post is working fine.
-
-// issue: post is happening multiple times
-// issue: there are duplicates on front end and in db
-
-// check: how many calls to db I'm making via post
-// only one call, in one function, however that function is being called in a useEffect that is listening to something else
-// the use effect is listening to dbChange
-
-// deleted use Effect
-
-// fixed the code so only one post was getting added to db on drop, however, the front end still displays two.
-
-// When I repull data from db and replace calendar, full calendar refuses to update completely to the arr.
-// Because of this ^, I will use an alternative arr that reflects the correct db - this should be okay because
-// when I post to db, the new arr will refresh, and if it doesn't post, then I will use the revert function
-
-// success. function now edits the correct db obj on move
-
-// issue from mapping ingredients again due to db changes
-// fixed issue using a helper function to find which event i'm trying to address for the db
-
-// implement delete from db now
-
-// When I delete, I will also have to filter both the calendars
-
-// if uuid exist, remove the item from actual calendar arr using uuid.
-// if uuid doesn't exist remove from both calendars using id
-
-
 Date.prototype.addDays = function(days) {
   var date = new Date(this.valueOf());
   date.setDate(date.getDate() + days);
@@ -273,6 +240,7 @@ export default function App() {
       </div>
       <div className="calendar-wrapper">
         <FullCalendar
+        // style={{height: '50vh !important'}}
           plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
           headerToolbar={{
             left: null,
