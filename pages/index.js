@@ -241,7 +241,7 @@ export default function App() {
           console.log(event, 'HELLO EVENT?')
           deleteFromCalendarDB(event, eventClick)
 
-          const newArr = actualCalendar.filter(events => {console.log(events._id, event._id); return events._id !== event._id})
+          const newArr = actualCalendar.filter(events => events._id !== event._id)
           console.log(newArr, 'did it work?')
           updateActualCalendar(newArr)
         } else {
