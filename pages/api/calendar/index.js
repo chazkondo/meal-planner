@@ -125,7 +125,6 @@ export default async function calendarSwitch(req, res){
           
       try {
         mongooseSession.startTransaction();
-        console.log('hello?!', req.query, '?????????what is being sent here?')
 
         const {_id, signature} = req.query
     
