@@ -280,9 +280,17 @@ export default function App() {
       <div className="calendar-wrapper">
         <FullCalendar
         // style={{height: '50vh !important'}}
+          customButtons={{
+            myCustomButton: {
+              text: 'custom!',
+              click: function() {
+                alert('clicked the custom button!');
+              }
+            }
+          }}
           plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
           headerToolbar={{
-            left: null,
+            left: 'myCustomButton',
             center: "title",
           }}
           initialView="dayGridMonth"
