@@ -82,10 +82,10 @@ export default function App() {
     .catch(err => console.log(err))
 
     axios
-    .get('/api/ingredients')
-    .then(ingredients => {
-      ingredients.data.ingredients.map(ingredient => ingredient.title = ingredient.name)
-      setApiIngredients(ingredients.data.ingredients)
+    .get('/api/groceryitems')
+    .then(items => {
+      items.data.groceryitems.map(item => item.title = item.name)
+      setApiIngredients(items.data.groceryitems)
     })
     .catch(err => console.log(err))
   }, [])
