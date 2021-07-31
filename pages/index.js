@@ -209,7 +209,6 @@ export default function App() {
         Alert.fire("Oops!", "An network error occurred.", "failure");
       }
     }
-
     const event = findItem(eventClick)
 
     Alert.fire({
