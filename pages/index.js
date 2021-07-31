@@ -174,7 +174,7 @@ export default function App() {
       .catch(err=>{console.log(err, ' an error with calendar post'); if (e) e.revert(); callback(false)})
   }
 
-  function findRecipe(e) {
+  function findItem(e) {
     // Either maps to item from db or item in the current state
     return calendar.find(item => item._id === e.event._def.extendedProps._id) || actualCalendar.find(item => item.uuid === e.event._def.extendedProps.uuid)
   }
@@ -215,7 +215,7 @@ export default function App() {
     }
 
   function showRecipeAlert(e) {
-    const event = findRecipe(e)
+    const event = findItem(e)
 
     Alert.fire({
       title: e.event._def.title + '<div style="font-size: 20">' + e.event.start.toString().slice(0, 15) + '</div>',
