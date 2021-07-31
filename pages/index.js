@@ -183,7 +183,7 @@ export default function App() {
     axios
       .delete('/api/calendar', {params: {_id: itemId._id}})
       .then(res=>callback(true))
-      .catch(err=>{console.log(err, ' an error with calendar post'); e.revert(); callback(false)})
+      .catch(err=>{console.log(err, ' an error with calendar post'); if (e) e.revert(); callback(false)})
   }
 
   function findItem(e) {
