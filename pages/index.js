@@ -220,7 +220,7 @@ export default function App() {
     const isRecipe = eventClick.event.extendedProps.recipe_id || eventClick.event.extendedProps.isRecipe
     function deleteCallback(success) {
       if (success) {
-        Alert.fire("Deleted!", "Your item has been deleted.", "success");
+        Alert.fire("Removed!", "Your item has been removed from the calendar.", "success");
       } else {
         Alert.fire("Oops!", "An network error occurred.", "failure");
       }
