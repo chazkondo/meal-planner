@@ -279,7 +279,7 @@ export default function App() {
         <div className="recipe-title flex-center">
         <Link href="/">
           <a className="toggle-list" onClick={()=>toggleIngredients(previous=>!previous)}>
-            {ingredientsToggled ? '[ Toggle Recipes ]' : '[ Toggle Grocery Items ]'}
+            {ingredientsToggled ? '[ Toggle Recipes ]' : '[ Toggle Grocery Items ]a'}
           </a>
         </Link>
         </div>
@@ -288,8 +288,8 @@ export default function App() {
         <FullCalendar
         // style={{height: '50vh !important'}}
           customButtons={{
-            myCustomButton: {
-              text: '+',
+            add: {
+              text: '+ Add',
               click: function() {
                 alert('clicked the custom button!');
               }
@@ -297,7 +297,7 @@ export default function App() {
           }}
           plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
           headerToolbar={{
-            left: 'myCustomButton',
+            left: 'add',
             center: "title",
           }}
           initialView="dayGridMonth"
