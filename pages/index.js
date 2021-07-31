@@ -282,7 +282,7 @@ export default function App() {
         // style={{height: '50vh !important'}}
           customButtons={{
             myCustomButton: {
-              text: 'custom!',
+              text: '+',
               click: function() {
                 alert('clicked the custom button!');
               }
