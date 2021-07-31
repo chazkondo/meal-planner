@@ -127,7 +127,7 @@ export default function App() {
       postToCalendarDB(newEvent, e, e.event._def.extendedProps.uuid)
     } else {
       const newEvent = {
-        recipe_id: e.event._def.extendedProps._id,
+        item_id: e.event._def.extendedProps._id,
         title: e.event._def.title,
         color: e.event._def.ui.backgroundColor,
         start: e.event.start,
