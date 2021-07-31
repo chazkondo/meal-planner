@@ -187,14 +187,14 @@ export default function App() {
     axios
       .delete('/api/calendar', {params: {_id: itemId._id}})
       .then(res=>{callback(true); setNavigationBlocker(false)})
-      .catch(err=>{console.log(err, ' an error with calendar post'); if (e) e.revert(); callback(false); setNavigationBlocker(false)})
+      .catch(err=>{console.log(err, ' an error with calendar post'); if (e) e.revert(); callback(false); setNavigationBlocker(falseg)})
   }
 
   function findItem(e) {
     // Either maps to item from db or item in the current state
     return calendar.find(item => item._id === e.event._def.extendedProps._id) || actualCalendar.find(item => item.uuid === e.event._def.extendedProps.uuid)
   }
-
+ 
   function handleCheck(e) {
     if (e.target.checked) {
       setExpandedView(5)
