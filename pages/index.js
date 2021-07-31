@@ -277,9 +277,11 @@ export default function App() {
           ))}
         </div>
         <div className="recipe-title flex-center">
+        <Link href="/">
           <a onClick={()=>toggleIngredients(previous=>!previous)}>
             {ingredientsToggled ? 'Toggle To Recipes' : 'Toggle To Grocery Items'}
           </a>
+        </Link>
         </div>
       </div>
       <div className="calendar-wrapper">
