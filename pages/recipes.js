@@ -108,7 +108,7 @@ export default function Items() {
   }
 
   return (
-    <div className="recipe-wrapper">
+    <div className={styles.recipeWrapper}>
     <div>
         Add Recipe 
         <br />
