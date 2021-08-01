@@ -42,7 +42,6 @@ export default function Items() {
 
   const [recipeDropdownState, setRecipeDropdownState] = useState(0)
 
-  const [color, setColor] = useState("#e66465");
 
   useEffect(()=>{
     axios
@@ -90,44 +89,6 @@ export default function Items() {
     setType(e.target.value)
   }
 
-  function setIngredientDropdownValue(e) {
-    setIngredientIndex(e.target.value)
-  }
-
-  function addIngredient() {
-    setCurrentRecipeIngredients(previous => [...previous, allIngredients[ingredientIndex]]);
-  }
-
-  function findCurrentRecipeIndex(index) {
-    // let change = currentRecipe[index];
-    // change.toggleDiv = true;
-    setCurrentAmount('')
-    setCurrentAmountDiv(index)
-  }
-
-  function submitAmount(index) {
-    let copy = currentRecipeIngredients.slice();
-    copy[index] = {...copy[index], amount: currentAmount};
-    setCurrentRecipeIngredients(copy)
-    copy = undefined;
-    console.log(index)
-    setCurrentAmount('')
-    setCurrentAmountDiv(null)
-  }
-
-  function submitIngredient() {
-    axios
-      .post('/api/recipes', {
-        name: recipeName,
-        type: recipeTypes[recipeDropdown],
-        servings: recipeServings, 
-        ingredients: currentRecipeIngredients,
-        isPrepRecipe: isPrep,
-        color,
-      })
-      .then(result=>console.log(result, 'hit recipe switch'))
-      .catch(err => console.log(err, 'an error occ. recipe switch'))
-  }
 
   return (
     <div>
