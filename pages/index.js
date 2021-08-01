@@ -275,7 +275,7 @@ export default function App() {
       denyButtonText: "Item",
     }).then((result) => {
       if (result.isConfirmed) {
-        router.push(href)
+        router.push('/recipes')
       }
       if (result.isDenied) {
         router.push(href)
