@@ -9,18 +9,6 @@ import React, { useEffect, useState, useRef, memo } from "react";
 // also plan for functionality of being able to drag and drop non food items to calendar as well.
 
 export default function Items() {
-  const ingredientTypes = ['Beverages – coffee/tea, juice, soda',
-    'Bread/Bakery – sandwich loaves, dinner rolls, tortillas, bagels',
-    'Canned/Jarred Goods – vegetables, spaghetti sauce, ketchup',
-    'Dairy – cheeses, eggs, milk, yogurt, butter',
-    'Dry/Baking Goods – cereals, flour, sugar, pasta, mixes',
-    'Frozen Foods – waffles, vegetables, individual meals, ice cream',
-    'Meat – lunch meat, poultry, beef, pork',
-    'Produce – fruits, vegetables',
-    'Cleaners – all- purpose, laundry detergent, dishwashing liquid/detergent',
-    'Paper Goods – paper towels, toilet paper, aluminum foil, sandwich bags',
-    'Personal Care – shampoo, soap, hand soap, shaving cream',
-    'Other' ]
   const recipeTypes = ['Breakfast', 'Lunch', 'Dinner', 'Snack', 'Appetizer', 'Drink']
   const condensedTypes = ['Beverages', 'Bread/Bakery', 'Canned/Jarred Goods', 'Dairy', 'Dry/Baking Goods', 'Frozen Foods', 'Meat', 'Produce', 'Cleaners', 'Paper Goods', 'Personal Care', 'Other']
   const [name, setName] = useState('')
