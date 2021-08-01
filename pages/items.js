@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import styles from '../styles/item.module.css'
 
 // Add modals for each function
 
