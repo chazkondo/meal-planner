@@ -13,7 +13,6 @@ export default function Items() {
   const condensedTypes = ['Beverages', 'Bread/Bakery', 'Canned/Jarred Goods', 'Dairy', 'Dry/Baking Goods', 'Frozen Foods', 'Meat', 'Produce', 'Cleaners', 'Paper Goods', 'Personal Care', 'Other']
   const [name, setName] = useState('')
   const [recipeName, setRecipeName] = useState('')
-  const [ingredientName, setIngredientName] = useState('')
   const [type, setType] = useState(0)
   const [currentRecipeIngredients, setCurrentRecipeIngredients] = useState([])
   const [currentRecipe, setCurrentRecipe] = useState({})
