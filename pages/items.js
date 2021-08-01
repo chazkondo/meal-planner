@@ -46,15 +46,6 @@ export default function Items() {
       .catch(err => console.log(err))
   },[])
 
-  useEffect(()=>{
-    axios
-      .get('/api/recipes')
-      .then(recipes => {
-        console.log(recipes.data.recipes, 'here')
-        setAllRecipes(recipes.data.recipes)
-      })
-      .catch(err => console.log(err))
-  },[])
 
 
   function postItem() {
