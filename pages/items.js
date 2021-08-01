@@ -156,38 +156,7 @@ export default function Items() {
         <select id="recipes" name="recipes" onChange={(e) => setRecipeDropdown(e.target.value)} value={recipeDropdown}>
           {recipeTypes.map((item, i) => <option value={i} key={i}>{item}</option>)}
         </select>
-        <br />
-        <br />
-        <label htmlFor="servings">(Optional) Servings:</label>
-        <input type="number" placeholder={'Enter Amount of Servings'} onChange={(e) => setRecipeServings(e.target.value)} value={recipeServings}  />
-        <br />
-        <br />
-        <label htmlFor="prep">(Optional) Prep Recipe</label>
-        <input type="checkbox" name="prep" value="prep" onChange={()=>setIsPrep(previous=>!previous)} checked={isPrep}/>
-        <br />
-        <br />
-        <ul>
-        {currentRecipeIngredients.map((recipeItem, mappedIndex) => 
-            <li key={mappedIndex}>
-              {recipeItem.name}
-            {currentAmountDiv === mappedIndex ? <div key={`${mappedIndex} + '_amount_div'`}><input type="text" placeholder={'Enter Amount'} onChange={(e) => setCurrentAmount(e.target.value)} value={currentAmount}  /><button onClick={() => submitAmount(mappedIndex)}>Submit</button></div> : <button onClick={()=>findCurrentRecipeIndex(mappedIndex)}>{recipeItem.amount ? 'Edit Amount' : 'Add Amount'}</button>}
-            {recipeItem.amount ? <div key={`${mappedIndex} + 'set_amount_div'`}>[ {recipeItem.amount} ]</div> : null}
-            <br />
-            <br />
-            </li>
-        )}
-        </ul>
-        <label htmlFor="ingredients">{allIngredients.length ? 'Choose an ingredient to add:' : 'Loading'}</label>
-        <select id="ingredients" name="ingredients" onChange={(e) => setIngredientDropdownValue(e)} value={ingredientIndex}>
-          {allIngredients.map((item, i) => <option value={i} key={i}>{item.name}</option>)}
-        </select>
-        <button onClick={()=>addIngredient()}>Add Ingredient</button>
     </div>
-    <label htmlFor="color">Color</label>
-    <input type="color" id="color" name="color" value={color} onChange={e => setColor(e.target.value)}/>
-    <br />
-    <br />
-    <button onClick={()=>{console.log(currentRecipeIngredients); submitIngredient()}} disabled={!currentRecipeIngredients.length}>Submit Recipe</button>
     </div>
   );
 }
