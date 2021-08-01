@@ -75,6 +75,8 @@ export default function App() {
 
   const [navigationBlocker, setNavigationBlocker] = useState(false)
 
+  const router = useRouter()
+
   useEffect(()=>{
     if (navigationBlocker) {
       window.onbeforeunload = () => true
