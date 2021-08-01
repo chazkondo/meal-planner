@@ -69,7 +69,7 @@ export default function Items() {
 
 
   return (
-    <div>
+    <div className={styles.itemWrapper}>
         Add Item
         <br />
         <input type="text" placeholder={'Enter Item Name'} onChange={(e) => setName(e.target.value)} value={name}  />
