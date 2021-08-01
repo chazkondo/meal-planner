@@ -263,7 +263,7 @@ export default function App() {
     });
   }
 
-  function add () {
+  function routeToItemOrRecipePages () {
     Alert.fire({
       title: 'create new',
       html: '',
@@ -275,10 +275,10 @@ export default function App() {
       denyButtonText: "Item",
     }).then((result) => {
       if (result.isConfirmed) {
-        alert('Confirmed')
+        router.push(href)
       }
       if (result.isDenied) {
-        alert('Denied')
+        router.push(href)
       }
     })
   }
