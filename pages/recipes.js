@@ -1,6 +1,8 @@
 import axios from "axios";
 import React, { useEffect, useState, useRef, memo } from "react";
 
+import styles from '../styles/Recipe.module.css'
+
 // Add modals for each function
 
 // ie. if adding/editings item, then provide a modal for that
@@ -28,15 +30,6 @@ export default function Items() {
 
 
   const [color, setColor] = useState("#e66465");
-
-  useEffect(()=>{
-    axios
-      .get('/api/ingredients')
-      .then(ingredients => {
-        setAllIngredients(ingredients.data.ingredients)
-      })
-      .catch(err => console.log(err))
-  },[])
 
   useEffect(()=>{
     axios
