@@ -37,7 +37,6 @@ export default function Items() {
 
   const [isPrep, setIsPrep] = useState(false)
 
-  const [currentAmountDiv, setCurrentAmountDiv] = useState(null)
 
 
 
