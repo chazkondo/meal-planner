@@ -314,7 +314,7 @@ export default function App() {
             add: {
               text: '+',
               click: function() {
-                add()
+                routeToItemOrRecipePages()
               }
             }
           }}
