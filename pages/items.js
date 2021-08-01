@@ -131,7 +131,6 @@ export default function Items() {
 
   return (
     <div>
-    <div>
         Add Item
         <br />
         <input type="text" placeholder={'Enter Item Name'} onChange={(e) => setName(e.target.value)} value={name}  />
@@ -141,22 +140,6 @@ export default function Items() {
           {ingredientTypes.map((item, i) => <option value={i} key={i}>{item}</option>)}
         </select>
         <button onClick={()=>postItem()}>Submit</button>
-    </div>
-    <br />
-    <br />
-    <div>
-        Add Recipe 
-        {/* {allRecipes.length ? <select id="recipe" name="recipe" onChange={(e) => setRecipeDropdownState(e.target.value)} value={recipeDropdownState}>
-          {allRecipes.map((item, i) => <option value={i} key={i}>{item.name}</option>)}
-        </select> : null} */}
-        <br />
-        <input type="text" placeholder={'Enter Recipe Name'} onChange={(e) => setRecipeName(e.target.value)} value={recipeName}  />
-        <br />
-        <label htmlFor="recipes">Choose a recipe type:</label>
-        <select id="recipes" name="recipes" onChange={(e) => setRecipeDropdown(e.target.value)} value={recipeDropdown}>
-          {recipeTypes.map((item, i) => <option value={i} key={i}>{item}</option>)}
-        </select>
-    </div>
     </div>
   );
 }
