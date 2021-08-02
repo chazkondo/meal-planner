@@ -29,6 +29,8 @@ export default function Items() {
   const [name, setName] = useState('')
   const [type, setType] = useState(0)
   const [allIngredients, setAllIngredients] = useState([])
+  const [navigationBlocker, setNavigationBlocker] = useState(false)
+
 
 
 
