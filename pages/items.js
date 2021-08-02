@@ -42,6 +42,14 @@ export default function Items() {
       .catch(err => console.log(err))
   },[])
 
+  useEffect(()=>{
+    if (navigationBlocker) {
+      window.onbeforeunload = () => true
+    } else {
+      window.onbeforeunload = undefined
+    }
+}, [navigationBlocker])
+
 
 
   function postItem() {
