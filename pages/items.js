@@ -55,6 +55,7 @@ export default function Items() {
 
 
   function postItem() {
+    setNavigationBlocker(true)
     if (type > 7) {
       axios
         .post('/api/items/', {
@@ -62,6 +63,7 @@ export default function Items() {
           type: condensedTypes[type]
         })
         .then(res=>{
+          setNavigationBlocker(false)
           Alert.fire({
             title: eventClick.event._def.title + '<div style="font-size: 20">' + eventClick.event.start.toString().slice(0, 15) + '</div>',
             html: isRecipe ? 
@@ -102,6 +104,7 @@ export default function Items() {
           type: condensedTypes[type]
         })
         .then(res=>{
+          setNavigationBlocker(true)
           Alert.fire({
             title: eventClick.event._def.title + '<div style="font-size: 20">' + eventClick.event.start.toString().slice(0, 15) + '</div>',
             html: isRecipe ? 
