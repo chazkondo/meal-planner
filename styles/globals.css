@@ -13,7 +13,8 @@ h1,h2,h3,h4,h5,h6 {
 a {
   color: rgb(240,240,240);
   text-decoration: none;
-  padding: 4px
+  padding: 4px;
+  cursor: pointer
 }
 
 * {
