@@ -96,7 +96,10 @@ export default function Items() {
             }
           });
         })
-        .catch(err=>console.log(err, 'wat err?'))
+        .catch(err=>{
+          setNavigationBlocker(false)
+          console.log(err, 'wat err?')
+        })
     } else {
       axios
         .post('/api/ingredients/', {
