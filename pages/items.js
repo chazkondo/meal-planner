@@ -11,6 +11,7 @@ import { useRouter } from 'next/router'
 // also plan for functionality of being able to drag and drop non food items to calendar as well.
 
 export default function Items() {
+  const router = useRouter()
   const ingredientTypes = ['Beverages – coffee/tea, juice, soda',
     'Bread/Bakery – sandwich loaves, dinner rolls, tortillas, bagels',
     'Canned/Jarred Goods – vegetables, spaghetti sauce, ketchup',
