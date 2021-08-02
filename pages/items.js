@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import styles from '../styles/item.module.css'
+import { useRouter } from 'next/router'
 
 // Add modals for each function
 
@@ -78,6 +79,7 @@ export default function Items() {
         <select id="items" name="items" onChange={(e) => setDropdownValue(e)} value={type}>
           {ingredientTypes.map((item, i) => <option value={i} key={i}>{item}</option>)}
         </select>
+        <br />
         <button onClick={()=>postItem()}>Submit</button>
     </div>
   );
