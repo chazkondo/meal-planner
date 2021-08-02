@@ -107,7 +107,7 @@ export default function Items() {
           type: condensedTypes[type]
         })
         .then(res=>{
-          setNavigationBlocker(true)
+          setNavigationBlocker(false)
           Alert.fire({
             title: eventClick.event._def.title + '<div style="font-size: 20">' + eventClick.event.start.toString().slice(0, 15) + '</div>',
             html: isRecipe ? 
