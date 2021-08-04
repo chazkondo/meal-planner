@@ -53,6 +53,10 @@ export default function Items() {
 }, [navigationBlocker])
 
 
+  function toggleAddMoreAlert(){
+    
+  }
+
 
   function postItem() {
     setNavigationBlocker(true)
@@ -65,9 +69,9 @@ export default function Items() {
         .then(res=>{
           setNavigationBlocker(false)
           Alert.fire({
-            title: 'alsdaskld',
+            title: 'Successfully Added.',
             html: `<div>` +
-             'hi' +
+             'Add another item?' +
             '</div>',
       
             showCancelButton: true,
