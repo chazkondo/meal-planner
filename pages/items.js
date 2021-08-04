@@ -28,10 +28,8 @@ export default function Items() {
   const condensedTypes = ['Beverages', 'Bread/Bakery', 'Canned/Jarred Goods', 'Dairy', 'Dry/Baking Goods', 'Frozen Foods', 'Meat', 'Produce', 'Cleaners', 'Paper Goods', 'Personal Care', 'Other']
   const [name, setName] = useState('')
   const [type, setType] = useState(0)
-  const [allIngredients, setAllIngredients] = useState([])
+  const [allItems, setAllItems] = useState([])
   const [navigationBlocker, setNavigationBlocker] = useState(false)
-
-
 
 
 
@@ -39,9 +37,10 @@ export default function Items() {
     axios
       .get('/api/groceryitems')
       .then(items => {
-        setAllIngredients(items.data.groceryitems)
+        setAllItems(items.data.groceryitems)
       })
       .catch(err => console.log(err))
+      console.log('is this being hit at least?')
   },[])
 
   useEffect(()=>{
@@ -115,7 +114,7 @@ export default function Items() {
 
   return (
     <div className={styles.itemWrapper}>
-        {allIngredients.length ? allIngredients.map(item=><div>{item.name}</div>):null}
+        {/* {allItems.map(item=><div>{item.name}</div>)} */}
         Add Item
         <br />
         <input type="text" placeholder={'Enter Item Name'} onChange={(e) => setName(e.target.value)} value={name}  />
