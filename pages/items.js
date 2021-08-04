@@ -110,10 +110,9 @@ export default function Items() {
           setNavigationBlocker(false)
           Alert.fire({
             title: 'sanity',
-            html: isRecipe ? 
-            `<div>` +
-              getIngredients(event.recipe_id) +
-            '</div>' : null,
+            html: `<div>` +
+              'hi' +
+            '</div>',
       
             showCancelButton: true,
             confirmButtonColor: "#d33",
