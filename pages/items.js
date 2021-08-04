@@ -37,9 +37,9 @@ export default function Items() {
 
   useEffect(()=>{
     axios
-      .get('/api/groceryItems')
+      .get('/api/groceryitems')
       .then(items => {
-        setAllIngredients(items.data.groceryItems)
+        setAllIngredients(items.data.groceryitems)
       })
       .catch(err => console.log(err))
   },[])
@@ -115,6 +115,7 @@ export default function Items() {
 
   return (
     <div className={styles.itemWrapper}>
+        {allIngredients.length ? allIngredients.map(item=><div>{item.name}</div>):null}
         Add Item
         <br />
         <input type="text" placeholder={'Enter Item Name'} onChange={(e) => setName(e.target.value)} value={name}  />
