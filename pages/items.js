@@ -112,7 +112,7 @@ export default function Items() {
 
 
   return (
-      <div className="pageWrapper">
+      <div className="pageWrapper" style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
     <div className={styles.itemWrapper}>
         {allItems.length ? allItems.map(item=><div>{item.name}</div>): null}
         Add Item
