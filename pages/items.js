@@ -37,6 +37,7 @@ export default function Items() {
     axios
       .get('/api/groceryitems')
       .then(items => {
+          console.log(items, 'ok here is the issue?')
         setAllItems(items.data.groceryitems)
       })
       .catch(err => console.log(err))
@@ -116,6 +117,7 @@ export default function Items() {
     <div className={styles.itemWrapper}>
         {/* {allItems.map(item=><div>{item.name}</div>)} */}
         Add Item
+        {console.log(allItems, 'hello??')}
         <br />
         <input type="text" placeholder={'Enter Item Name'} onChange={(e) => setName(e.target.value)} value={name}  />
         <br />
