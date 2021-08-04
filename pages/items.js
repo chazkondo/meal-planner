@@ -94,7 +94,7 @@ export default function Items() {
                 deleteFromCalendarDB(event, null, deleteCallback)
               }
             }
-            router.basePath()
+            router.push('/')
           });
         })
         .catch(err=>{
@@ -138,7 +138,7 @@ export default function Items() {
                 updateCalendar(calendarArr)
                 deleteFromCalendarDB(event, null, deleteCallback)
               }
-              router.basePath()
+              router.push('/') 
             }
           });
         })
