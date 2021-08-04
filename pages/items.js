@@ -97,7 +97,7 @@ export default function Items() {
           name,
           type: condensedTypes[type]
         })
-        .then(res=>{
+        .then(()=>{
           setNavigationBlocker(false)
           Alert.fire({
             title: 'sanity',
