@@ -50,7 +50,7 @@ export default function Items() {
 }, [navigationBlocker])
 
 
-  function toggleAddMoreAlert(){
+  function toggleEditAlert(){
     setNavigationBlocker(false)
     Alert.fire({
       title: 'Successfully Added.',
@@ -113,8 +113,8 @@ export default function Items() {
   return (
       <div className="pageWrapper" style={{backgroundColor: 'pink', width: '100vw', height: '100vh', padding: 20, display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
     <div>
-        {allItems.length ? allItems.map(item=><div>{item.name}</div>): null}
-        Edit Item
+        {allItems.length ? allItems.map(item=><div onClick={()=>console.log()}>{item.name}</div>): null}
+        {/* Edit Item
         {console.log(allItems, 'hello??')}
         <br />
         <input type="text" placeholder={'Enter Item Name'} onChange={(e) => setName(e.target.value)} value={name}  />
@@ -124,7 +124,7 @@ export default function Items() {
           {ingredientTypes.map((item, i) => <option value={i} key={i}>{item}</option>)}
         </select>
         <br />
-        <button onClick={()=>postItem()}>Submit</button>
+        <button onClick={()=>postItem()}>Submit</button> */}
     </div>
     </div>
   );
