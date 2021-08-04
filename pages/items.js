@@ -1,6 +1,5 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import styles from '../styles/item.module.css'
 import { useRouter } from 'next/router'
 import Alert from "sweetalert2";
 
@@ -112,8 +111,8 @@ export default function Items() {
 
 
   return (
-      <div className="pageWrapper" style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-    <div className={styles.itemWrapper}>
+      <div className="pageWrapper" style={{backgroundColor: 'pink', width: '100vw', height: '100vh', padding: 20, display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+    <div>
         {allItems.length ? allItems.map(item=><div>{item.name}</div>): null}
         Add Item
         {console.log(allItems, 'hello??')}
