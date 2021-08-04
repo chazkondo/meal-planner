@@ -68,10 +68,9 @@ export default function Items() {
       cancelButtonText: "Close",
     }).then((result) => {
       if (result.value) {
-        router.push('/index')
-
+          router.push('/index')
         } else {
-// do nothing
+          // do nothing
         }
     });
   }
