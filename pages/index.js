@@ -288,7 +288,7 @@ export default function App() {
       <div onClick={()=>console.log(calendar, ' calendar', actualCalendar, ' actual')} className="recipe-wrapper">
         <div className="recipe-title flex-center">
           <Link href="/">
-            <a>{ingredientsToggled ? 'Grocery Items' : 'Recipes'}</a>
+            <a className="dropdown-title">{ingredientsToggled ? 'Grocery Items' : 'Recipes'}</a>
           </Link>
         </div>
         <div id="all-recipes">
