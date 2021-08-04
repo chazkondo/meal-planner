@@ -98,11 +98,11 @@ export default function Items() {
           type: condensedTypes[type]
         })
         .then(()=>{
-          toggleAddMoreAlert()y
+          toggleAddMoreAlert()
         })
         .catch(err=>{
           setNavigationBlocker(false)
-          console.log(err, 'wat err?')
+          alert('Oops a network error occurred.')
         })
     }
     
