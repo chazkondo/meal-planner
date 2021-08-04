@@ -112,6 +112,7 @@ export default function Items() {
 
 
   return (
+      <div className="pageWrapper">
     <div className={styles.itemWrapper}>
         {allItems.length ? allItems.map(item=><div>{item.name}</div>): null}
         Add Item
@@ -125,6 +126,7 @@ export default function Items() {
         </select>
         <br />
         <button onClick={()=>postItem()}>Submit</button>
+    </div>
     </div>
   );
 }  
