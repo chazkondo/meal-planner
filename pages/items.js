@@ -114,7 +114,7 @@ export default function Items() {
       <div className="pageWrapper" style={{backgroundColor: 'pink', width: '100vw', height: '100vh', padding: 20, display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
     <div>
         {allItems.length ? allItems.map(item=><div>{item.name}</div>): null}
-        Add Item
+        Edit Item
         {console.log(allItems, 'hello??')}
         <br />
         <input type="text" placeholder={'Enter Item Name'} onChange={(e) => setName(e.target.value)} value={name}  />
