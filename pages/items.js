@@ -37,11 +37,9 @@ export default function Items() {
     axios
       .get('/api/groceryitems')
       .then(items => {
-          console.log(items, 'ok here is the issue?')
-        setAllItems(items.data.groceryitems)
+        setAllItems(items.data.groceryItems)
       })
       .catch(err => console.log(err))
-      console.log('is this being hit at least?')
   },[])
 
   useEffect(()=>{
@@ -115,7 +113,7 @@ export default function Items() {
 
   return (
     <div className={styles.itemWrapper}>
-        {/* {allItems.map(item=><div>{item.name}</div>)} */}
+        {allItems.length ? allItems.map(item=><div>{item.name}</div>): null}
         Add Item
         {console.log(allItems, 'hello??')}
         <br />
