@@ -98,7 +98,7 @@ export default function Items() {
         })
         .catch(err=>{
           setNavigationBlocker(false)
-          console.log(err, 'wat err?')
+          alert('Oops a network error occurred.')
         })
     } else {
       axios
