@@ -67,7 +67,7 @@ export default function Items() {
       confirmButtonText: "Yes",
       cancelButtonText: "No",
     }).then((result) => {
-      if (result.value) {
+      if (!result.value) {
           router.push('/')
         } else {
           // do nothing

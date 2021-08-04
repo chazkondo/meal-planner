@@ -278,7 +278,7 @@ export default function App() {
         router.push('/recipes')
       }
       if (result.isDenied) {
-        router.push('/items')
+        router.push('/createItems')
       }
     })
   }
