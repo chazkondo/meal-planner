@@ -68,7 +68,7 @@ export default function Items() {
       cancelButtonText: "Close",
     }).then((result) => {
       if (result.value) {
-          yrouter.push('/index')
+          router.push('/index')
         } else {
           // do nothing
         }
@@ -98,7 +98,7 @@ export default function Items() {
           type: condensedTypes[type]
         })
         .then(()=>{
-          toggleAddMoreAlert()
+          toggleAddMoreAlert()y
         })
         .catch(err=>{
           setNavigationBlocker(false)
