@@ -71,11 +71,8 @@ export default function Items() {
         router.push('/index')
 
         } else {
-          const calendarArr = calendar.filter(events => events._id !== event._id)
-          updateCalendar(calendarArr)
-          deleteFromCalendarDB(event, null, deleteCallback)
+// do nothing
         }
-      }
     });
   }
 
