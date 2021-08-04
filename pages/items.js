@@ -62,13 +62,13 @@ export default function Items() {
       '</div>',
 
       showCancelButton: true,
-      confirmButtonColor: "#d33",
-      cancelButtonColor: "#3085d6",
-      confirmButtonText: "Remove",
-      cancelButtonText: "Close",
+      confirmButtonColor: "green",
+      cancelButtonColor: "red",
+      confirmButtonText: "Yes",
+      cancelButtonText: "No",
     }).then((result) => {
       if (result.value) {
-          router.push('/index')
+          router.push('/')
         } else {
           // do nothing
         }
