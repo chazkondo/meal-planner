@@ -65,11 +65,10 @@ export default function Items() {
         .then(res=>{
           setNavigationBlocker(false)
           Alert.fire({
-            title: eventClick.event._def.title + '<div style="font-size: 20">' + eventClick.event.start.toString().slice(0, 15) + '</div>',
-            html: isRecipe ? 
-            `<div>` +
-              getIngredients(event.recipe_id) +
-            '</div>' : null,
+            title: 'alsdaskld',
+            html: `<div>` +
+             'hi' +
+            '</div>',
       
             showCancelButton: true,
             confirmButtonColor: "#d33",
