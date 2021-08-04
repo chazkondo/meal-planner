@@ -68,15 +68,7 @@ export default function Items() {
       cancelButtonText: "Close",
     }).then((result) => {
       if (result.value) {
-        const newArr = actualCalendar.filter(events => events._id !== event._id)
-        updateActualCalendar(newArr)
-        // IF event was just added on front end UI
-        if (eventClick.event._def.extendedProps.uuid) {
-          // utilize remove() function
-          eventClick.event.remove(); // It will remove event from the calendar
-          // if uuid exists, then this item has not been added to calendar arr, but is in actualCalendar arr
-          // delete from db first
-          deleteFromCalendarDB(event, eventClick, deleteCallback)
+        router.push('/index')
 
         } else {
           const calendarArr = calendar.filter(events => events._id !== event._id)
@@ -84,7 +76,6 @@ export default function Items() {
           deleteFromCalendarDB(event, null, deleteCallback)
         }
       }
-      router.push('/index')
     });
   }
 
