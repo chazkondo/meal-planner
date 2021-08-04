@@ -94,7 +94,7 @@ export default function Items() {
                 deleteFromCalendarDB(event, null, deleteCallback)
               }
             }
-            router.push('/')
+            router.push('/index')
           });
         })
         .catch(err=>{
@@ -110,7 +110,7 @@ export default function Items() {
         .then(res=>{
           setNavigationBlocker(false)
           Alert.fire({
-            title: eventClick.event._def.title + '<div style="font-size: 20">' + eventClick.event.start.toString().slice(0, 15) + '</div>',
+            title: 'sanity',
             html: isRecipe ? 
             `<div>` +
               getIngredients(event.recipe_id) +
@@ -138,7 +138,7 @@ export default function Items() {
                 updateCalendar(calendarArr)
                 deleteFromCalendarDB(event, null, deleteCallback)
               }
-              router.push('/') 
+              router.push('/index') 
             }
           });
         })
