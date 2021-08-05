@@ -109,6 +109,26 @@ export default function Items() {
     setType(e.target.value)
   }
 
+  function sanity () {
+    Alert.fire({
+      title: 'create new',
+      html: '',
+
+      showDenyButton: true,
+      confirmButtonColor: "green",
+      denyButtonColor: "orange",
+      confirmButtonText: "Recipe",
+      denyButtonText: "Item",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        router.push('/recipes')
+      }
+      if (result.isDenied) {
+        router.push('/createItems')
+      }
+    })
+  }
+
 
   return (
       <div className="pageWrapper" style={{backgroundColor: 'pink', width: '100vw', height: '100vh', padding: 20, display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
