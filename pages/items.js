@@ -163,7 +163,7 @@ export default function Items() {
         if (condensedTypes.indexOf(item.type) > 7) {
             axiosDeleteItem(item)
         } else {
-
+            axiosDeleteIngredient(item)
         }
     }
     console.log(condensedTypes.indexOf(item.type), ' this should be a num!')
