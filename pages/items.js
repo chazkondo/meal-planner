@@ -109,16 +109,17 @@ export default function Items() {
     setType(e.target.value)
   }
 
-  function sanity (name) {
+  function sanity (item) {
+      console.log(item, 'what is her?')
     Alert.fire({
-      title: name,
-      html: '',
+      title: item.name,
+      html: '<span>Grocery Item</span>',
 
       showDenyButton: true,
-      confirmButtonColor: "green",
-      denyButtonColor: "orange",
-      confirmButtonText: "Recipe",
-      denyButtonText: "Item",
+      confirmButtonColor: "blue",
+      denyButtonColor: "red",
+      confirmButtonText: "Edit",
+      denyButtonText: "Delete",
     }).then((result) => {
       if (result.isConfirmed) {
         router.push('/recipes')
@@ -133,7 +134,7 @@ export default function Items() {
   return (
       <div className="pageWrapper" style={{backgroundColor: 'pink', width: '100vw', height: '100vh', padding: 20, display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
     <div>
-        {allItems.length ? allItems.map(item=><div key={item._id} onClick={()=>sanity(item.name)}>{item.name}</div>): null}
+        {allItems.length ? allItems.map(item=><div key={item._id} onClick={()=>sanity(item)}>{item.name}</div>): null}
         {/* Edit Item
         {console.log(allItems, 'hello??')}
         <br />
