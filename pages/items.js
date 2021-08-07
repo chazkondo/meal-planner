@@ -111,9 +111,10 @@ export default function Items() {
     axios
     .delete('/api/items/', {params: {...item}})
     .then(res=>{
+        console.log(res, 'what!?!??!')
         if (res.success) {
             alert('Success')
-
+            filterOutItem(item)
         } else {
             alert('Oops. An error occurred.')
         }
@@ -130,6 +131,7 @@ export default function Items() {
     axios
     .delete('/api/ingredients/', {params: {...item}})
     .then(res=>{
+        console.log(res, 'what!?!??!')
         if (res.success) {
             alert('Success')
             filterOutItem(item)
@@ -146,8 +148,7 @@ export default function Items() {
 
   function filterOutItem(item) {
       let filter = allItems.filter(arrItem => arrItem._id !== item._id)
-      setAllItems(filter)
-      filter = undefined;
+      return setAllItems(filter)
   }
 
   function setDropdownValue(e) {
