@@ -113,7 +113,6 @@ export default function Items() {
     .then(res=>{
         console.log(res, 'what!?!??!')
         if (res.data.success) {
-            alert('Success')
             filterOutItem(item)
         } else {
             alert('Oops. An error occurred.')
@@ -133,7 +132,6 @@ export default function Items() {
     .then(res=>{
         console.log(res, 'what!?!??!')
         if (res.data.success) {
-            alert('Success')
             filterOutItem(item)
         } else {
             alert('Oops. An error occurred.')
