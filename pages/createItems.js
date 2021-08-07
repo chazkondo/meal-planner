@@ -115,7 +115,9 @@ export default function Items() {
 
   return (
     <div className={styles.itemWrapper}>
-        Add Item
+      <div style={{ width: '15vw', display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+        Add Item <span style={{color: 'blue', cursor: 'pointer', fontSize: 12}} onClick={()=>router.push('items')}>[ All Items ]</span>
+        </div>
         <br />
         <input type="text" placeholder={'Enter Item Name'} onChange={(e) => setName(e.target.value)} value={name}  />
         <br />
@@ -124,10 +126,7 @@ export default function Items() {
           {ingredientTypes.map((item, i) => <option value={i} key={i}>{item}</option>)}
         </select>
         <br />
-        <div style={{ width: '15vw', display: 'flex', flexDirection: 'row', justifyContent: 'space-between'}}>
           <button onClick={()=>postItem()}>Submit</button> 
-          <button onClick={()=>router.push('items')}>All Items</button>
-        </div>
     </div>
   );
 }  
