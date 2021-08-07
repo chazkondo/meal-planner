@@ -132,6 +132,7 @@ export default function Items() {
     .then(res=>{
         if (res.success) {
             alert('Success')
+            filterOutItem(item)
         } else {
             alert('Oops. An error occurred.')
         }
@@ -145,7 +146,8 @@ export default function Items() {
 
   function filterOutItem(item) {
       let filter = allItems.filter(arrItem => arrItem._id !== item._id)
-      
+      setAllItems(filter)
+      filter = undefined;
   }
 
   function setDropdownValue(e) {
