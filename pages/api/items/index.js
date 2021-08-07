@@ -67,18 +67,13 @@ export default async function itemSwitch(req, res){
 export const deleteItem = async (req, res) => {
     console.log(req.query, 'delete item -  what is happening?')
     await dbConnect();
-  
-    const mongooseSession = await mongoose.startSession();
-        
+          
     try {
-      mongooseSession.startTransaction();
 
       const {_id, signature} = req.query
   
       await Item.findOneAndDelete({ _id });
   
-      await mongooseSession.commitTransaction();
-      mongooseSession.endSession();
   
       res.status(200).json({
         success: true,
@@ -86,9 +81,7 @@ export const deleteItem = async (req, res) => {
       });
     } catch (err) {
       console.log("ERROR?", err.message);
-  
-      await mongooseSession.abortTransaction();
-      mongooseSession.endSession();
+
   
       res.status(400).json({
         success: false,
