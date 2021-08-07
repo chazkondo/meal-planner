@@ -111,7 +111,11 @@ export default function Items() {
     axios
     .delete('/api/items/', {params: {...item}})
     .then(res=>{
-        console.log(res, 'what is the res for delete item?')
+        if (res.success) {
+            alert('Success')
+        } else {
+            alert('Oops. An error occurred.')
+        }
         setNavigationBlocker(false)
     })
     .catch(err=>{
