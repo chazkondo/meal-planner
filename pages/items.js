@@ -113,6 +113,7 @@ export default function Items() {
     .then(res=>{
         if (res.success) {
             alert('Success')
+
         } else {
             alert('Oops. An error occurred.')
         }
@@ -140,6 +141,11 @@ export default function Items() {
       setNavigationBlocker(false)
       alert('Oops a network error occurred.')
     })
+  }
+
+  function filterOutItem(item) {
+      let filter = allItems.filter(arrItem => arrItem._id !== item._id)
+      
   }
 
   function setDropdownValue(e) {
