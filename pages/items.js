@@ -105,7 +105,7 @@ export default function Items() {
     
   }
 
-  function axiosDeleteItem() {
+  function axiosDeleteItem(item) {
     axios
     .delete('/api/items/', {
       name,
@@ -120,12 +120,9 @@ export default function Items() {
     })
   }
 
-  function axiosDeleteIngredient() {
+  function axiosDeleteIngredient(item) {
     axios
-    .delete('/api/ingredient/', {
-      name,
-      type: condensedTypes[type]
-    })
+    .delete('/api/ingredient/', {params: {...item}})
     .then(()=>{
       toggleAddMoreAlert()
     })
