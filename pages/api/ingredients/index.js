@@ -2,6 +2,7 @@ import dbConnect from '../../../utils/dbConnect';
 import Ingredient from '../../../models/Ingredient';
 // import Connections from '../../../models/Connections';
 import mongoose from 'mongoose';
+import Calendar from '../../../models/Calendar';
 
 dbConnect();
 
@@ -76,6 +77,7 @@ export const deleteItem = async (req, res) => {
       const {_id, signature} = req.query
   
       await Ingredient.findOneAndDelete({ _id });
+      await Calendar.find({item_id: _id }).deleteMany()
   
       await mongooseSession.commitTransaction();
       mongooseSession.endSession();

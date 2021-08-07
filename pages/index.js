@@ -285,7 +285,7 @@ export default function App() {
 
   return (
     <div className="App">
-      <div onClick={()=>console.log(calendar, ' calendar', actualCalendar, ' actual')} className="recipe-wrapper">
+      <div className="recipe-wrapper">
         <div className="recipe-title flex-center">
           <Link href="/">
             <a className="dropdown-title">{ingredientsToggled ? <span onClick={()=>router.push('/items')}>Grocery Items</span> : <span onClick={()=>router.push('/recipes')}>Recipes</span>}</a>
