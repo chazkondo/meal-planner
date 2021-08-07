@@ -125,7 +125,11 @@ export default function Items() {
     axios
     .delete('/api/ingredients/', {params: {...item}})
     .then(res=>{
-        
+        if (res.success) {
+            alert('Success')
+        } else {
+            alert('Oops. An error occurred.')
+        }
         console.log(res, 'what is the res for delete ingredient?')
         setNavigationBlocker(false)
     })
