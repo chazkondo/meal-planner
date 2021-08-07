@@ -191,7 +191,7 @@ export default function Items() {
   return (
       <div className="pageWrapper" style={{backgroundColor: 'pink', width: '100vw', height: '100vh', padding: 20, display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
     <div>
-        {allItems.length ? allItems.map(item=><div key={item._id} onClick={()=>sanity(item)}>{item.name}</div>): null}
+        {allItems.length ? allItems.map(item=><div key={item._id} onClick={()=>sanity(item)}>{item.name}</div>): <span>No Grocery Items. <a onClick={()=>router.push('/createItems')}>Click To Add</a></span>}
         {/* Edit Item
         {console.log(allItems, 'hello??')}
         <br />
