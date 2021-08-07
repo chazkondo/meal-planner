@@ -110,7 +110,7 @@ export default function Items() {
     axios
     .delete('/api/items/', {params: {...item}})
     .then(()=>{
-      toggleAddMoreAlert()
+        alert('success')
     })
     .catch(err=>{
       setNavigationBlocker(false)
@@ -123,7 +123,7 @@ export default function Items() {
     axios
     .delete('/api/ingredient/', {params: {...item}})
     .then(()=>{
-      toggleAddMoreAlert()
+        alert('success')
     })
     .catch(err=>{
       setNavigationBlocker(false)
