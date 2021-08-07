@@ -130,7 +130,6 @@ export default function Items() {
         } else {
             alert('Oops. An error occurred.')
         }
-        console.log(res, 'what is the res for delete ingredient?')
         setNavigationBlocker(false)
     })
     .catch(err=>{
