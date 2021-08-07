@@ -77,6 +77,9 @@ export default function Items() {
 
 
   function postItem() {
+    if (!name.length) {
+      return alert('Please type in a name')
+    }
     setNavigationBlocker(true)
     if (type > 7) {
       axios

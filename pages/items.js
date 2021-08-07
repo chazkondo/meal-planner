@@ -169,8 +169,9 @@ export default function Items() {
         router.push('/recipes')
       }
       if (result.isDenied) {
-        if (confirm('Warning! Deleting items could affect your recipes and calendar. Do you want to proceed?'))
-        deleteItem(item)
+        if (confirm('Warning! Deleting items could affect your recipes and calendar. Do you want to proceed?')) {
+            deleteItem(item)
+        }
       }
     })
   }
