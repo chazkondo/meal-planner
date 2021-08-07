@@ -29,6 +29,7 @@ export default function Items() {
   const [type, setType] = useState(0)
   const [allItems, setAllItems] = useState([])
   const [navigationBlocker, setNavigationBlocker] = useState(false)
+  const [loading, setLoading] = useState(true)
 
 
 
@@ -38,8 +39,9 @@ export default function Items() {
       .then(items => {
           console.log(items.data.groceryItems, 'anything weird?')
         setAllItems(items.data.groceryItems)
+        setLoading(false)
       })
-      .catch(err => console.log(err))
+      .catch(err => {console.log(err); setLoading(false)})
   },[])
 
   useEffect(()=>{
@@ -191,7 +193,7 @@ export default function Items() {
   return (
       <div className="pageWrapper" style={{backgroundColor: 'gray', width: '100vw', height: '100vh', padding: 20, display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
     <div>
-        {allItems.length ? allItems.map(item=><div key={item._id} onClick={()=>sanity(item)}>{item.name}</div>): <span>No Grocery Items. <a onClick={()=>router.push('/createItems')}>Click To Add</a></span>}
+        {!loading ? allItems.length ? allItems.map(item=><div key={item._id} onClick={()=>sanity(item)}>{item.name}</div>): <span>No Grocery Items. <a onClick={()=>router.push('/createItems')}>Click To Add</a></span> : <span>Loading</span>}
         {/* Edit Item
         {console.log(allItems, 'hello??')}
         <br />
