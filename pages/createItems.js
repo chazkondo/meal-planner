@@ -33,17 +33,6 @@ export default function Items() {
 
 
 
-
-
-  useEffect(()=>{
-    axios
-      .get('/api/ingredients')
-      .then(ingredients => {
-        setAllIngredients(ingredients.data.ingredients)
-      })
-      .catch(err => console.log(err))
-  },[])
-
   useEffect(()=>{
     if (navigationBlocker) {
       window.onbeforeunload = () => true
