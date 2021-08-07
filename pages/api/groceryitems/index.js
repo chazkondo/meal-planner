@@ -26,9 +26,6 @@ export default async function groceryItemSwitch(req, res){
                 res.status(400).json({success: false})
             }
             break;
-        case 'DELETE':
-            await deleteItem(req, res);
-            break;
         default:
             res.status(400).json({success: false, default: true})
             break;
