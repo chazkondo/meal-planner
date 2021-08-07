@@ -64,7 +64,7 @@ export default async function itemSwitch(req, res){
 }
 
 export const deleteItem = async (req, res) => {
-    console.log(req.query, 'um what is happening?')
+    console.log(req.query, 'delete item -  what is happening?')
     await dbConnect();
   
     const mongooseSession = await mongoose.startSession();
