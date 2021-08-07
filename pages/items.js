@@ -125,7 +125,7 @@ export default function Items() {
         router.push('/recipes')
       }
       if (result.isDenied) {
-        deleteItem(findItem)
+        deleteItem(item)
       }
     })
   }
