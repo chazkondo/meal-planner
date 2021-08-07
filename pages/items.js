@@ -113,7 +113,6 @@ export default function Items() {
     axios
     .delete('/api/items/', {params: {...item}})
     .then(res=>{
-        console.log(res, 'what!?!??!')
         if (res.data.success) {
             filterOutItem(item)
         } else {
@@ -132,7 +131,6 @@ export default function Items() {
     axios
     .delete('/api/ingredients/', {params: {...item}})
     .then(res=>{
-        console.log(res, 'what!?!??!')
         if (res.data.success) {
             filterOutItem(item)
         } else {
