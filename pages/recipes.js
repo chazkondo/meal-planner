@@ -41,6 +41,16 @@ export default function Items() {
       .catch(err => console.log(err))
   },[])
 
+  useEffect(()=>{
+    axios
+      .get('/api/ingredients')
+      .then(ingredients => {
+        setAllIngredients(ingredients.data.ingredients)
+      })
+      .catch(err => console.log(err))
+  },[])
+
+
 
   function postItem() {
     alert('sup')
