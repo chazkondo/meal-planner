@@ -131,10 +131,12 @@ export default function Items() {
   }
 
   function deleteItem(item) {
-    if (condensedTypes.indexOf(item.type) < 0) {
+    if (condensedTypes.indexOf(item.type) < 0 || condensedTypes.indexOf(item.type) > 11) {
         return (alert('Error. Item not found.'))
     } else {
-        // if ()
+        if (condensedTypes.indexOf(item.type) > 11) {
+
+        }
     }
     console.log(condensedTypes.indexOf(item.type), ' this should be a num!')
   }
