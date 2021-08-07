@@ -124,7 +124,10 @@ export default function Items() {
           {ingredientTypes.map((item, i) => <option value={i} key={i}>{item}</option>)}
         </select>
         <br />
-        <button onClick={()=>postItem()}>Submit</button>
+        <div style={{ width: '15vw', display: 'flex', flexDirection: 'row', justifyContent: 'space-between'}}>
+          <button onClick={()=>postItem()}>Submit</button> 
+          <button onClick={()=>postItem()}>Submit</button>
+        </div>
     </div>
   );
 }  
