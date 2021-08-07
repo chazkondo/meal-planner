@@ -36,6 +36,7 @@ export default function Items() {
     axios
       .get('/api/groceryitems')
       .then(items => {
+          console.log(items.data.groceryItems, 'anything weird?')
         setAllItems(items.data.groceryItems)
       })
       .catch(err => console.log(err))
