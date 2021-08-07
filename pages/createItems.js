@@ -126,7 +126,7 @@ export default function Items() {
         <br />
         <div style={{ width: '15vw', display: 'flex', flexDirection: 'row', justifyContent: 'space-between'}}>
           <button onClick={()=>postItem()}>Submit</button> 
-          <button onClick={()=>postItem()}>Submit</button>
+          <button onClick={()=>router.push('items')}>All Items</button>
         </div>
     </div>
   );
