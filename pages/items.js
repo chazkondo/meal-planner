@@ -112,7 +112,7 @@ export default function Items() {
     .delete('/api/items/', {params: {...item}})
     .then(res=>{
         console.log(res, 'what!?!??!')
-        if (res.success) {
+        if (res.data.success) {
             alert('Success')
             filterOutItem(item)
         } else {
@@ -132,7 +132,7 @@ export default function Items() {
     .delete('/api/ingredients/', {params: {...item}})
     .then(res=>{
         console.log(res, 'what!?!??!')
-        if (res.success) {
+        if (res.data.success) {
             alert('Success')
             filterOutItem(item)
         } else {
