@@ -31,8 +31,6 @@ export default function Items() {
   const [allIngredients, setAllIngredients] = useState([])
   const [navigationBlocker, setNavigationBlocker] = useState(false)
 
-
-
   useEffect(()=>{
     if (navigationBlocker) {
       window.onbeforeunload = () => true
