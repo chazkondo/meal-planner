@@ -106,11 +106,9 @@ export default function Items() {
   }
 
   function axiosDeleteItem(item) {
+    setNavigationBlocker(true)
     axios
-    .delete('/api/items/', {
-      name,
-      type: condensedTypes[type]
-    })
+    .delete('/api/items/', {params: {...item}})
     .then(()=>{
       toggleAddMoreAlert()
     })
@@ -121,6 +119,7 @@ export default function Items() {
   }
 
   function axiosDeleteIngredient(item) {
+    setNavigationBlocker(true)
     axios
     .delete('/api/ingredient/', {params: {...item}})
     .then(()=>{
