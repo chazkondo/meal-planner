@@ -109,7 +109,7 @@ export default function Items() {
     setNavigationBlocker(true)
     axios
     .delete('/api/items/', {params: {...item}})
-    .then(()=>{
+    .then(res=>{
         alert('success')
         setNavigationBlocker(false)
     })
@@ -123,8 +123,9 @@ export default function Items() {
     setNavigationBlocker(true)
     axios
     .delete('/api/ingredients/', {params: {...item}})
-    .then(()=>{
-        alert('success')
+    .then(res=>{
+        
+        console.log(res, 'what is the res for delete ingredient?')
         setNavigationBlocker(false)
     })
     .catch(err=>{
