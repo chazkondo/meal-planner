@@ -107,7 +107,22 @@ export default function Items() {
 
   function axiosDeleteItem() {
     axios
-    .post('/api/items/', {
+    .delete('/api/items/', {
+      name,
+      type: condensedTypes[type]
+    })
+    .then(()=>{
+      toggleAddMoreAlert()
+    })
+    .catch(err=>{
+      setNavigationBlocker(false)
+      alert('Oops a network error occurred.')
+    })
+  }
+
+  function axiosDeleteIngredient() {
+    axios
+    .delete('/api/ingredient/', {
       name,
       type: condensedTypes[type]
     })
@@ -150,6 +165,8 @@ export default function Items() {
         return (alert('Error. Item not found.'))
     } else {
         if (condensedTypes.indexOf(item.type) > 7) {
+            axiosDeleteItem(item)
+        } else {
 
         }
     }
