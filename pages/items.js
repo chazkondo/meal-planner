@@ -139,7 +139,7 @@ export default function Items() {
       console.log(item, 'what is her?')
     Alert.fire({
       title: item.name,
-      html: '<span>Grocery Item</span>',
+      html: `<span>Grocery Item</span><br /><br /><span>${item.type}</span>`,
 
       showDenyButton: true,
       confirmButtonColor: "blue",
