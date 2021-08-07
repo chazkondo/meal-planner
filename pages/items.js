@@ -109,9 +109,9 @@ export default function Items() {
     setType(e.target.value)
   }
 
-  function sanity () {
+  function sanity (name) {
     Alert.fire({
-      title: 'create new',
+      title: name,
       html: '',
 
       showDenyButton: true,
@@ -133,7 +133,7 @@ export default function Items() {
   return (
       <div className="pageWrapper" style={{backgroundColor: 'pink', width: '100vw', height: '100vh', padding: 20, display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
     <div>
-        {allItems.length ? allItems.map(item=><div key={item._id} onClick={()=>sanity()}>{item.name}</div>): null}
+        {allItems.length ? allItems.map(item=><div key={item._id} onClick={()=>sanity(item.name)}>{item.name}</div>): null}
         {/* Edit Item
         {console.log(allItems, 'hello??')}
         <br />
