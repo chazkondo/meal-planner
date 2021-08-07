@@ -105,6 +105,21 @@ export default function Items() {
     
   }
 
+  function axiosDeleteItem() {
+    axios
+    .post('/api/items/', {
+      name,
+      type: condensedTypes[type]
+    })
+    .then(()=>{
+      toggleAddMoreAlert()
+    })
+    .catch(err=>{
+      setNavigationBlocker(false)
+      alert('Oops a network error occurred.')
+    })
+  }
+
   function setDropdownValue(e) {
     setType(e.target.value)
   }
@@ -134,7 +149,7 @@ export default function Items() {
     if (condensedTypes.indexOf(item.type) < 0 || condensedTypes.indexOf(item.type) > 11) {
         return (alert('Error. Item not found.'))
     } else {
-        if (condensedTypes.indexOf(item.type) > 11) {
+        if (condensedTypes.indexOf(item.type) > 7) {
 
         }
     }
