@@ -131,7 +131,7 @@ export default function Items() {
   }
 
   function deleteItem(item) {
-
+    console.log(condensedTypes.indexOf(item.type), ' this should be a num!')
   }
 
 
