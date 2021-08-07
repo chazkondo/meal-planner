@@ -130,6 +130,10 @@ export default function Items() {
     })
   }
 
+  function deleteItem(item) {
+
+  }
+
 
   return (
       <div className="pageWrapper" style={{backgroundColor: 'pink', width: '100vw', height: '100vh', padding: 20, display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
