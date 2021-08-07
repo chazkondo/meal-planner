@@ -287,9 +287,7 @@ export default function App() {
     <div className="App">
       <div className="recipe-wrapper">
         <div className="recipe-title flex-center">
-          <Link href="/">
-            <a className="dropdown-title">{ingredientsToggled ? <span onClick={()=>router.push('/items')}>Grocery Items</span> : <span onClick={()=>router.push('/recipes')}>Recipes</span>}</a>
-          </Link>
+          <a className="dropdown-title">{ingredientsToggled ? <span onClick={()=>router.push('/items')}>Grocery Items</span> : <span onClick={()=>router.push('/recipes')}>Recipes</span>}</a>
         </div>
         <div id="all-recipes">
           {ingredientsToggled ? ingredients.map((item) => (
