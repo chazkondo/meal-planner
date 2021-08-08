@@ -115,7 +115,7 @@ export const deleteItem = async (req, res) => {
 
       const {_id, signature} = req.query
   
-      const deletedIngredient = await Ingredient.findOneAndDelete({ _id });
+      const patchedIngredient = await Ingredient.findOneAndDelete({ _id });
       const deletedIngredientCalendar = await Calendar.find({item_id: _id }).deleteMany()
 
       if (!deletedIngredient || !deletedIngredientCalendar) {throw error}
