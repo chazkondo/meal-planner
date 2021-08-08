@@ -99,3 +99,36 @@ export const deleteItem = async (req, res) => {
       });
     }
   };
+
+  export const patchItem = async (req, res) => {
+    console.log(req.query, 'patch item -  what is happening?')
+    await dbConnect();
+          
+    try {
+
+      const {_id, signature} = req.query
+  
+      const item = await Item.findOneAndDelete({ _id });
+      console.log(item, 'what happens?')
+
+      if (!item) {
+        res.status(400).json({
+            success: false,
+            message: "Failed to delete item.",
+          });
+      } else {
+        res.status(200).json({
+            success: true,
+            message: "Successful.",
+          });
+      }
+    } catch (err) {
+      console.log("ERROR?", err.message);
+
+  
+      res.status(400).json({
+        success: false,
+        message: "Failed to delete item.",
+      });
+    }
+  };
