@@ -35,6 +35,14 @@ export default function Items() {
 
   useEffect(()=>{
     axios
+    .get('/api/recipes')
+    .then(recipes => {
+      console.log(recipes.data.recipes, 'here')
+      setAllRecipes(recipes.data.recipes)
+    })
+    .catch(err => console.log(err))
+    
+    axios
       .get('/api/groceryitems')
       .then(items => {
           console.log(items.data.groceryItems, 'anything weird?')
