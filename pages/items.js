@@ -261,7 +261,9 @@ function mapRecipeArrays(arr) {
         if (condensedTypes.indexOf(item.type) > 7) {
             axiosDeleteItem(item)
         } else {
-            axiosDeleteIngredient(item)
+            if (findAffectedRecipes(item)) {
+                axiosDeleteIngredient(item)
+            }
         }
     }
     console.log(condensedTypes.indexOf(item.type), ' this should be a num!')
@@ -288,12 +290,15 @@ function mapRecipeArrays(arr) {
             }
         }
         if (affected.length === 0) {
-            // console.log(affected, 'what??')
-            return alert('No recipes affected.')
+            return true
         }
       console.log(affected, 'affected recipes')
-      return alert(`Warning! These recipes will be affected: ${affected.map(recipe => ` ${recipe}` )}`)
-  }
+        if (confirm(`Warning! These recipes will be affected: ${affected.map(recipe => ` ${recipe}` )}`)) {
+            return true
+        } else {
+            return false
+        }
+        }
 
 
   return (
