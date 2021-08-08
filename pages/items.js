@@ -150,7 +150,7 @@ export default function Items() {
     .patch('/api/items/', {...item})
     .then(res=>{
         if (res.data.success) {
-            filterOutItem(item)
+            alert('Successful Edit')
         } else {
             alert('Oops. An error occurred.')
         }
@@ -173,7 +173,7 @@ export default function Items() {
             alert('Oops. An error occurred.')
         }
         setNavigationBlocker(false)
-    })
+    })y
     .catch(err=>{
       setNavigationBlocker(false)
       alert('Oops a network error occurred.')
