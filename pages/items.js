@@ -271,7 +271,7 @@ export default function Items() {
   function findAffectedRecipes(item) {
       const affected = []
       if (!allRecipes.length) {
-          return alert('No recipes will be affected.')
+          return alert('No recipes will be affected.')y
       } else {
         allRecipes.forEach(recipe => {
             if (recipe.ingredients.includes(item._id)) {
@@ -280,7 +280,7 @@ export default function Items() {
         })
       }
       console.log(affected, 'affected recipes')
-      return 'Warning! These recipes will be affected: ' + affected.map(recipe => <span>{recipe.name} </span>)
+      return alert('Warning! These recipes will be affected: ' + affected.map(recipe => <span>{recipe.name} </span>))
   }
 
 
