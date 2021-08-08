@@ -271,7 +271,7 @@ export default function Items() {
   function findAffectedRecipes(item) {
       const affected = []
       if (!allRecipes.length) {
-          return 'No recipes will be affected.'
+          return alert('No recipes will be affected.')
       } else {
         allRecipes.forEach(recipe => {
             if (recipe.ingredients.includes(item._id)) {
