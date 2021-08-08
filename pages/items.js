@@ -191,7 +191,11 @@ export default function Items() {
         denyButtonText: "Cancel",
       }).then((result) => {
         if (result.isConfirmed) {
-          alert(document.getElementById('edit_name').value)
+            if (!document.getElementById('edit_name').value) {
+                alert(item.name)
+            } else {
+                alert(document.getElementById('edit_name').value)
+            }
         }
       })
   }
