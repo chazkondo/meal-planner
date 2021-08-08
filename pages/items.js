@@ -65,7 +65,7 @@ export default function Items() {
 
 function mapRecipeArrays(arr) {
     const obj = {}
-    arr.forEach(item => obj[item._id] = [...item.ingredients])
+    arr.forEach(item => obj[item.name] = [...item.ingredients])
     return setRecipeMap(obj)
 }
 
@@ -293,7 +293,7 @@ function mapRecipeArrays(arr) {
             return alert('No recipes affected.')
         }
       console.log(affected, 'affected recipes')
-      return alert(`Warning! These recipes will be affected: ${affected.map(recipe => recipe )}`)
+      return alert(`Warning! These recipes will be affected: ${affected.map(recipe =>  ` ${recipe}` )}`)
   }
 
 
