@@ -230,7 +230,6 @@ function mapRecipeArrays(arr) {
   }
 
   function edit (item) {
-      let name;
     Alert.fire({
         title: item.name,
         html: 
@@ -265,6 +264,13 @@ function mapRecipeArrays(arr) {
   }
 
   function editItem(item) {
+    let name
+    if (!document.getElementById('edit_name').value) {
+        name = item.name
+    } else {
+        name = document.getElementById('edit_name').value
+    }
+    document.getElementById('edit_name').value
     if (condensedTypes.indexOf(item.type) <= 7) {
         findAffectedRecipes(item)
         // axiosPatchIngredient(item)
