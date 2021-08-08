@@ -62,6 +62,12 @@ export default function Items() {
     }
 }, [navigationBlocker])
 
+function mapRecipeArrays(arr) {
+    const obj = {}
+    arr.forEach(item => obj[item._id] = [...item.ingredients])
+    return setRecipeMap(obj)
+}
+
 
   function toggleEditAlert(){
     setNavigationBlocker(false)
