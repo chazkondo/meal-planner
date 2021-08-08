@@ -168,7 +168,7 @@ export default function Items() {
     .patch('/api/ingredients/', {...item})
     .then(res=>{
         if (res.data.success) {
-            filterOutItem(item)
+            alert('Successful Edit')
         } else {
             alert('Oops. An error occurred.')
         }
