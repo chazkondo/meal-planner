@@ -100,3 +100,39 @@ export const deleteItem = async (req, res) => {
       });
     }
   };
+
+  export const patchItem = async (req, res) => {
+    console.log(req.query, 'delete ingredient um what is happening?')
+    await dbConnect();
+  
+    const mongooseSession = await mongoose.startSession();
+        
+    try {
+      mongooseSession.startTransaction();
+
+      const {_id, signature} = req.query
+  
+      const deletedIngredient = await Ingredient.findOneAndDelete({ _id });
+      const deletedIngredientCalendar = await Calendar.find({item_id: _id }).deleteMany()
+
+      if (!deletedIngredient || !deletedIngredientCalendar) {throw error}
+  
+      await mongooseSession.commitTransaction();
+      mongooseSession.endSession();
+  
+      res.status(200).json({
+        success: true,
+        message: "Successful.",
+      });
+    } catch (err) {
+      console.log("ERROR?", err.message);
+  
+      await mongooseSession.abortTransaction();
+      mongooseSession.endSession();
+  
+      res.status(400).json({
+        success: false,
+        message: "Failed to delete item.",
+      });
+    }
+  };

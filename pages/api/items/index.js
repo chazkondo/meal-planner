@@ -108,13 +108,13 @@ export const deleteItem = async (req, res) => {
 
       const {_id, signature} = req.query
   
-      const item = await Item.findOneAndDelete({ _id });
+      const item = await Item.findOneAndUpdate({ _id });
       console.log(item, 'what happens?')
 
       if (!item) {
         res.status(400).json({
             success: false,
-            message: "Failed to delete item.",
+            message: "Failed to patch item.",
           });
       } else {
         res.status(200).json({
