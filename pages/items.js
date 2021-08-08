@@ -258,6 +258,15 @@ export default function Items() {
     console.log(condensedTypes.indexOf(item.type), ' this should be a num!')
   }
 
+  function editItem(item) {
+    if (condensedTypes.indexOf(item.type) <= 7) {
+        alert(`Warning! These recipes will be affected: `)
+        // axiosPatchIngredient(item)
+    } else {
+        // axiosPatchItem(item)
+    }
+  }
+
 
   return (
       <div className="pageWrapper" style={{backgroundColor: 'gray', width: '100vw', height: '100vh', padding: 20, display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
