@@ -173,7 +173,7 @@ export default function Items() {
             alert('Oops. An error occurred.')
         }
         setNavigationBlocker(false)
-    })y
+    })
     .catch(err=>{
       setNavigationBlocker(false)
       alert('Oops a network error occurred.')
