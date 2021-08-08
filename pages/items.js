@@ -31,7 +31,7 @@ export default function Items() {
   const [navigationBlocker, setNavigationBlocker] = useState(false)
   const [loading, setLoading] = useState(true)
   const [allRecipes, setAllRecipes] = useState([])
-  const [recipeMap, setRecipeMap] = useState({})
+  const [recipeMap, setRecipeMap] = useState([])
 
 
 
@@ -278,14 +278,15 @@ function mapRecipeArrays(arr) {
 
   function findAffectedRecipes(item) {
       let affected = []  
+      console.log(recipeMap, 'recipe map')
         allRecipes.forEach(recipe => {
-            console.log(recipe.ingredients, 'what is here then?')
+            // console.log(recipe.ingredients, 'what is here then?')
             if (recipe.ingredients.includes(item._id)) {
                 affected = [...affected, recipe]
             }
         })
         if (affected.length === 0) {
-            console.log(affected, 'what??')
+            // console.log(affected, 'what??')
             return alert('No recipes affected.')
         }
       console.log(affected, 'affected recipes')
