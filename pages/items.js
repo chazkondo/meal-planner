@@ -40,6 +40,7 @@ export default function Items() {
     .get('/api/recipes')
     .then(recipes => {
       console.log(recipes.data.recipes, 'here')
+      mapRecipeArrays(recipes.data.recipes)
       setAllRecipes(recipes.data.recipes)
     })
     .catch(err => console.log(err))
