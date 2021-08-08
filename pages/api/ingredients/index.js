@@ -115,7 +115,7 @@ export const deleteItem = async (req, res) => {
 
       const {_id, signature} = req.query
   
-      const patchedIngredient = await Ingredient.findOneAndDelete({ _id });
+      const patchedIngredient = await Ingredient.findOneAndUpdate({ _id });
 
       if (!patchedIngredient) {throw error}
   
