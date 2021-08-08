@@ -269,18 +269,19 @@ export default function Items() {
   }
 
   function findAffectedRecipes(item) {
-      const affected = []
-      if (!allRecipes.length) {
-          return alert('No recipes will be affected.')y
-      } else {
+      let affected = []  
         allRecipes.forEach(recipe => {
+            console.log(recipe.ingredients, 'what is here then?')
             if (recipe.ingredients.includes(item._id)) {
-                affected.push(recipe)
+                affected = [...affected, recipe]
             }
         })
-      }
+        if (affected.length === 0) {
+            console.log(affected, 'what??')
+            return alert('No recipes affected.')
+        }
       console.log(affected, 'affected recipes')
-      return alert('Warning! These recipes will be affected: ' + affected.map(recipe => <span>{recipe.name} </span>))
+      return alert(`Warning! These recipes will be affected: ${affected.map(recipe => recipe.name )}`)
   }
 
 
