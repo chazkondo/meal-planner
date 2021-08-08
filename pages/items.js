@@ -144,6 +144,42 @@ export default function Items() {
     })
   }
 
+  function axiosPatchItem(item) {
+    setNavigationBlocker(true)
+    axios
+    .patch('/api/items/', {...item})
+    .then(res=>{
+        if (res.data.success) {
+            filterOutItem(item)
+        } else {
+            alert('Oops. An error occurred.')
+        }
+        setNavigationBlocker(false)
+    })
+    .catch(err=>{
+      setNavigationBlocker(false)
+      alert('Oops a network error occurred.')
+    })
+  }
+
+  function axiosPatchIngredient(item) {
+    setNavigationBlocker(true)
+    axios
+    .patch('/api/ingredients/', {...item})
+    .then(res=>{
+        if (res.data.success) {
+            filterOutItem(item)
+        } else {
+            alert('Oops. An error occurred.')
+        }
+        setNavigationBlocker(false)
+    })
+    .catch(err=>{
+      setNavigationBlocker(false)
+      alert('Oops a network error occurred.')
+    })
+  }
+
   function filterOutItem(item) {
       let filter = allItems.filter(arrItem => arrItem._id !== item._id)
       return setAllItems(filter)
