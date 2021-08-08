@@ -230,6 +230,7 @@ function mapRecipeArrays(arr) {
   }
 
   function edit (item) {
+      let name;
     Alert.fire({
         title: item.name,
         html: 
@@ -245,11 +246,6 @@ function mapRecipeArrays(arr) {
       }).then((result) => {
         if (result.isConfirmed) {
             editItem(item)
-            if (!document.getElementById('edit_name').value) {
-                alert(item.name + document.getElementById('edit_type').value)
-            } else {
-                alert(document.getElementById('edit_name').value)
-            }
         }
       })
   }
