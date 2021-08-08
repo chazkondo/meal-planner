@@ -57,7 +57,7 @@ export default async function ingredientSwitch(req, res){
             }
             break;
         case 'PATCH':
-            await deleteItem(req, res);
+            await patchItem(req, res);
             break;
         case 'DELETE':
             await deleteItem(req, res);
