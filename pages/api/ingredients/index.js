@@ -56,6 +56,9 @@ export default async function ingredientSwitch(req, res){
                 res.status(400).json({success: false})
             }
             break;
+        case 'PATCH':
+            await deleteItem(req, res);
+            break;
         case 'DELETE':
             await deleteItem(req, res);
             break;
