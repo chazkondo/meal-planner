@@ -278,7 +278,6 @@ function mapRecipeArrays(arr) {
 
   function findAffectedRecipes(item) {
       let affected = []  
-      console.log(recipeMap, 'recipe map')
         for (const recipe in recipeMap) {
             if (recipeMap[recipe].length) {
                 recipeMap[recipe].forEach(ingred => {
@@ -293,7 +292,7 @@ function mapRecipeArrays(arr) {
             return alert('No recipes affected.')
         }
       console.log(affected, 'affected recipes')
-      return alert(`Warning! These recipes will be affected: ${affected.map(recipe =>  ` ${recipe}` )}`)
+      return alert(`Warning! These recipes will be affected: ${affected.map(recipe => ` ${recipe}` )}`)
   }
 
 
