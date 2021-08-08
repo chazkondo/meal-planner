@@ -236,6 +236,7 @@ export default function Items() {
         denyButtonText: "Cancel",
       }).then((result) => {
         if (result.isConfirmed) {
+            editItem(item)
             if (!document.getElementById('edit_name').value) {
                 alert(item.name + document.getElementById('edit_type').value)
             } else {
