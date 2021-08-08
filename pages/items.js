@@ -269,7 +269,16 @@ export default function Items() {
 
   function findAffectedRecipes(item) {
       const affected = []
-      
+      if (!allRecipes.length) {
+          return []
+      } else {
+        allRecipes.forEach(recipe => {
+            if (recipe.ingredients.includes(item._id)) {
+                affected.push(recipe)
+            }
+        })
+      }
+      console.log(affected, 'affected recipes')
   }
 
 
