@@ -166,7 +166,7 @@ export default function Items() {
       denyButtonText: "Delete",
     }).then((result) => {
       if (result.isConfirmed) {
-        router.push('/recipes')
+        edit(item)
       }
       if (result.isDenied) {
         if (confirm('Warning! Deleting items could affect your recipes and calendar. Do you want to proceed?')) {
@@ -174,6 +174,28 @@ export default function Items() {
         }
       }
     })
+  }
+
+  function edit (item) {
+    Alert.fire({
+        title: item.name,
+        html: '<input id="edit_name">HI</input>',
+  
+        showDenyButton: true,
+        confirmButtonColor: "blue",
+        denyButtonColor: "red",
+        confirmButtonText: "Update",
+        denyButtonText: "Cancel",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          router.push('/recipes')
+        }
+        if (result.isDenied) {
+          if (confirm('Warning! Deleting items could affect your recipes and calendar. Do you want to proceed?')) {
+              deleteItem(item)
+          }
+        }
+      })
   }
 
   function deleteItem(item) {
