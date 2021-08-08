@@ -179,7 +179,7 @@ export default function Items() {
   function edit (item) {
     Alert.fire({
         title: item.name,
-        html: '<input id="edit_name">HI</input>',
+        html: '<input id="edit_name" type="text" name="new name" pattern="[a-zA-Z0-9]+"/>',
   
         showDenyButton: true,
         confirmButtonColor: "blue",
@@ -188,12 +188,7 @@ export default function Items() {
         denyButtonText: "Cancel",
       }).then((result) => {
         if (result.isConfirmed) {
-          router.push('/recipes')
-        }
-        if (result.isDenied) {
-          if (confirm('Warning! Deleting items could affect your recipes and calendar. Do you want to proceed?')) {
-              deleteItem(item)
-          }
+          alert(document.getElementById('edit_name').value)
         }
       })
   }
