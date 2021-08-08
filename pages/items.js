@@ -260,7 +260,7 @@ export default function Items() {
 
   function editItem(item) {
     if (condensedTypes.indexOf(item.type) <= 7) {
-        alert(`Warning! These recipes will be affected: `)
+        alert(`Warning! These recipes will be affected: ${}`)
         // axiosPatchIngredient(item)
     } else {
         // axiosPatchItem(item)
@@ -270,7 +270,7 @@ export default function Items() {
   function findAffectedRecipes(item) {
       const affected = []
       if (!allRecipes.length) {
-          return []
+          return 'No recipes will be affected.'
       } else {
         allRecipes.forEach(recipe => {
             if (recipe.ingredients.includes(item._id)) {
@@ -279,6 +279,7 @@ export default function Items() {
         })
       }
       console.log(affected, 'affected recipes')
+      return 'Warning! These recipes will be affected: ' + affected.map(recipe => <span>{recipe.name} </span>)
   }
 
 
