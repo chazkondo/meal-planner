@@ -116,9 +116,8 @@ export const deleteItem = async (req, res) => {
       const {_id, signature} = req.query
   
       const patchedIngredient = await Ingredient.findOneAndDelete({ _id });
-      const patchedIngredientCalendar = await Calendar.find({item_id: _id }).deleteMany()
 
-      if (!deletedIngredient || !deletedIngredientCalendar) {throw error}
+      if (!patchedIngredient) {throw error}
   
       await mongooseSession.commitTransaction();
       mongooseSession.endSession();
