@@ -279,12 +279,9 @@ function mapRecipeArrays(arr) {
   function findAffectedRecipes(item) {
       let affected = []  
       console.log(recipeMap, 'recipe map')
-        allRecipes.forEach(recipe => {
-            // console.log(recipe.ingredients, 'what is here then?')
-            if (recipe.ingredients.includes(item._id)) {
-                affected = [...affected, recipe]
-            }
-        })
+        for (const recipe in recipeMap) {
+            console.log(recipeMap[recipe], 'hello??')
+        }
         if (affected.length === 0) {
             // console.log(affected, 'what??')
             return alert('No recipes affected.')
