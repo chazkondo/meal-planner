@@ -216,7 +216,7 @@ export default function Items() {
     Alert.fire({
         title: item.name,
         html: 
-            `<span>${item.type}</span><br /><br /><input id="edit_name" type="text" placeholder="new name" pattern="[a-zA-Z0-9]+"/><br /><select id="items" name="items">${ingredientTypes.map((item, i) => '<option value={i} key={i}>'+item+'</option>')}
+            `<span>${item.type}</span><br /><br /><input id="edit_name" type="text" placeholder="new name" pattern="[a-zA-Z0-9]+"/><br /><select id="edit_type" name="items">${condensedTypes.map((item, i) => '<option>'+item+'</option>')}
           </select>`
         ,
   
@@ -228,7 +228,7 @@ export default function Items() {
       }).then((result) => {
         if (result.isConfirmed) {
             if (!document.getElementById('edit_name').value) {
-                alert(item.name)
+                alert(item.name + document.getElementById('edit_type').value)
             } else {
                 alert(document.getElementById('edit_name').value)
             }
