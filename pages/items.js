@@ -280,14 +280,20 @@ function mapRecipeArrays(arr) {
       let affected = []  
       console.log(recipeMap, 'recipe map')
         for (const recipe in recipeMap) {
-            console.log(recipeMap[recipe], 'hello??')
+            if (recipeMap[recipe].length) {
+                recipeMap[recipe].forEach(ingred => {
+                    if (ingred._id === item._id) {
+                    affected.push(recipe)
+                }
+            })
+            }
         }
         if (affected.length === 0) {
             // console.log(affected, 'what??')
             return alert('No recipes affected.')
         }
       console.log(affected, 'affected recipes')
-      return alert(`Warning! These recipes will be affected: ${affected.map(recipe => recipe.name )}`)
+      return alert(`Warning! These recipes will be affected: ${affected.map(recipe => recipe )}`)
   }
 
 
