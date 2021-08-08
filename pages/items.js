@@ -31,7 +31,7 @@ export default function Items() {
   const [navigationBlocker, setNavigationBlocker] = useState(false)
   const [loading, setLoading] = useState(true)
   const [allRecipes, setAllRecipes] = useState([])
-  const [recipeMap, setRecipeMap] = useState([])
+  const [recipeMap, setRecipeMap] = useState({})
 
 
 
@@ -64,7 +64,7 @@ export default function Items() {
 }, [navigationBlocker])
 
 function mapRecipeArrays(arr) {
-    const obj = []
+    const obj = {}
     arr.forEach(item => obj[item._id] = [...item.ingredients])
     return setRecipeMap(obj)
 }
