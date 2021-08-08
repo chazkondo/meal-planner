@@ -30,6 +30,7 @@ export default function Items() {
   const [allItems, setAllItems] = useState([])
   const [navigationBlocker, setNavigationBlocker] = useState(false)
   const [loading, setLoading] = useState(true)
+  const [allRecipes, setAllRecipes] = useState([])
 
 
 
@@ -41,7 +42,7 @@ export default function Items() {
       setAllRecipes(recipes.data.recipes)
     })
     .catch(err => console.log(err))
-    
+
     axios
       .get('/api/groceryitems')
       .then(items => {
