@@ -105,7 +105,7 @@ export const deleteItem = async (req, res) => {
   };
 
   export const patchItem = async (req, res) => {
-    console.log(req.query, 'patch ingredient um what is happening?')
+    console.log(req.body, 'patch ingredient um what is happening?')
     await dbConnect();
   
     const mongooseSession = await mongoose.startSession();
@@ -113,9 +113,9 @@ export const deleteItem = async (req, res) => {
     try {
       mongooseSession.startTransaction();
 
-      const {_id, signature} = req.query
+      const {_id, signature} = req.body
   
-      const patchedIngredient = await Ingredient.findOneAndUpdate({ _id });
+      const patchedIngredient = await Ingredient.findOneAndUpdate({ _id }, {...req.body});
 
       if (!patchedIngredient) {throw error}
   
