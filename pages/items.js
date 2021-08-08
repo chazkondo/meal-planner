@@ -179,7 +179,10 @@ export default function Items() {
   function edit (item) {
     Alert.fire({
         title: item.name,
-        html: '<input id="edit_name" type="text" name="new name" pattern="[a-zA-Z0-9]+"/>',
+        html: 
+            `<span>${item.type}</span><br /><br /><input id="edit_name" type="text" placeholder="new name" pattern="[a-zA-Z0-9]+"/><br /><select id="items" name="items">${ingredientTypes.map((item, i) => '<option value={i} key={i}>'+item+'</option>')}
+          </select>`
+        ,
   
         showDenyButton: true,
         confirmButtonColor: "blue",
