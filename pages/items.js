@@ -260,7 +260,7 @@ export default function Items() {
 
   function editItem(item) {
     if (condensedTypes.indexOf(item.type) <= 7) {
-        alert(`Warning! These recipes will be affected: ${}`)
+        findAffectedRecipes(item)
         // axiosPatchIngredient(item)
     } else {
         // axiosPatchItem(item)
