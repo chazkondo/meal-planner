@@ -266,7 +266,6 @@ function mapRecipeArrays(arr) {
             }
         }
     }
-    console.log(condensedTypes.indexOf(item.type), ' this should be a num!')
   }
 
   function editItem(item) {
@@ -292,7 +291,6 @@ function mapRecipeArrays(arr) {
         if (affected.length === 0) {
             return true
         }
-      console.log(affected, 'affected recipes')
         if (confirm(`Warning! These recipes will be affected: ${affected.map(recipe => ` ${recipe}` )}`)) {
             return true
         } else {
