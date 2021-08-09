@@ -2,6 +2,7 @@ import dbConnect from '../../../utils/dbConnect';
 import Item from '../../../models/Item';
 // import Connections from '../../../models/Connections';
 import mongoose from 'mongoose';
+import Calendar from '../../../models/Calendar';
 
 dbConnect();
 
