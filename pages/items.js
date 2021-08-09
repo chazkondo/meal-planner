@@ -69,6 +69,12 @@ function mapRecipeArrays(arr) {
     return setRecipeMap(obj)
 }
 
+function updateItemState(item) {
+    let copy = allItems.slice;
+    copy.find(element => element._id === item._id).name = item.name
+    setAllItems(copy)
+}
+
 
   function toggleEditAlert(){
     setNavigationBlocker(false)
