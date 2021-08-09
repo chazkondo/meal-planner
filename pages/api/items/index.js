@@ -69,7 +69,7 @@ export default async function itemSwitch(req, res){
 }
 
 export const deleteItem = async (req, res) => {
-    console.log(req.query, 'delete ingredient um what is happening?')
+    console.log(req.query, 'delete item um what is happening?')
     await dbConnect();
   
     const mongooseSession = await mongoose.startSession();
@@ -105,7 +105,7 @@ export const deleteItem = async (req, res) => {
   };
 
   export const patchItem = async (req, res) => {
-    console.log(req.body, 'patch ingredient um what is happening?')
+    console.log(req.body, 'patch item um what is happening?')
     await dbConnect();
   
     const mongooseSession = await mongoose.startSession();
