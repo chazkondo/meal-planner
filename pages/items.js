@@ -175,6 +175,7 @@ function updateItemState(item) {
         if (res.data.success) {
             console.log(res.data)
             console.log(item.name, '?')
+            updateItemState(item)
             alert('Successful Edit')
         } else {
             alert('Oops. An error occurred.')
@@ -195,6 +196,7 @@ function updateItemState(item) {
         if (res.data.success) {
             console.log(res.data)
             console.log(item.name, '?')
+            updateItemState(updateItemState)
             alert('Successful Edit')
         } else {
             alert('Oops. An error occurred.')
