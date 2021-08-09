@@ -270,7 +270,7 @@ function mapRecipeArrays(arr) {
     if (condensedTypes.indexOf(item.type) <= 7) {
         if (findAffectedRecipes(item)) {
             console.log('this is what i am sending to patch function: ', {...item, name})
-            axiosPatchIngredient({...item, name, type})
+            axiosPatchIngredient({...item, name})
         }
     } else {
         // axiosPatchItem(item)
