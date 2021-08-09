@@ -114,7 +114,7 @@ export const deleteItem = async (req, res) => {
       mongooseSession.startTransaction();
 
       const {_id, signature} = req.body
-  ss
+  
       const patchedItem = await Item.findOneAndUpdate({ _id }, {...req.body});
       const patchedItemCalendar = await Calendar.updateMany({item_id: _id }, {title: req.body.name})
 
