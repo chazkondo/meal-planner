@@ -193,7 +193,6 @@ function updateItemState(item) {
     .then(res=>{
         if (res.data.success) {
             updateItemState(item)
-            alert('Successful Edit')
         } else {
             alert('Oops. An error occurred.')
         }
