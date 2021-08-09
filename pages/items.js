@@ -185,6 +185,8 @@ function mapRecipeArrays(arr) {
     .patch('/api/ingredients/', {...item})
     .then(res=>{
         if (res.data.success) {
+            console.log(res.data)
+            console.log(item.name, '?')
             alert('Successful Edit')
         } else {
             alert('Oops. An error occurred.')
@@ -263,9 +265,9 @@ function mapRecipeArrays(arr) {
   }
 
   function editItem(item) {
-    let name
+    let name = document.getElementById('edit_name').value
     if (!document.getElementById('edit_name').value) {
-        name = item.name
+        return
     }
     if (condensedTypes.indexOf(item.type) <= 7) {
         if (findAffectedRecipes(item)) {
