@@ -105,30 +105,33 @@ export const deleteItem = async (req, res) => {
   };
 
   export const patchItem = async (req, res) => {
-    console.log(req.query, 'patch item -  what is happening?')
+    console.log(req.body, 'patch ingredient um what is happening?')
     await dbConnect();
-          
-    try {
-
-      const {_id, signature} = req.query
   
-      const item = await Item.findOneAndUpdate({ _id });
-      console.log(item, 'what happens?')
+    const mongooseSession = await mongoose.startSession();
+        
+    try {
+      mongooseSession.startTransaction();
 
-      if (!item) {
-        res.status(400).json({
-            success: false,
-            message: "Failed to patch item.",
-          });
-      } else {
-        res.status(200).json({
-            success: true,
-            message: "Successful.",
-          });
-      }
+      const {_id, signature} = req.body
+  
+      const patchedIngredient = await Ingredient.findOneAndUpdate({ _id }, {...req.body});
+      const patchedIngredientCalendar = await Calendar.updateMany({item_id: _id }, {title: req.body.name})
+
+      if (!patchedIngredient || !patchedIngredientCalendar) {throw error}
+  
+      await mongooseSession.commitTransaction();
+      mongooseSession.endSession();
+  
+      res.status(200).json({
+        success: true,
+        message: "Successful.",
+      });
     } catch (err) {
       console.log("ERROR?", err.message);
-
+  
+      await mongooseSession.abortTransaction();
+      mongooseSession.endSession();
   
       res.status(400).json({
         success: false,
