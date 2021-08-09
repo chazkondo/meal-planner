@@ -275,7 +275,7 @@ function mapRecipeArrays(arr) {
             axiosPatchIngredient({...item, name})
         }
     } else {
-        // axiosPatchItem(item)
+        axiosPatchItem({...item, name})
     }
   }
 
