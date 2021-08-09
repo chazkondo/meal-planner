@@ -270,10 +270,12 @@ function mapRecipeArrays(arr) {
     } else {
         name = document.getElementById('edit_name').value
     }
-    document.getElementById('edit_name').value
+    const type = document.getElementById('edit_type').value
     if (condensedTypes.indexOf(item.type) <= 7) {
-        findAffectedRecipes(item)
-        // axiosPatchIngredient(item)
+        if (findAffectedRecipes(item)) {
+            console.log('this is what i am sending to patch function: ', {...item, name, type})
+            axiosPatchIngredient({...item, name, type})
+        }
     } else {
         // axiosPatchItem(item)
     }
