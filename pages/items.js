@@ -70,8 +70,10 @@ function mapRecipeArrays(arr) {
 }
 
 function updateItemState(item) {
+    console.log(item, "HELLO??")
     let copy = allItems.slice;
     copy.find(element => element._id === item._id).name = item.name
+    console.log(copy, 'hello?')
     setAllItems(copy)
 }
 
