@@ -173,7 +173,6 @@ function updateItemState(item) {
     .patch('/api/items/', {...item})
     .then(res=>{
         if (res.data.success) {
-            console.log(res.data)
             updateItemState(item)
             alert('Successful Edit')
         } else {
