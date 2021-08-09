@@ -73,6 +73,7 @@ function updateItemState(item) {
     const copy = allItems.slice();
     copy.find(element => element._id === item._id).name = item.name
     setAllItems(copy)
+    alert('Successful Edit')
 }
 
 
@@ -174,7 +175,6 @@ function updateItemState(item) {
     .then(res=>{
         if (res.data.success) {
             updateItemState(item)
-            alert('Successful Edit')
         } else {
             alert('Oops. An error occurred.')
         }
