@@ -192,7 +192,7 @@ function updateItemState(item) {
     .patch('/api/ingredients/', {...item})
     .then(res=>{
         if (res.data.success) {
-            updateItemState(updateItemState)
+            updateItemState(item)
             alert('Successful Edit')
         } else {
             alert('Oops. An error occurred.')
