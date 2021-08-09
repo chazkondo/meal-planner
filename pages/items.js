@@ -195,7 +195,6 @@ function updateItemState(item) {
     .then(res=>{
         if (res.data.success) {
             console.log(res.data)
-            console.log(item.name, '?')
             updateItemState(updateItemState)
             alert('Successful Edit')
         } else {
