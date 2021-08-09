@@ -73,7 +73,7 @@ function updateItemState(item) {
     const copy = allItems.slice();
     copy.find(element => element._id === item._id).name = item.name
     setAllItems(copy)
-    alert('Successful Edit')
+    Alert.fire("Success", "Your item has been edited.", "success");
 }
 
 
