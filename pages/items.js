@@ -167,6 +167,8 @@ function mapRecipeArrays(arr) {
     .patch('/api/items/', {...item})
     .then(res=>{
         if (res.data.success) {
+            console.log(res.data)
+            console.log(item.name, '?')
             alert('Successful Edit')
         } else {
             alert('Oops. An error occurred.')
