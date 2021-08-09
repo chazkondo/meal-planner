@@ -233,8 +233,7 @@ function mapRecipeArrays(arr) {
     Alert.fire({
         title: item.name,
         html: 
-            `<span>${item.type}</span><br /><br /><input id="edit_name" type="text" placeholder="new name" pattern="[a-zA-Z0-9]+"/><br /><select id="edit_type" name="items">${condensedTypes.map((item, i) => '<option>'+item+'</option>')}
-          </select>`
+            `<span>${item.type}</span><br /><br /><input id="edit_name" type="text" placeholder="new name" pattern="[a-zA-Z0-9]+"/>`
         ,
   
         showDenyButton: true,
