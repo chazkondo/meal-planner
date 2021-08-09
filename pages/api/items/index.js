@@ -68,30 +68,33 @@ export default async function itemSwitch(req, res){
 }
 
 export const deleteItem = async (req, res) => {
-    console.log(req.query, 'delete item -  what is happening?')
+    console.log(req.query, 'delete ingredient um what is happening?')
     await dbConnect();
-          
+  
+    const mongooseSession = await mongoose.startSession();
+        
     try {
+      mongooseSession.startTransaction();
 
       const {_id, signature} = req.query
   
-      const item = await Item.findOneAndDelete({ _id });
-      console.log(item, 'what happens?')
+      const deletedItem = await Item.findOneAndDelete({ _id });
+      const deletedItemCalendar = await Calendar.find({item_id: _id }).deleteMany()
 
-      if (!item) {
-        res.status(400).json({
-            success: false,
-            message: "Failed to delete item.",
-          });
-      } else {
-        res.status(200).json({
-            success: true,
-            message: "Successful.",
-          });
-      }
+      if (!deletedItem || !deletedItemCalendar) {throw error}
+  
+      await mongooseSession.commitTransaction();
+      mongooseSession.endSession();
+  
+      res.status(200).json({
+        success: true,
+        message: "Successful.",
+      });
     } catch (err) {
       console.log("ERROR?", err.message);
-
+  
+      await mongooseSession.abortTransaction();
+      mongooseSession.endSession();
   
       res.status(400).json({
         success: false,
