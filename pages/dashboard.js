@@ -87,21 +87,6 @@ export default function App() {
     const handleEventMove = (e) => {
       const event = calendar.find(item=>item._instance === e.event._instance.defId)
       event._date = e.event.start
-      // const newEvent = {
-      //   id: eventInfo.draggedEl.getAttribute("data-id"),
-      //   title: eventInfo.draggedEl.getAttribute("title"),
-      //   color: eventInfo.draggedEl.getAttribute("data-color"),
-      //   start: eventInfo.date,
-      //   end: eventInfo.date,
-      //   custom: eventInfo.draggedEl.getAttribute("data-custom")
-      // };
-  
-      // setState((state) => {
-      //   return {
-      //     ...state,
-      //     calendarEvents: state.calendarEvents.concat(newEvent)
-      //   };
-      // });
     };
 
   function handleCheck(e) {
