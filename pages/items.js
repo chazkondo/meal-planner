@@ -309,7 +309,7 @@ function updateItemState(item) {
   return (
       <div className="pageWrapper" style={{backgroundColor: 'gray', width: '100vw', height: '100vh', padding: 20, display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
     <div>
-        {!loading ? allItems.length ? allItems.map(item=><div key={item._id} onClick={()=>sanity(item)}>{item.name}</div>): <span>No Grocery Items. <a onClick={()=>router.push('/createItems')}>Click To Add</a></span> : <span>Loading</span>}
+        {!loading ? allItems.length ? allItems.map(item=><div key={item._id} onClick={()=>sanity(item)}>{item.name}</div>): <span>No Grocery Items. <a onClick={()=>router.push('/createitems')}>Click To Add</a></span> : <span>Loading</span>}
         {/* Edit Item
         {console.log(allItems, 'hello??')}
         <br />
