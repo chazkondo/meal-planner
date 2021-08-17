@@ -217,7 +217,7 @@ function updateItemState(item) {
       console.log(item, 'what is her?')
     Alert.fire({
       title: item.name,
-      html: `<span>${item.type}</span>`,
+      html: `<span>${item.type}</span><div>${item.ingredients.map(ingredient=>ingredient.name)}</div>`,
 
       showDenyButton: true,
       confirmButtonColor: "blue",
@@ -241,7 +241,7 @@ function updateItemState(item) {
     Alert.fire({
         title: item.name,
         html: 
-            `<span>${item.type}</span><br /><br /><input id="edit_name" type="text" placeholder="new name" pattern="[a-zA-Z0-9]+"/><div>Sanity${item.ingredients.map(ingredient=>console.log(ingredient.name))}</div>Hello`
+            `<span>${item.type}</span><br /><br /><input id="edit_name" type="text" placeholder="new name" pattern="[a-zA-Z0-9]+"/>`
         ,
   
         showDenyButton: true,
