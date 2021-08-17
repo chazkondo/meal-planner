@@ -237,6 +237,7 @@ function updateItemState(item) {
   }
 
   function edit (item) {
+    console.log(item, 'whats here agian?')
     Alert.fire({
         title: item.name,
         html: 
