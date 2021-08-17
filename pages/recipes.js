@@ -241,7 +241,7 @@ function updateItemState(item) {
     Alert.fire({
         title: item.name,
         html: 
-            `<span>${item.type}</span><br /><br /><input id="edit_name" type="text" placeholder="new name" pattern="[a-zA-Z0-9]+"/><div>${item.ingredients.map(ingredient=>{return `<span>${ingredient.name}</span>`})}</div>`
+            `<span>${item.type}</span><br /><br /><input id="edit_name" type="text" placeholder="new name" pattern="[a-zA-Z0-9]+"/><div>${item.ingredients.map(ingredient=>console.log(ingredient.name))}</div>`
         ,
   
         showDenyButton: true,
