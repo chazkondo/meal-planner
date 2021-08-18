@@ -1,6 +1,7 @@
 import dbConnect from '../../../utils/dbConnect';
 import Recipe from '../../../models/Recipe';
 import mongoose from 'mongoose';
+import Calendar from '../../../models/Calendar';
 // import Ingredient from '../../../models/Ingredient';
 // import { syncIndexes } from '../../../models/Connections';
 // import Connections from '../../../models/Connections';
@@ -80,10 +81,11 @@ export default async function recipeSwitch(req, res){
     
           const {_id, signature} = req.query
       
-          const deletedIngredient = await Ingredient.findOneAndDelete({ _id });
-          const deletedIngredientCalendar = await Calendar.find({item_id: _id }).deleteMany()
+          const deletedRecipe = await Recipe.findOneAndDelete({ _id });
+          await Calendar.find({recipe_id: _id }).deleteMany()
+
     
-          if (!deletedIngredient || !deletedIngredientCalendar) {throw error}
+          if (!deletedRecipe) {throw error}
       
           await mongooseSession.commitTransaction();
           mongooseSession.endSession();
