@@ -67,3 +67,36 @@ export default async function recipeSwitch(req, res){
             break;
     }
 }
+
+    // Delete Item
+    export const deleteRecipe = async (req, res) => {
+        await dbConnect();
+      
+        const mongooseSession = await mongoose.startSession();
+            
+        try {
+          mongooseSession.startTransaction();
+  
+          const {_id, signature} = req.query
+      
+          await Recipe.findOneAndDelete({ _id });
+      
+          await mongooseSession.commitTransaction();
+          mongooseSession.endSession();
+      
+          res.status(200).json({
+            success: true,
+            message: "Successful.",
+          });
+        } catch (err) {
+          console.log("ERROR?", err.message);
+      
+          await mongooseSession.abortTransaction();
+          mongooseSession.endSession();
+      
+          res.status(400).json({
+            success: false,
+            message: "Failed to delete item.",
+          });
+        }
+      };
