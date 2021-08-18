@@ -136,7 +136,7 @@ function updateItemState(item) {
     
   }
 
-  function axiosDeleteItem(item) {
+  function axiosDeleteRecipe(item) {
     setNavigationBlocker(true)
     axios
     .delete('/api/items/', {params: {...item}})
@@ -154,23 +154,6 @@ function updateItemState(item) {
     })
   }
 
-  function axiosDeleteIngredient(item) {
-    setNavigationBlocker(true)
-    axios
-    .delete('/api/ingredients/', {params: {...item}})
-    .then(res=>{
-        if (res.data.success) {
-            filterOutItem(item)
-        } else {
-            alert('Oops. An error occurred.')
-        }
-        setNavigationBlocker(false)
-    })
-    .catch(err=>{
-      setNavigationBlocker(false)
-      alert('Oops a network error occurred.')
-    })
-  }
 
   function axiosPatchItem(item) {
     setNavigationBlocker(true)
@@ -260,19 +243,6 @@ function updateItemState(item) {
       })
   }
 
-  function deleteItem(item) {
-    if (condensedTypes.indexOf(item.type) < 0 || condensedTypes.indexOf(item.type) > 11) {
-        return (alert('Error. Item not found.'))
-    } else {
-        if (condensedTypes.indexOf(item.type) > 7) {
-            axiosDeleteItem(item)
-        } else {
-            if (findAffectedRecipes(item)) {
-                axiosDeleteIngredient(item)
-            }
-        }
-    }
-  }
 
   function editItem(item) {
     let name = document.getElementById('edit_name').value
