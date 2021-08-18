@@ -191,8 +191,8 @@ function updateItemState(item) {
     })
   }
 
-  function filterOutItem(item) {
-      let filter = allItems.filter(arrItem => arrItem._id !== item._id)
+  function filterOutRecipe(item) {
+      let filter = allRecipes.filter(arrItem => arrItem._id !== item._id)
       return setAllItems(filter)
   }
 
