@@ -139,7 +139,7 @@ function updateItemState(item) {
   function axiosDeleteRecipe(item) {
     setNavigationBlocker(true)
     axios
-    .delete('/api/items/', {params: {...item}})
+    .delete('/api/recipes/', {params: {...item}})
     .then(res=>{
         if (res.data.success) {
             filterOutItem(item)
