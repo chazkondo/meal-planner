@@ -10,7 +10,7 @@ import Alert from "sweetalert2";
 
 // also plan for functionality of being able to drag and drop non food items to calendar as well.
 
-// delete recipe, edit recipe
+// edit recipe
 // users
 
 
