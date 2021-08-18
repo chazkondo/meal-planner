@@ -58,7 +58,10 @@ export default async function recipeSwitch(req, res){
                 console.log(error)
                 res.status(400).json({success: false})
             }
+        case 'DELETE':
+            await deleteRecipe(req, res);
             break;
+        break;
         default:
             res.status(400).json({success: false, default: true})
             break;
