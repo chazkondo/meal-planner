@@ -233,7 +233,7 @@ function updateItemState(item) {
         edit(item)
       }
       if (result.isDenied) {
-        if (confirm('Warning! Deleting items could affect your recipes and calendar. Do you want to proceed?')) {
+        if (confirm('Warning! Deleting recipes could affect your calendar. Do you want to proceed?')) {
             deleteItem(item)
         }
       }
