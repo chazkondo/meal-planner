@@ -142,7 +142,7 @@ function updateItemState(item) {
     .delete('/api/recipes/', {params: {...item}})
     .then(res=>{
         if (res.data.success) {
-            filterOutItem(item)
+          filterOutRecipe(item)
         } else {
             alert('Oops. An error occurred.')
         }
@@ -193,7 +193,7 @@ function updateItemState(item) {
 
   function filterOutRecipe(item) {
       let filter = allRecipes.filter(arrItem => arrItem._id !== item._id)
-      return setAllItems(filter)
+      return setAllRecipes(filter)
   }
 
   function setDropdownValue(e) {
