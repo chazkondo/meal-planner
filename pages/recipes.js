@@ -217,7 +217,7 @@ function updateItemState(item) {
       }
       if (result.isDenied) {
         if (confirm('Warning! Deleting recipes could affect your calendar. Do you want to proceed?')) {
-            deleteRecipe(item)
+          axiosDeleteRecipe(item)
         }
       }
     })
