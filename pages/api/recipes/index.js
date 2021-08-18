@@ -69,7 +69,7 @@ export default async function recipeSwitch(req, res){
     }
 }
 
-    // Delete Item
+    // Delete Recipe
     export const deleteRecipe = async (req, res) => {
         await dbConnect();
       
@@ -77,10 +77,13 @@ export default async function recipeSwitch(req, res){
             
         try {
           mongooseSession.startTransaction();
-  
+    
           const {_id, signature} = req.query
       
-          await Recipe.findOneAndDelete({ _id });
+          const deletedIngredient = await Ingredient.findOneAndDelete({ _id });
+          const deletedIngredientCalendar = await Calendar.find({item_id: _id }).deleteMany()
+    
+          if (!deletedIngredient || !deletedIngredientCalendar) {throw error}
       
           await mongooseSession.commitTransaction();
           mongooseSession.endSession();
@@ -97,7 +100,7 @@ export default async function recipeSwitch(req, res){
       
           res.status(400).json({
             success: false,
-            message: "Failed to delete recipe.",
+            message: "Failed to delete item.",
           });
         }
       };
