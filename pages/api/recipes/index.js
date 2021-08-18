@@ -96,7 +96,7 @@ export default async function recipeSwitch(req, res){
       
           res.status(400).json({
             success: false,
-            message: "Failed to delete item.",
+            message: "Failed to delete recipe.",
           });
         }
       };
