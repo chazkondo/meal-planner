@@ -116,7 +116,7 @@ export default async function calendarSwitch(req, res){
         }
       };
 
-    //change organization
+    // Delete Item
     export const deleteItem = async (req, res) => {
       console.log(req.query, 'um what is happening?')
       await dbConnect();
