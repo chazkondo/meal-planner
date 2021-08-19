@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState, useRef, memo } from "react";
 
-import styles from '../styles/Recipe.module.css'
+import styles from '../../styles/Recipe.module.css'
 
 // Add modals for each function
 
