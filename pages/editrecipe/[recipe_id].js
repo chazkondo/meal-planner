@@ -3,6 +3,8 @@ import React, { useEffect, useState, useRef, memo } from "react";
 
 import styles from '../../styles/Recipe.module.css'
 
+// get recipe by Id
+
 // Add modals for each function
 
 // ie. if adding/editings item, then provide a modal for that
