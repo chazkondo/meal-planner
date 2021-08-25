@@ -12,6 +12,8 @@ import styles from '../../styles/Recipe.module.css'
 
 // also plan for functionality of being able to drag and drop non food items to calendar as well.
 
+// test commit from phone
+
 export default function Items() {
   const recipeTypes = ['Breakfast', 'Lunch', 'Dinner', 'Snack', 'Appetizer', 'Drink']
   const condensedTypes = ['Beverages', 'Bread/Bakery', 'Canned/Jarred Goods', 'Dairy', 'Dry/Baking Goods', 'Frozen Foods', 'Meat', 'Produce', 'Cleaners', 'Paper Goods', 'Personal Care', 'Other']
