@@ -41,7 +41,7 @@ export default function Items() {
 
   useEffect(()=>{
     axios
-      .get('/api/recipes')
+      .get(`/api/recipes/${router.query.recipe_id}`)
       .then(recipes => {
         console.log(recipes.data.recipes, 'here')
         setAllRecipes(recipes.data.recipes)
