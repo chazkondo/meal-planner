@@ -213,7 +213,7 @@ function updateItemState(item) {
       denyButtonText: "Delete",
     }).then((result) => {
       if (result.isConfirmed) {
-        edit(item)
+        router.push(`/editrecipe/${item._id}`)
       }
       if (result.isDenied) {
         if (confirm('Warning! Deleting recipes could affect your calendar. Do you want to proceed?')) {
