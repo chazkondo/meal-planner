@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState, useRef, memo } from "react";
 
 import styles from '../../styles/Recipe.module.css'
+import { useRouter } from 'next/router'
 
 // get recipe by Id
 
