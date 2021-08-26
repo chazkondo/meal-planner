@@ -40,14 +40,17 @@ export default function Items() {
   const [color, setColor] = useState("#e66465");
 
   useEffect(()=>{
-    axios
-      .get(`/api/recipes/${router.query.recipe_id}`)
-      .then(recipes => {
-        console.log(recipes.data.recipes, 'here')
-        setAllRecipes(recipes.data.recipes)
-      })
-      .catch(err => console.log(err))
-  },[])
+    
+    if (router.query.recipe_id) {
+      axios
+        .get(`/api/recipes/${router.query.recipe_id.toString()}`)
+        .then(recipes => {
+          console.log(recipes.data.recipes, 'here')
+          setAllRecipes(recipes.data.recipes)
+        })
+        .catch(err => console.log(err))
+    }
+  },[router])
 
   useEffect(()=>{
     axios
