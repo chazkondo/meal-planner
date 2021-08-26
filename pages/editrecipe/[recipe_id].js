@@ -16,6 +16,8 @@ import { useRouter } from 'next/router'
 // test commit from phone
 
 export default function Items() {
+  const router = useRouter()
+  console.log(router, ' what is here?')
   const recipeTypes = ['Breakfast', 'Lunch', 'Dinner', 'Snack', 'Appetizer', 'Drink']
   const condensedTypes = ['Beverages', 'Bread/Bakery', 'Canned/Jarred Goods', 'Dairy', 'Dry/Baking Goods', 'Frozen Foods', 'Meat', 'Produce', 'Cleaners', 'Paper Goods', 'Personal Care', 'Other']
   const [name, setName] = useState('')
