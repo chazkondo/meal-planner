@@ -10,8 +10,8 @@ dbConnect();
 
 
 export default async function recipeSwitch(req, res){
-    const {method} = req;
-    console.log(req, 'whats here in my req?')
+    const { recipe_id } = req.query;
+    console.log(recipe_id, 'whats here in my req?')
 
     // switch(method) {
     //     case 'GET':
