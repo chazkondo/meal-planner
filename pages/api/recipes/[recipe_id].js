@@ -11,7 +11,20 @@ dbConnect();
 
 export default async function recipeSwitch(req, res){
     const { recipe_id } = req.query;
+    const { method } = req;
     console.log(recipe_id, 'whats here in my req?')
+
+    if (method === 'GET') {
+        try {
+            const recipe = await Recipe.find({_id: recipe_id}).populate("ingredients", "_id name type")
+            .exec()
+
+            res.status(200).json({success: true, recipe})
+        } catch (error) {
+            console.log(error, 'what is the error here')
+            res.status(400).json({success: false})
+        }
+    }
 
     // switch(method) {
     //     case 'GET':
