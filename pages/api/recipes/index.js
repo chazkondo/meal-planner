@@ -106,3 +106,24 @@ export default async function recipeSwitch(req, res){
           });
         }
       };
+
+      export const getRecipeSSR = async (req) => {
+        await dbConnect();
+      
+        const session = await getSession({ req });
+        console.log(req, 'what is here?')
+      
+        // if (session) {
+          try {
+
+            // return data.docs;
+            // return newData;
+          } catch (error) {
+            console.log("ERROR?", error);
+            // throw err;
+          }
+        // else {
+        //   // Not Signed in
+        //   res.status(401);
+        // }
+      };
