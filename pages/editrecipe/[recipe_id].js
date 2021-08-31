@@ -4,6 +4,8 @@ import React, { useEffect, useState, useRef, memo } from "react";
 import styles from '../../styles/Recipe.module.css'
 import { useRouter } from 'next/router'
 
+import getRecipeSSR from '../api/recipes';
+
 // get recipe by Id
 
 // Add modals for each function
@@ -166,13 +168,7 @@ export async function getServerSideProps(context) {
   console.log(recipe_id, 'usse this for the call')
   let data;
 
-  axios
-        .get(`/api/recipes/${recipe_id}`)
-        .then(recipe => {
-          console.log(recipe, 'da wta?')
-        })
-        .catch(err => console.log(err))
-
+  console.log(getRecipeSSR(context), 'hello?')
   return {
     props: {}, // will be passed to the page component as props
   }

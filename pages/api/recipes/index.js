@@ -108,14 +108,15 @@ export default async function recipeSwitch(req, res){
       };
 
       export const getRecipeSSR = async (req) => {
-        await dbConnect();
+        // await dbConnect();
       
-        const session = await getSession({ req });
+        // const session = await getSession({ req });
         console.log(req, 'what is here?')
       
         // if (session) {
           try {
 
+            console.log('hi biatch')
             // return data.docs;
             // return newData;
           } catch (error) {
