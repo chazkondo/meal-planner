@@ -17,7 +17,6 @@ import { useRouter } from 'next/router'
 
 export default function Items() {
   const router = useRouter()
-  console.log(router, ' what is here?')
   const recipeTypes = ['Breakfast', 'Lunch', 'Dinner', 'Snack', 'Appetizer', 'Drink']
   const condensedTypes = ['Beverages', 'Bread/Bakery', 'Canned/Jarred Goods', 'Dairy', 'Dry/Baking Goods', 'Frozen Foods', 'Meat', 'Produce', 'Cleaners', 'Paper Goods', 'Personal Care', 'Other']
   const [name, setName] = useState('')
@@ -38,19 +37,6 @@ export default function Items() {
 
 
   const [color, setColor] = useState("#e66465");
-
-  useEffect(()=>{
-    
-    if (router.query.recipe_id) {
-      axios
-        .get(`/api/recipes/${router.query.recipe_id.toString()}`)
-        .then(recipes => {
-          console.log(recipes.data.recipes, 'here')
-          setAllRecipes(recipes.data.recipes)
-        })
-        .catch(err => console.log(err))
-    }
-  },[router])
 
   useEffect(()=>{
     axios
@@ -173,4 +159,21 @@ export default function Items() {
     <button onClick={()=>{console.log(currentRecipeIngredients); submitIngredient()}} disabled={!currentRecipeIngredients.length}>Submit Recipe</button>
     </div>
   );
+}
+
+export async function getServerSideProps(context) {
+  const { recipe_id } = context.query;
+  console.log(recipe_id, 'usse this for the call')
+  let data;
+
+  axios
+        .get(`/api/recipes/${recipe_id}`)
+        .then(recipe => {
+          console.log(recipe, 'da wta?')
+        })
+        .catch(err => console.log(err))
+
+  return {
+    props: {}, // will be passed to the page component as props
+  }
 }
