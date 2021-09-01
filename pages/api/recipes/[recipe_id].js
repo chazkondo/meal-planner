@@ -1,6 +1,6 @@
 import dbConnect from '../../../utils/dbConnect';
 import Recipe from '../../../models/Recipe';
-import mongoose from 'mongoose';
+// import mongoose from 'mongoose';
 // import Calendar from '../../../../models/Calendar';
 // import Ingredient from '../../../models/Ingredient';
 // import { syncIndexes } from '../../../models/Connections';
@@ -9,21 +9,21 @@ import mongoose from 'mongoose';
 dbConnect();
 
 
-export default async function recipeSwitch(req, res){
-    const { recipe_id } = req.query;
-    const { method } = req;
+// export default async function recipeSwitch(req, res){
+//     const { recipe_id } = req.query;
+//     const { method } = req;
 
-    if (method === 'GET') {
-        try {
-            const recipe = await Recipe.find({_id: recipe_id}).populate("ingredients", "_id name type")
-            .exec()
+//     if (method === 'GET') {
+//         try {
+//             const recipe = await Recipe.find({_id: recipe_id}).populate("ingredients", "_id name type")
+//             .exec()
 
-            res.status(200).json({success: true, recipe})
-        } catch (error) {
-            console.log(error, 'what is the error here')
-            res.status(400).json({success: false})
-        }
-    }
+//             res.status(200).json({success: true, recipe})
+//         } catch (error) {
+//             console.log(error, 'what is the error here')
+//             res.status(400).json({success: false})
+//         }
+//     }
 
     // switch(method) {
     //     case 'GET':
@@ -81,7 +81,7 @@ export default async function recipeSwitch(req, res){
     //         res.status(400).json({success: false, default: true})
     //         break;
     // }
-}
+// }
 
     // // Delete Recipe
     // export const deleteRecipe = async (req, res) => {
@@ -119,3 +119,24 @@ export default async function recipeSwitch(req, res){
     //       });
     //     }
     //   };
+    export const getRecipeSSR = async (req) => {
+        // await dbConnect();
+      
+        // const session = await getSession({ req });
+        // console.log(req, 'what is here?')
+      
+        // if (session) {
+          try {
+
+            console.log('hi biatch')
+            // return data.docs;
+            // return newData;
+          } catch (error) {
+            console.log("ERROR?", error);
+            // throw err;
+          }
+        // else {
+        //   // Not Signed in
+        //   res.status(401);
+        // }
+      };
