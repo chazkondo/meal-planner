@@ -1,16 +1,17 @@
 import dbConnect from '../../../utils/dbConnect';
-import Recipe from '../../../models/Recipe';
+import RecipeSchema from '../../../models/Recipe';
 import mongoose from 'mongoose';
-import Calendar from '../../../models/Calendar';
+import CalendarSchema from '../../../models/Calendar';
 // import Ingredient from '../../../models/Ingredient';
 // import { syncIndexes } from '../../../models/Connections';
 // import Connections from '../../../models/Connections';
 
-dbConnect();
-
 
 export default async function recipeSwitch(req, res){
+    dbConnect();
     const {method} = req;
+
+    const Recipe = mongoose.models.Recipe || db.model("Recipe", RecipeSchema);
 
     switch(method) {
         case 'GET':
@@ -63,7 +64,6 @@ export default async function recipeSwitch(req, res){
         case 'DELETE':
             await deleteRecipe(req, res);
             break;
-        break;
         default:
             res.status(400).json({success: false, default: true})
             break;
@@ -105,4 +105,27 @@ export default async function recipeSwitch(req, res){
             message: "Failed to delete item.",
           });
         }
+      };
+
+      export const getRecipeSSR = async (req) => {
+          console.log('THIS IS GETTING HIT')
+        // await dbConnect();
+      
+        // const session = await getSession({ req });
+        // console.log(req, 'what is here?')
+      
+        // if (session) {
+        //   try {
+
+        //     console.log('hi biatch')
+        //     // return data.docs;
+        //     // return newData;
+        //   } catch (error) {
+        //     console.log("ERROR?", error);
+        //     // throw err;
+        //   }
+        // else {
+        //   // Not Signed in
+        //   res.status(401);
+        // }
       };

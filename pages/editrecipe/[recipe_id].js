@@ -40,38 +40,38 @@ export default function Items() {
 
   const [color, setColor] = useState("#e66465");
 
-  useEffect(()=>{
-    axios
-      .get('/api/ingredients')
-      .then(ingredients => {
-        setAllIngredients(ingredients.data.ingredients)
-      })
-      .catch(err => console.log(err))
-  },[])
+  // useEffect(()=>{
+  //   axios
+  //     .get('/api/ingredients')
+  //     .then(ingredients => {
+  //       setAllIngredients(ingredients.data.ingredients)
+  //     })
+  //     .catch(err => console.log(err))
+  // },[])
 
 
 
-  function postItem() {
-    alert('sup')
+  // function postItem() {
+  //   alert('sup')
 
-    if (type > 7) {
-      axios
-        .post('/api/items/', {
-          name,
-          type: condensedTypes[type]
-        })
-        .then(res=>console.log(res, 'wat?'))
-        .catch(err=>console.log(err, 'wat err?'))
-    } else {
-      axios
-        .post('/api/ingredients/', {
-          name,
-          type: condensedTypes[type]
-        })
-        .then(res=>console.log(res, 'wat?'))
-        .catch(err=>console.log(err, 'wat err?'))
-    }
-  }
+  //   if (type > 7) {
+  //     axios
+  //       .post('/api/items/', {
+  //         name,
+  //         type: condensedTypes[type]
+  //       })
+  //       .then(res=>console.log(res, 'wat?'))
+  //       .catch(err=>console.log(err, 'wat err?'))
+  //   } else {
+  //     axios
+  //       .post('/api/ingredients/', {
+  //         name,
+  //         type: condensedTypes[type]
+  //       })
+  //       .then(res=>console.log(res, 'wat?'))
+  //       .catch(err=>console.log(err, 'wat err?'))
+  //   }
+  // }
 
   function setDropdownValue(e) {
     setType(e.target.value)
@@ -163,13 +163,13 @@ export default function Items() {
   );
 }
 
-export async function getServerSideProps(context) {
-  const { recipe_id } = context.query;
-  console.log(recipe_id, 'usse this for the call')
-  let data;
+// export async function getServerSideProps({req, query}) {
+//   // const { recipe_id } = context.query;
+//   // console.log(recipe_id, 'usse this for the call')
+//   // let data;
 
-  console.log(getRecipeSSR(context), 'hello?')
-  return {
-    props: {}, // will be passed to the page component as props
-  }
-}
+//   // console.log(await getRecipeSSR(req), 'hello?')
+//   return {
+//     props: {}, // will be passed to the page component as props
+//   }
+// }

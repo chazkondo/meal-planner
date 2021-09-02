@@ -1,5 +1,5 @@
 import dbConnect from '../../../utils/dbConnect';
-import Recipe from '../../../models/Recipe';
+import { Recipe }  from '../../../models/Recipe';
 // import mongoose from 'mongoose';
 // import Calendar from '../../../../models/Calendar';
 // import Ingredient from '../../../models/Ingredient';
@@ -120,6 +120,9 @@ dbConnect();
     //     }
     //   };
     export const getRecipeSSR = async (req) => {
+
+      const Recipe =
+    mongoose.models.Recipe || db.model("Recipe", RecipeSchema);
         // await dbConnect();
       
         // const session = await getSession({ req });
@@ -128,7 +131,7 @@ dbConnect();
         // if (session) {
           try {
 
-            console.log('hi biatch')
+            console.log('hi')
             // return data.docs;
             // return newData;
           } catch (error) {
