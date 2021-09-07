@@ -8,6 +8,8 @@ import { Recipe }  from '../../../models/Recipe';
 
 // dbConnect();
 
+// issues with the model
+
 
 // export default async function recipeSwitch(req, res){
 //     const { recipe_id } = req.query;
