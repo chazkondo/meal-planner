@@ -112,5 +112,4 @@ export default async function recipeSwitch(req, res){
         // await dbConnect();
       
         // const session = await getSession({ req });
-        // console.log(req, 'what is here?')
       };
