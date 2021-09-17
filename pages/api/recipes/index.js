@@ -122,7 +122,4 @@ export default async function recipeSwitch(req, res){
         //     // return newData;
         //   } catch (error) {
         //     console.log("ERROR?", error);
-        //     // throw err;
-        //   }
-        // else {
       };
