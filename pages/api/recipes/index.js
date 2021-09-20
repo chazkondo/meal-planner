@@ -125,7 +125,4 @@ export default async function recipeSwitch(req, res){
         //     // throw err;
         //   }
         // else {
-        //   // Not Signed in
-        //   res.status(401);
-        // }
       };
