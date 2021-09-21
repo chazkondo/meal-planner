@@ -4,7 +4,7 @@ import React, { useEffect, useState, useRef, memo } from "react";
 import styles from '../../styles/Recipe.module.css'
 import { useRouter } from 'next/router'
 
-import getRecipeSSR from '../api/recipes';
+import { getRecipeSSR } from '../api/recipes/[recipe_id].js';
 
 // get recipe by Id
 
