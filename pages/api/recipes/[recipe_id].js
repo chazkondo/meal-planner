@@ -6,7 +6,7 @@ import { Recipe }  from '../../../models/Recipe';
 // import { syncIndexes } from '../../../models/Connections';
 // import Connections from '../../../models/Connections';
 
-dbConnect();
+// dbConnect();
 
 
 // export default async function recipeSwitch(req, res){
@@ -121,8 +121,8 @@ dbConnect();
     //   };
     export const getRecipeSSR = async (req) => {
 
-      const Recipe =
-    mongoose.models.Recipe || db.model("Recipe", RecipeSchema);
+    //   const Recipe =
+    // mongoose.models.Recipe || db.model("Recipe", RecipeSchema);
         // await dbConnect();
       
         // const session = await getSession({ req });
