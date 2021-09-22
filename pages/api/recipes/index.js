@@ -108,6 +108,4 @@ export default async function recipeSwitch(req, res){
       };
 
       export const getRecipeSSR = async (req) => {
-          console.log('THIS IS GETTING HIT')
-      
       };
