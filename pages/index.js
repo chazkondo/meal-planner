@@ -15,7 +15,7 @@ import { v4 as uuid_v4 } from "uuid";
 // Finish view all recipes. look into mongoose paginate
 // Finish edit and delete recipes
 // Remove recipes from calendar
-// 
+// Finish the edit form on calendar
 
 Date.prototype.addDays = function(days) {
   var date = new Date(this.valueOf());
