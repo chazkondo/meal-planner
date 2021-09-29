@@ -154,7 +154,7 @@ export default function Items() {
         <select id="ingredients" name="ingredients" onChange={(e) => setIngredientDropdownValue(e)} value={ingredientIndex}>
           {allIngredients.map((item, i) => <option value={i} key={i}>{item.name}</option>)}
         </select>
-        <button onClick={()=>addIngredient()}>Add Ingredient</button>
+        <button onClick={()=>addIngredient()}>Add Ingredient?</button>
     </div>
     <label htmlFor="color">Color</label>
     <input type="color" id="color" name="color" value={color} onChange={e => setColor(e.target.value)}/>
