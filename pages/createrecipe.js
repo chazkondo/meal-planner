@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState, useRef, memo } from "react";
-import { useRouter } from 'next/router'
+import { useRouter, Link } from 'next/router'
 
 import styles from '../styles/Recipe.module.css'
 
@@ -24,6 +24,7 @@ export default function Items() {
   const [recipeDropdown, setRecipeDropdown] = useState(0)
   const [recipeServings, setRecipeServings] = useState(0)
   
+  const router = useRouter()
 
   const [isPrep, setIsPrep] = useState(false)
 
@@ -159,7 +160,12 @@ export default function Items() {
         <br />
         <br />
         Ingredient not here?
-        <
+        <br />
+        <Link href="/createitems">
+          <a className="toggle-list">
+            Click to add ingredients
+          </a>
+        </Link>
     </div>
     <label htmlFor="color">Color</label>
     <input type="color" id="color" name="color" value={color} onChange={e => setColor(e.target.value)}/>
