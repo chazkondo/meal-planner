@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState, useRef, memo } from "react";
+import { useRouter } from 'next/router'
 
 import styles from '../styles/Recipe.module.css'
 
@@ -155,6 +156,10 @@ export default function Items() {
           {allIngredients.map((item, i) => <option value={i} key={i}>{item.name}</option>)}
         </select>
         <button onClick={()=>addIngredient()}>Add Ingredient?</button>
+        <br />
+        <br />
+        Ingredient not here?
+        <
     </div>
     <label htmlFor="color">Color</label>
     <input type="color" id="color" name="color" value={color} onChange={e => setColor(e.target.value)}/>
