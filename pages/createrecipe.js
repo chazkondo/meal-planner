@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState, useRef, memo } from "react";
-import { useRouter, Link } from 'next/router'
+import Link from 'next/link'
 
 import styles from '../styles/Recipe.module.css'
 
@@ -23,8 +23,6 @@ export default function Items() {
   const [allRecipes, setAllRecipes] = useState([])
   const [recipeDropdown, setRecipeDropdown] = useState(0)
   const [recipeServings, setRecipeServings] = useState(0)
-  
-  const router = useRouter()
 
   const [isPrep, setIsPrep] = useState(false)
 
@@ -159,12 +157,12 @@ export default function Items() {
         <button onClick={()=>addIngredient()}>Add Ingredient?</button>
         <br />
         <br />
+        <br />
+        <br />
         Ingredient not here?
         <br />
         <Link href="/createitems">
-          <a className="toggle-list">
-            Click to add ingredients
-          </a>
+          <a style={{color: 'blue'}}>Click to add ingredients</a>
         </Link>
     </div>
     <label htmlFor="color">Color</label>
